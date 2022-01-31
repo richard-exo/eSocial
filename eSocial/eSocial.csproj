@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BC24EB7-491D-454E-89DA-1B092645D5AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eSocial</RootNamespace>
+    <AssemblyName>eSocial</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>d:\vs\esocial2\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>47</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>42B5661A8B4C6C0B80C728F32FABF4476E7E6C96</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>eSocial_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cBase.cs" />
+    <Compile Include="Controller\controller.cs" />
+    <Compile Include="Controller\controls.cs" />
+    <Compile Include="Model\eSocialBD.cs" />
+    <Compile Include="Model\Eventos\BD\s1030.cs" />
+    <Compile Include="Model\Eventos\BD\s1300.cs" />
+    <Compile Include="Model\Eventos\BD\s2205.cs" />
+    <Compile Include="Model\Eventos\BD\s2206.cs" />
+    <Compile Include="Model\Eventos\BD\s2210.cs" />
+    <Compile Include="Model\Eventos\BD\s2220.cs" />
+    <Compile Include="Model\Eventos\BD\s2240.cs" />
+    <Compile Include="Model\Eventos\BD\s2250.cs" />
+    <Compile Include="Model\Eventos\BD\s2260.cs" />
+    <Compile Include="Model\Eventos\BD\s2299.cs" />
+    <Compile Include="Model\Eventos\BD\s2300.cs" />
+    <Compile Include="Model\Eventos\BD\s2399.cs" />
+    <Compile Include="Model\Eventos\BD\s3000.cs" />
+    <Compile Include="Model\Eventos\BD\s2230.cs" />
+    <Compile Include="Model\Eventos\BD\s2200.cs" />
+    <Compile Include="Model\Eventos\BD\s2190.cs" />
+    <Compile Include="Model\Eventos\BD\s1299.cs" />
+    <Compile Include="Model\Eventos\BD\s1298.cs" />
+    <Compile Include="Model\Eventos\BD\s1005.cs" />
+    <Compile Include="Model\Eventos\BD\s1020.cs" />
+    <Compile Include="Model\Eventos\BD\s1200.cs" />
+    <Compile Include="Model\Eventos\BD\s1210.cs" />
+    <Compile Include="Model\Eventos\BD\s1060.cs" />
+    <Compile Include="Model\Eventos\BD\s1050.cs" />
+    <Compile Include="Model\Eventos\BD\s1040.cs" />
+    <Compile Include="Model\Eventos\BD\s1010.cs" />
+    <Compile Include="Model\Eventos\BD\s5001.cs" />
+    <Compile Include="Model\Eventos\BD\s5002.cs" />
+    <Compile Include="Model\Eventos\XML\s1030.cs" />
+    <Compile Include="Model\Eventos\XML\s1020.cs" />
+    <Compile Include="Model\Eventos\XML\s1060.cs" />
+    <Compile Include="Model\Eventos\XML\s2220.cs" />
+    <Compile Include="Model\Eventos\XML\s2240.cs" />
+    <Compile Include="Model\Eventos\XML\s2260.cs" />
+    <Compile Include="Model\Eventos\XML\s2300.cs" />
+    <Compile Include="Model\Eventos\XML\s2399.cs" />
+    <Compile Include="Model\Eventos\XML\s5011.cs" />
+    <Compile Include="Model\Eventos\XML\s5012.cs" />
+    <Compile Include="Model\fSQL.cs" />
+    <Compile Include="Model\Eventos\BD\bEvento_BD.cs" />
+    <Compile Include="Model\Eventos\BD\s1000.cs" />
+    <Compile Include="Model\Eventos\XML\s1005.cs" />
+    <Compile Include="Model\Eventos\XML\s1010.cs" />
+    <Compile Include="Model\Eventos\XML\s1040.cs" />
+    <Compile Include="Model\Eventos\XML\s1050.cs" />
+    <Compile Include="Model\Eventos\XML\s1200.cs" />
+    <Compile Include="Model\Eventos\XML\s1298.cs" />
+    <Compile Include="Model\Eventos\XML\s1299.cs" />
+    <Compile Include="Model\Eventos\XML\s1300.cs" />
+    <Compile Include="Model\Eventos\XML\s2190.cs" />
+    <Compile Include="Model\Eventos\XML\s2200.cs" />
+    <Compile Include="Model\Eventos\XML\s2205.cs" />
+    <Compile Include="Model\Eventos\XML\s2230.cs" />
+    <Compile Include="Model\Eventos\XML\s2250.cs" />
+    <Compile Include="Model\Eventos\XML\s2299.cs" />
+    <Compile Include="Model\Eventos\XML\s3000.cs" />
+    <Compile Include="Model\Eventos\XML\s5001.cs" />
+    <Compile Include="Model\Eventos\XML\s5002.cs" />
+    <Compile Include="Model\Eventos\XML\s1210.cs" />
+    <Compile Include="Model\Eventos\XML\s2206.cs" />
+    <Compile Include="Controller\WS\enviarLotesWS.cs" />
+    <Compile Include="Model\Eventos\Retorno\retEnvioLoteEventos.cs" />
+    <Compile Include="Controller\x509.cs" />
+    <Compile Include="Model\Eventos\XML\s2210.cs" />
+    <Compile Include="Model\Eventos\XML\s1070.cs" />
+    <Compile Include="Model\model.cs" />
+    <Compile Include="Service References\wsConsultarLoteEventos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsEnviarLoteEventos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\WS\consultarLotesWS.cs" />
+    <Compile Include="Model\Eventos\Retorno\retProcessamentoLote.cs" />
+    <Compile Include="Model\Eventos\XML\s1000.cs" />
+    <Compile Include="Controller\fUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Eventos\XML\bEvento_XML.cs" />
+    <Compile Include="Model\Eventos\Retorno\retEvento.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eSocial_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\wsConsultarLoteEventos\ServicoConsultarLoteEventos.wsdl" />
+    <None Include="Service References\wsEnviarLoteEventos\ServicoEnviarLoteEventos.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsEnviarLoteEventos\configuration91.svcinfo" />
+    <None Include="Service References\wsEnviarLoteEventos\configuration.svcinfo" />
+    <None Include="Service References\wsEnviarLoteEventos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsConsultarLoteEventos\configuration91.svcinfo" />
+    <None Include="Service References\wsConsultarLoteEventos\configuration.svcinfo" />
+    <None Include="Service References\wsConsultarLoteEventos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ico.ico" />
+    <Content Include="_ToDo e TIPs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsConsultarLoteEventos\" />
+    <WCFMetadataStorage Include="Service References\wsEnviarLoteEventos\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

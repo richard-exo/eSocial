@@ -1,0 +1,11 @@
+Configuração para modo Teste / Prod. (Gravar data + id_usuario)
+Relatório do painel
+
+* BT download XML
+* Trazer somente eventos < 2100
+* 1050 - durInterv com valor sem iniInterv
+* Gravar recibo FOL_retornoWS (Apagar FOL_enviado)
+* Status OK - Exibir XML de envio + IDs eSocial
+* Exibir Cliente: cod + breve *
+* Exibir Func: cod + breve *
+* Exibir protocolo *

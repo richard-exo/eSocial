@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtTabRubrica/v02_02_02">
+  <evtTabRubrica Id="ID1123456780000002017082603571200001">
+    <ideEvento>
+      <tpAmb>2</tpAmb>
+      <procEmi>1</procEmi>
+      <verProc>QuartaRH eSocial 1.0</verProc>
+    </ideEvento>
+    <ideEmpregador>
+      <tpInsc>1</tpInsc>
+      <nrInsc>12345678</nrInsc>
+    </ideEmpregador>
+    <infoRubrica>
+      <inclusao>
+        <ideRubrica>
+          <codRubr>9</codRubr>
+          <iniValid>2017-01</iniValid>
+        </ideRubrica>
+        <dadosRubrica>
+          <dscRubr>HORAS EXTRAS 50%</dscRubr>
+          <natRubr>1003</natRubr>
+          <tpRubr>1</tpRubr>
+          <codIncCP>11</codIncCP>
+          <codIncIRRF>11</codIncIRRF>
+          <codIncFGTS>11</codIncFGTS>
+          <codIncSIND>00</codIncSIND>
+          <repDSR>N</repDSR>
+          <rep13>S</rep13>
+          <repFerias>S</repFerias>
+          <repAviso>S</repAviso>
+        </dadosRubrica>
+      </inclusao>
+    </infoRubrica>
+  </evtTabRubrica>
+</eSocial>

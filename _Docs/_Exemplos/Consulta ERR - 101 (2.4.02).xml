@@ -1,0 +1,21 @@
+<eSocial xmlns="http://www.esocial.gov.br/schema/lote/eventos/envio/retornoProcessamento/v1_3_0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <retornoProcessamentoLoteEventos>
+    <ideEmpregador>
+      <tpInsc>1</tpInsc>
+      <nrInsc>68013689</nrInsc>
+    </ideEmpregador>
+    <ideTransmissor>
+      <tpInsc>1</tpInsc>
+      <nrInsc>26874144000160</nrInsc>
+    </ideTransmissor>
+    <status>
+      <cdResposta>101</cdResposta>
+      <descResposta>Lote aguardando processamento.</descResposta>
+    </status>
+    <dadosRecepcaoLote>
+      <dhRecepcao>2018-04-23T13:52:48.917</dhRecepcao>
+      <versaoAplicativoRecepcao>0.1.0-A0295</versaoAplicativoRecepcao>
+      <protocoloEnvio>1.2.201804.0000000000000678122</protocoloEnvio>
+    </dadosRecepcaoLote>
+  </retornoProcessamentoLoteEventos>
+</eSocial>

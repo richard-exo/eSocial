@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:v1="http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1">
+<soap:Body>
+<v1:EnviarLoteEventos>
+<v1:loteEventos>
+<eSocial xmlns="http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1">
+<envioLoteEventos grupo="1">
+<ideEmpregador>
+<tpInsc>1</tpInsc>
+<nrInsc>55109565</nrInsc>
+</ideEmpregador>
+<ideTransmissor>
+<tpInsc>1</tpInsc>
+<nrInsc>55109565000101</nrInsc>
+</ideTransmissor>
+<eventos>
+<evento Id="ID1551095650000002018031310211697949"> 
+<eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v02_04_02">
+<evtInfoEmpregador Id="ID1551095650000002018031310211697949">
+<ideEvento>
+<tpAmb>2</tpAmb>
+<procEmi>1</procEmi>
+<verProc>1.0</verProc>
+</ideEvento>
+<ideEmpregador>
+<tpInsc>1</tpInsc>
+<nrInsc>55109565</nrInsc>
+</ideEmpregador>
+<infoEmpregador>
+<inclusao>
+<idePeriodo>
+<iniValid>2016-02</iniValid>
+</idePeriodo>
+<infoCadastro>
+<nmRazao>USINA BAZAN S/A</nmRazao>
+<classTrib>06</classTrib>
+<natJurid>2054</natJurid>
+<indCoop>0</indCoop>
+<indConstr>0</indConstr>
+<indDesFolha>0</indDesFolha>
+<indOptRegEletron>0</indOptRegEletron>
+<indEntEd>N</indEntEd>
+<indEtt>N</indEtt>
+<contato>
+<nmCtt>ADRIANO SEBASTIAO XAVIER</nmCtt>
+<cpfCtt>08860402808</cpfCtt>
+<foneFixo>1639539000</foneFixo>
+</contato>
+<infoComplementares>
+<situacaoPJ>
+<indSitPJ>0</indSitPJ>
+</situacaoPJ>
+</infoComplementares>
+</infoCadastro>
+</inclusao>
+</infoEmpregador>
+</evtInfoEmpregador>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+</CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256">
+</SignatureMethod>
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+</Transform>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+</Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256">
+</DigestMethod>
+<DigestValue>48wiztWfRL/HKrdp2EstfzXjVE5Vpd6bOhx7S75kUkQ=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>p+1XlObSJQCpEcDdnjnrU4R0UU/VAoj1sNa7WSEjQUHc4+Suam0nFjcNU2TF7Z5hhFd7gm1RETZR3yKAfxy8VcU3bZtz7cSF9noq2seTa00rZWKaVyWgDT9H23j1fJPUXFiBnfcBsXLPBVlIDnuDySIB2D2Z8U4CczlkJzqmlK7bj14KQse/SLXpx34ESeSXhsx/Xa2hyotORcnuHOLmhEOrBWU4b6PuuLuMU1mZilHaonbEhYoU7fB5EzpK+qdJPmsAhAXhNuOD/xD9OeajrMwIJTGLr1xKHJyKYDZ3h2/ITlQsbYX331mFpzZYa1v2ZKoCpCokN58bD8W4TlyKlw==</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>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</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature>
+</eSocial>
+</evento>
+</eventos>
+</envioLoteEventos>
+</eSocial>
+</v1:loteEventos>
+</v1:EnviarLoteEventos>
+</soap:Body>
+</soap:Envelope>

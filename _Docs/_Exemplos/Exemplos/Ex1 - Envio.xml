@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header />
+	<soap:Body>
+		<eSocial xmlns="http://www.esocial.gov.br/schema/lote/eventos/envio/v1_1_1">
+			<envioLoteEventos grupo="1">
+				<ideEmpregador>
+					<tpInsc>1</tpInsc>
+					<nrInsc>12123123123412</nrInsc>
+				</ideEmpregador>
+				<ideTransmissor>
+					<tpInsc>1</tpInsc>
+					<nrInsc>12123123123412</nrInsc>
+				</ideTransmissor>
+				<eventos>
+					<evento Id="ID 1 12123123123412 2017 09 04 11 40 00 12345">
+						<ns1:eSocial
+							xmlns:ns1="http://www.esocial.gov.br/schema/evt/evtInfoEmpregador/v02_02_02">
+							<ns1:evtInfoEmpregador Id="ID1 12123123123412 2017 09 04 11 40 00 12345">
+								<ns1:ideEvento>
+									<ns1:tpAmb>1</ns1:tpAmb>
+									<ns1:procEmi>1</ns1:procEmi>
+									<ns1:verProc>v02_02_02</ns1:verProc>
+								</ns1:ideEvento>
+								<ns1:ideEmpregador>
+									<ns1:tpInsc>1</ns1:tpInsc>
+									<ns1:nrInsc>12123123123412</ns1:nrInsc>
+								</ns1:ideEmpregador>
+								<ns1:infoEmpregador>
+									<ns1:inclusao>
+										<ns1:idePeriodo>
+											<ns1:iniValid>2017-08</ns1:iniValid>
+											<ns1:fimValid />
+										</ns1:idePeriodo>
+										<ns1:infoCadastro>
+											<ns1:nmRazao>M O R L A N S. A.</ns1:nmRazao>
+											<ns1:classTrib>01</ns1:classTrib>
+											<ns1:natJurid>2038</ns1:natJurid>
+											<ns1:indCoop>0</ns1:indCoop>
+											<ns1:indConstr>0</ns1:indConstr>
+											<ns1:indDesFolha>0</ns1:indDesFolha>
+											<ns1:indOptRegEletron>0</ns1:indOptRegEletron>
+											<ns1:multTabRubricas>N</ns1:multTabRubricas>
+											<ns1:indEntEd>N</ns1:indEntEd>
+											<ns1:indEtt>N</ns1:indEtt>
+											<ns1:nrRegEtt />
+											<ns1:dadosIsencao> 
+											</ns1:dadosIsencao>
+											<ns1:contato>
+												<ns1:nmCtt>NOME TESTE ALTERADOO</ns1:nmCtt>
+												<ns1:cpfCtt>11122233344</ns1:cpfCtt>
+												<ns1:foneFixo />
+												<ns1:foneCel />
+												<ns1:email />
+											</ns1:contato>
+											<ns1:infoOP> 
+											</ns1:infoOP>
+											<ns1:infoOrgInternacional> 
+											</ns1:infoOrgInternacional>
+											<ns1:softwareHouse> 
+											</ns1:softwareHouse>
+											<ns1:infoComplementares>
+												<ns1:situacaoPJ>
+													<ns1:indSitPJ>0</ns1:indSitPJ>
+												</ns1:situacaoPJ>
+												<ns1:situacaoPF> 
+												</ns1:situacaoPF>
+											</ns1:infoComplementares>
+										</ns1:infoCadastro>
+									</ns1:inclusao>
+									<ns1:alteracao />
+									<ns1:exclusao />
+								</ns1:infoEmpregador>
+								<ns1:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+									<ns1:SignedInfo>
+										<ns1:CanonicalizationMethod
+											Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+										<ns1:SignatureMethod
+											Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+										<ns1:Reference URI="ID1121231231234122017090411400012345">
+											<ns1:Transforms>
+												<ns1:Transform
+													Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+												<ns1:Transform
+													Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+											</ns1:Transforms>
+											<ns1:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+											<ns1:DigestValue />
+										</ns1:Reference>
+									</ns1:SignedInfo>
+									<ns1:SignatureValue>...xpto ...
+									</ns1:SignatureValue>
+									<ns1:KeyInfo>
+										<ns1:X509Data>
+											<ns1:X509Certificate>...xpto...
+											</ns1:X509Certificate>
+										</ns1:X509Data>
+									</ns1:KeyInfo>
+								</ns1:Signature>
+							</ns1:evtInfoEmpregador>
+						</ns1:eSocial>
+					</evento>
+				</eventos>
+			</envioLoteEventos>	 
+		</eSocial>
+	</soap:Body>
+</soap:Envelope>
+
