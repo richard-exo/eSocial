@@ -20,6 +20,7 @@ namespace eSocial.Model.Eventos.XML {
 
          cat = new sCat();
          cat.localAcidente = new sCat.sLocalAcidente();
+         cat.localAcidente.ideLocalAcid = new sCat.sLocalAcidente.sIdeLocalAcid();
          cat.parteAtingida = new sCat.sParteAtingida();
          cat.agenteCausador = new sCat.sAgenteCausador();
 
@@ -87,7 +88,11 @@ namespace eSocial.Model.Eventos.XML {
          opTag("codMunic", cat.localAcidente.codMunic),
          opTag("uf", cat.localAcidente.uf),
          opTag("pais", cat.localAcidente.pais),
-         opTag("codPostal", cat.localAcidente.codPostal)),
+         opTag("codPostal", cat.localAcidente.codPostal),
+
+         opElement("ideLocalAcid", cat.localAcidente.ideLocalAcid.tpInsc,
+         new XElement(ns + "tpInsc", cat.localAcidente.ideLocalAcid.tpInsc),
+         new XElement(ns + "nrInsc", cat.localAcidente.ideLocalAcid.nrInsc))),
 
          //// parteAtingida 0.99
          //from e in lParteAtingida
@@ -238,6 +243,9 @@ namespace eSocial.Model.Eventos.XML {
          public struct sLocalAcidente {
             public string tpLocal, codMunic;
             public string dscLocal, tpLograd, dscLograd, nrLograd, complemento, bairro, cep,  uf, pais, codPostal;
+
+            public sIdeLocalAcid ideLocalAcid;
+            public struct sIdeLocalAcid { public string tpInsc, nrInsc; }
          }
 
          public sParteAtingida parteAtingida;
