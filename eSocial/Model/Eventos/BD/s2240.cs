@@ -103,8 +103,8 @@ namespace eSocial.Model.Eventos.BD
 								gcl.setLevel("retEpi_detEpi", clear: true);
 
 								var tbRetEpi_detEpi = from DataRow r in tbAgNoc
-														 where !string.IsNullOrEmpty(r[$"docAval_retEpi_detEpi"].ToString()) &&
-														 r["id_retEpi_detEpi"].ToString().Equals(sChaveEpi1)
+														 where !string.IsNullOrEmpty(r[$"dscEPI_retEpi_detEpi"].ToString()) &&
+														 r["id_agNoc"].ToString().Equals(sChaveEpi1)
 														 select r;
 
 								foreach (var retEpiFl in tbRetEpi_detEpi)

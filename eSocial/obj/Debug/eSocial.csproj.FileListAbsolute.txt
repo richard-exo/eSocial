@@ -81,3 +81,17 @@ D:\GitHub\eSocialServer\eSocial\obj\Debug\eSocial.exe.manifest
 D:\GitHub\eSocialServer\eSocial\obj\Debug\eSocial.application
 D:\GitHub\eSocialServer\eSocial\obj\Debug\eSocial.exe
 D:\GitHub\eSocialServer\eSocial\obj\Debug\eSocial.pdb
+D:\GitHub\eSocial\eSocial\bin\Debug\eSocial.exe.config
+D:\GitHub\eSocial\eSocial\bin\Debug\eSocial.exe.manifest
+D:\GitHub\eSocial\eSocial\bin\Debug\eSocial.application
+D:\GitHub\eSocial\eSocial\bin\Debug\eSocial.exe
+D:\GitHub\eSocial\eSocial\bin\Debug\eSocial.pdb
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.frmMain.resources
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.Properties.Resources.resources
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.csproj.GenerateResource.cache
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.csproj.CoreCompileInputs.cache
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.application
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.exe
+D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.pdb

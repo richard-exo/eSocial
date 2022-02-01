@@ -135,7 +135,7 @@ namespace eSocial.Model.Eventos.XML
       public void add_epi()
       {
          lEpi.Add(
-         opElement("epi", infoExpRisco.agNoc.epcEpi.epi.docAval,
+         opElement("epi", infoExpRisco.agNoc.epcEpi.epi.dscEPI,
          opTag("docAval", infoExpRisco.agNoc.epcEpi.epi.docAval),
          opTag("dscEPI", infoExpRisco.agNoc.epcEpi.epi.dscEPI)));
 

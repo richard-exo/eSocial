@@ -69,7 +69,7 @@ namespace eSocial.Model.Eventos.BD
                s2210XML.cat.localAcidente.nrLograd = row["nrLograd"].ToString();
                s2210XML.cat.localAcidente.complemento = row["complemento"].ToString();
                s2210XML.cat.localAcidente.bairro = row["bairro"].ToString();
-               s2210XML.cat.localAcidente.complemento = row["cep"].ToString();
+               s2210XML.cat.localAcidente.cep = row["cep"].ToString();
                s2210XML.cat.localAcidente.codMunic = row["codMunic"].ToString();
                s2210XML.cat.localAcidente.uf = row["uf"].ToString();
                s2210XML.cat.localAcidente.pais = row["pais"].ToString();
