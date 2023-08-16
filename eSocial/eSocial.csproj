@@ -9,12 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eSocial</RootNamespace>
     <AssemblyName>eSocial</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>d:\vs\esocial2\</PublishUrl>
+    <PublishUrl>c:\vs\esocial2\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>47</ApplicationRevision>
+    <ApplicationRevision>54</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,7 +53,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>42B5661A8B4C6C0B80C728F32FABF4476E7E6C96</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>DDB1623FC05FCF15561C4212900C70D91E8375A5</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>eSocial_TemporaryKey.pfx</ManifestKeyFile>
@@ -103,7 +103,10 @@
     <Compile Include="Model\Eventos\BD\s2260.cs" />
     <Compile Include="Model\Eventos\BD\s2299.cs" />
     <Compile Include="Model\Eventos\BD\s2300.cs" />
+    <Compile Include="Model\Eventos\BD\s2306.cs" />
     <Compile Include="Model\Eventos\BD\s2399.cs" />
+    <Compile Include="Model\Eventos\BD\s2500.cs" />
+    <Compile Include="Model\Eventos\BD\s2501.cs" />
     <Compile Include="Model\Eventos\BD\s3000.cs" />
     <Compile Include="Model\Eventos\BD\s2230.cs" />
     <Compile Include="Model\Eventos\BD\s2200.cs" />
@@ -127,7 +130,10 @@
     <Compile Include="Model\Eventos\XML\s2240.cs" />
     <Compile Include="Model\Eventos\XML\s2260.cs" />
     <Compile Include="Model\Eventos\XML\s2300.cs" />
+    <Compile Include="Model\Eventos\XML\s2306.cs" />
     <Compile Include="Model\Eventos\XML\s2399.cs" />
+    <Compile Include="Model\Eventos\XML\s2500.cs" />
+    <Compile Include="Model\Eventos\XML\s2501.cs" />
     <Compile Include="Model\Eventos\XML\s5011.cs" />
     <Compile Include="Model\Eventos\XML\s5012.cs" />
     <Compile Include="Model\fSQL.cs" />

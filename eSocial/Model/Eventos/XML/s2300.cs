@@ -13,7 +13,7 @@ namespace eSocial.Model.Eventos.XML
 {
    public class s2300 : bEvento_XML
    {
-      public s2300(string sID) : base("evtTSVInicio")
+      public s2300(string sID) : base("evtTSVInicio", "", "v_S_01_01_00")
       {
          id = sID;
          ideEvento = new sIdeEvento();
@@ -30,7 +30,7 @@ namespace eSocial.Model.Eventos.XML
          trabalhador.endereco = new sTrabalhador.sEndereco();
          trabalhador.endereco.brasil = new sTrabalhador.sEndereco.sBrasil();
          trabalhador.endereco.exterior = new sTrabalhador.sEndereco.sExterior();
-         trabalhador.trabEstrangeiro = new sTrabalhador.sTrabEstrangeiro();
+         trabalhador.trabImig = new sTrabalhador.sTrabImig();
          trabalhador.infoDeficiencia = new sTrabalhador.sInfoDeficiencia();
          trabalhador.dependente = new sTrabalhador.sDependente();
          trabalhador.aposentadoria = new sTrabalhador.sAposentadoria();
@@ -43,6 +43,7 @@ namespace eSocial.Model.Eventos.XML
          infoTSVInicio.infoComplementares.FGTS = new sInfoTSVInicio.sInfoComplementares.sFGTS();
          infoTSVInicio.infoComplementares.infoDirigenteSindical = new sInfoTSVInicio.sInfoComplementares.sInfoDirigenteSindical();
          infoTSVInicio.infoComplementares.infoTrabCedido = new sInfoTSVInicio.sInfoComplementares.sInfoTrabCedido();
+         infoTSVInicio.infoComplementares.infoMandElet = new sInfoTSVInicio.sInfoComplementares.sInfoMandElet();
          infoTSVInicio.infoComplementares.infoEstagiario = new sInfoTSVInicio.sInfoComplementares.sInfoEstagiario();
          infoTSVInicio.infoComplementares.infoEstagiario.instEnsino = new sInfoTSVInicio.sInfoComplementares.sInfoEstagiario.sInstEnsino();
          infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao = new sInfoTSVInicio.sInfoComplementares.sInfoEstagiario.sAgeIntegracao();
@@ -71,7 +72,6 @@ namespace eSocial.Model.Eventos.XML
          xml.Elements().ElementAt(0).Add(
          new XElement(ns + "trabalhador",
          new XElement(ns + "cpfTrab", trabalhador.cpfTrab),
-         new XElement(ns + "nisTrab", trabalhador.nisTrab),
          new XElement(ns + "nmTrab", trabalhador.nmTrab),
          new XElement(ns + "sexo", trabalhador.sexo),
          new XElement(ns + "racaCor", trabalhador.racaCor),
@@ -82,57 +82,8 @@ namespace eSocial.Model.Eventos.XML
          // nascimento
          new XElement(ns + "nascimento",
          new XElement(ns + "dtNascto", trabalhador.nascimento.dtNascto),
-         opTag("codMunic", trabalhador.nascimento.codMunic),
-         opTag("uf", trabalhador.nascimento.uf),
          new XElement(ns + "paisNascto", trabalhador.nascimento.paisNascto),
-         new XElement(ns + "paisNac", trabalhador.nascimento.paisNac),
-         opTag("nmMae", trabalhador.nascimento.nmMae),
-         opTag("nmPai", trabalhador.nascimento.nmPai)),
-
-         // documentos 0.1
-         opElement("documentos", trabalhador.documentos.CTPS.nrCtps,
-
-         // CTPS 0.1
-         opElement("CTPS", trabalhador.documentos.CTPS.nrCtps,
-         new XElement(ns + "nrCtps", trabalhador.documentos.CTPS.nrCtps),
-         new XElement(ns + "serieCtps", trabalhador.documentos.CTPS.serieCtps),
-         new XElement(ns + "ufCtps", trabalhador.documentos.CTPS.ufCtps)),
-
-         // RIC 0.1
-         opElement("RIC", trabalhador.documentos.RIC.nrRic,
-         new XElement(ns + "nrRic", trabalhador.documentos.RIC.nrRic),
-         new XElement(ns + "orgaoEmissor", trabalhador.documentos.RIC.orgaoEmissor),
-         opTag("dtExped", trabalhador.documentos.RIC.dtExped)),
-
-         // RG 0.1
-         opElement("RG", trabalhador.documentos.RG.nrRg,
-         new XElement(ns + "nrRg", trabalhador.documentos.RG.nrRg),
-         new XElement(ns + "orgaoEmissor", trabalhador.documentos.RG.orgaoEmissor),
-         opTag("dtExped", trabalhador.documentos.RG.dtExped)),
-
-         // RNE 0.1
-         opElement("RNE", trabalhador.documentos.RNE.nrRne,
-         new XElement(ns + "nrRne", trabalhador.documentos.RNE.nrRne),
-         new XElement(ns + "orgaoEmissor", trabalhador.documentos.RNE.orgaoEmissor),
-         opTag("dtExped", trabalhador.documentos.RNE.dtExped)),
-
-         // OC 0.1
-         opElement("OC", trabalhador.documentos.OC.nrOc,
-         new XElement(ns + "nrOc", trabalhador.documentos.OC.nrOc),
-         new XElement(ns + "orgaoEmissor", trabalhador.documentos.OC.orgaoEmissor),
-         opTag("dtExped", trabalhador.documentos.OC.dtExped),
-         opTag("dtValid", trabalhador.documentos.OC.dtValid)),
-
-         // CNH 0.1
-         opElement("CNH", trabalhador.documentos.CNH.nrRegCnh,
-         new XElement(ns + "nrRegCnh", trabalhador.documentos.CNH.nrRegCnh),
-         opTag("dtExped", trabalhador.documentos.CNH.dtExped),
-         new XElement(ns + "ufCnh", trabalhador.documentos.CNH.ufCnh),
-         new XElement(ns + "dtValid", trabalhador.documentos.CNH.dtValid),
-         opTag("dtPriHab", trabalhador.documentos.CNH.dtPriHab),
-         new XElement(ns + "categoriaCnh", trabalhador.documentos.CNH.categoriaCnh))
-
-         ), //documentos
+         new XElement(ns + "paisNac", trabalhador.nascimento.paisNac)),
 
          // endereco
          new XElement(ns + "endereco",
@@ -160,12 +111,10 @@ namespace eSocial.Model.Eventos.XML
 
          ), // endereco
 
-         // trabEstrangeiro 0.1
-         opElement("trabEstrangeiro", trabalhador.trabEstrangeiro.dtChegada,
-         new XElement(ns + "dtChegada", trabalhador.trabEstrangeiro.dtChegada),
-         new XElement(ns + "classTrabEstrang", trabalhador.trabEstrangeiro.classTrabEstrang),
-         new XElement(ns + "casadoBr", trabalhador.trabEstrangeiro.casadoBr),
-         new XElement(ns + "filhosBr", trabalhador.trabEstrangeiro.filhosBr)),
+         // trabImig 0.1
+         opElement("trabImig", trabalhador.trabImig.condIng,
+         opTag("tmpResid", trabalhador.trabImig.tmpResid),
+         new XElement(ns + "condIng", trabalhador.trabImig.condIng)),
 
          // infoDeficiencia 0.1
          opElement("infoDeficiencia", trabalhador.infoDeficiencia.defFisica,
@@ -191,15 +140,19 @@ namespace eSocial.Model.Eventos.XML
          xml.Elements().ElementAt(0).Add(
          opElement("infoTSVInicio", infoTSVInicio.cadIni,
          new XElement(ns + "cadIni", infoTSVInicio.cadIni),
+         opTag("matricula", infoTSVInicio.matricula),
          new XElement(ns + "codCateg", infoTSVInicio.codCateg),
          new XElement(ns + "dtInicio", infoTSVInicio.dtInicio),
+         opTag("nrProcTrab", infoTSVInicio.nrProcTrab),
          opTag("natAtividade", infoTSVInicio.natAtividade),
 
          // infoComplementares
          new XElement(ns + "infoComplementares",
-         opElement("cargoFuncao", infoTSVInicio.infoComplementares.cargoFuncao.codCargo,
-         new XElement(ns + "codCargo", infoTSVInicio.infoComplementares.cargoFuncao.codCargo),
-         opTag("codFuncao", infoTSVInicio.infoComplementares.cargoFuncao.codFuncao)),
+         opElement("cargoFuncao", infoTSVInicio.infoComplementares.cargoFuncao.nmCargo,
+         opTag("nmCargo", infoTSVInicio.infoComplementares.cargoFuncao.nmCargo),
+         opTag("CBOCargo", infoTSVInicio.infoComplementares.cargoFuncao.CBOCargo),
+         opTag("nmFuncao", infoTSVInicio.infoComplementares.cargoFuncao.nmFuncao),
+         opTag("CBOFuncao", infoTSVInicio.infoComplementares.cargoFuncao.CBOFuncao)),
 
          new XElement(ns + "remuneracao",
          new XElement(ns + "vrSalFx", infoTSVInicio.infoComplementares.remuneracao.vrSalFx),
@@ -208,15 +161,17 @@ namespace eSocial.Model.Eventos.XML
 
          // FGTS
          opElement("fgts",
-         opTag("opcFGTS", infoTSVInicio.infoComplementares.FGTS.opcFGTS),
          opTag("dtOpcFGTS", infoTSVInicio.infoComplementares.FGTS.dtOpcFGTS)),
 
          // infoDirigenteSindical
          opElement("infoDirigenteSindical",
          opTag("categOrig", infoTSVInicio.infoComplementares.infoDirigenteSindical.categOrig),
-         opTag("cnpjOrigem", infoTSVInicio.infoComplementares.infoDirigenteSindical.cnpjOrigem),
+         opTag("tpInsc", infoTSVInicio.infoComplementares.infoDirigenteSindical.tpInsc),
+         opTag("nrInsc", infoTSVInicio.infoComplementares.infoDirigenteSindical.nrInsc),
          opTag("dtAdmOrig", infoTSVInicio.infoComplementares.infoDirigenteSindical.dtAdmOrig),
-         opTag("matricOrig", infoTSVInicio.infoComplementares.infoDirigenteSindical.matricOrig)),
+         opTag("matricOrig", infoTSVInicio.infoComplementares.infoDirigenteSindical.matricOrig),
+         opTag("tpRegTrab", infoTSVInicio.infoComplementares.infoDirigenteSindical.tpRegTrab),
+         new XElement(ns + "tpRegPrev", infoTSVInicio.infoComplementares.infoDirigenteSindical.tpRegPrev)),
 
          // infoTrabCedido
          opElement("infoTrabCedido",
@@ -225,16 +180,24 @@ namespace eSocial.Model.Eventos.XML
          opTag("matricCed", infoTSVInicio.infoComplementares.infoTrabCedido.matricCed),
          opTag("dtAdmCed", infoTSVInicio.infoComplementares.infoTrabCedido.dtAdmCed),
          opTag("tpRegTrab", infoTSVInicio.infoComplementares.infoTrabCedido.tpRegTrab),
-         opTag("tpRegPrev", infoTSVInicio.infoComplementares.infoTrabCedido.tpRegPrev),
-         opTag("infOnus", infoTSVInicio.infoComplementares.infoTrabCedido.infOnus)),
+         opTag("tpRegPrev", infoTSVInicio.infoComplementares.infoTrabCedido.tpRegPrev)),
+
+         // infoMandElet
+         opElement("infoMandElet", infoTSVInicio.infoComplementares.infoMandElet.categOrig,
+         new XElement(ns + "categOrig", infoTSVInicio.infoComplementares.infoMandElet.categOrig),
+         new XElement(ns + "cnpjOrig", infoTSVInicio.infoComplementares.infoMandElet.cnpjOrig),
+         new XElement(ns + "matricOrig", infoTSVInicio.infoComplementares.infoMandElet.matricOrig),
+         new XElement(ns + "dtExercOrig", infoTSVInicio.infoComplementares.infoMandElet.tpRegPrev),
+         opTag("indRemunCargo", infoTSVInicio.infoComplementares.infoMandElet.indRemunCargo),
+         new XElement(ns + "tpRegTrab", infoTSVInicio.infoComplementares.infoMandElet.tpRegTrab),
+         new XElement(ns + "tpRegPrev", infoTSVInicio.infoComplementares.infoMandElet.tpRegPrev)),
 
          // infoEstagiario
-         opElement("localTrabalho",
+         opElement("infoEstagiario",
          opTag("natEstagio", infoTSVInicio.infoComplementares.infoEstagiario.natEstagio),
          opTag("nivEstagio", infoTSVInicio.infoComplementares.infoEstagiario.nivEstagio),
          opTag("areaAtuacao", infoTSVInicio.infoComplementares.infoEstagiario.areaAtuacao),
          opTag("nrApol", infoTSVInicio.infoComplementares.infoEstagiario.nrApol),
-         opTag("vlrBolsa", infoTSVInicio.infoComplementares.infoEstagiario.vlrBolsa),
          opTag("dtPrevTerm", infoTSVInicio.infoComplementares.infoEstagiario.dtPrevTeam)),
 
          // intEnsino
@@ -250,24 +213,17 @@ namespace eSocial.Model.Eventos.XML
 
          // ageIntegracao
          opElement("ageIntegracao",
-         opTag("cnpjAgntInteg", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.cnpjAgntInteg),
-         opTag("nrRazao", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.nrRazao),
-         opTag("dscLograd", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.dscLograd),
-         opTag("nrLograd", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.nrLograd),
-         opTag("bairro", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.bairro),
-         opTag("cep", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.cep),
-         opTag("codMunic", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.codMunic),
-         opTag("uf", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.uf)),
+         opTag("cnpjAgntInteg", infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.cnpjAgntInteg)),
 
          // supervisorEstagio
          opElement("supervisorEstagio",
-         opTag("cpfSupervisor", infoTSVInicio.infoComplementares.infoEstagiario.supervisorEstagiario.cpfSupervisor),
-         opTag("nmSuperv", infoTSVInicio.infoComplementares.infoEstagiario.supervisorEstagiario.nmSuperv)),
+         opTag("cpfSupervisor", infoTSVInicio.infoComplementares.infoEstagiario.supervisorEstagiario.cpfSupervisor)),
 
          // mudancaCPF 
-         opElement("mudancaCPF",
-         opTag("cpfAnt", infoTSVInicio.mudancaCPF.cpfAnt),
-         opTag("dtAltCPF", infoTSVInicio.mudancaCPF.dtAltCPF),
+         opElement("mudancaCPF", infoTSVInicio.mudancaCPF.cpfAnt,
+         new XElement(ns + "cnpjOrig", infoTSVInicio.mudancaCPF.cpfAnt),
+         opTag("matricAnt", infoTSVInicio.mudancaCPF.matricAnt),
+         new XElement(ns + "dtAltCPF", infoTSVInicio.mudancaCPF.dtAltCPF),
          opTag("observacao", infoTSVInicio.mudancaCPF.observacao)),
          
          // afastamento
@@ -313,9 +269,7 @@ namespace eSocial.Model.Eventos.XML
          lContato.Add(
          new XElement(ns + "contato",
          opTag("fonePrinc", trabalhador.contato.fonePrinc),
-         opTag("foneAlternat", trabalhador.contato.foneAlternat),
-         opTag("emailPrinc", trabalhador.contato.emailPrinc),
-         opTag("emailAlternat", trabalhador.contato.emailAlternat)));
+         opTag("emailPrinc", trabalhador.contato.emailPrinc)));
 
          trabalhador.contato = new sTrabalhador.sContato();
       }
@@ -406,12 +360,11 @@ namespace eSocial.Model.Eventos.XML
             public struct sExterior { public string paisResid, dscLograd, nrLograd, complemento, bairro, nmCid, codPostal; }
          }
 
-         public sTrabEstrangeiro trabEstrangeiro;
-         public struct sTrabEstrangeiro
+         public sTrabImig trabImig;
+         public struct sTrabImig
          {
-            public string classTrabEstrang;
-            public string casadoBr, filhosBr;
-            public string dtChegada;
+            public string tmpResid;
+            public string condIng;
          }
          public sInfoDeficiencia infoDeficiencia;
          public struct sInfoDeficiencia { public string defFisica, defVisual, defAuditiva, defMental, defIntelectual, reabReadap, infoCota, observacao; }
@@ -432,7 +385,7 @@ namespace eSocial.Model.Eventos.XML
       public sInfoTSVInicio infoTSVInicio;
       public struct sInfoTSVInicio
       {
-         public string cadIni, codCateg, dtInicio, natAtividade;
+         public string cadIni, matricula, codCateg, dtInicio, natAtividade, nrProcTrab;
 
          public sInfoComplementares infoComplementares;
          public struct sInfoComplementares
@@ -440,7 +393,7 @@ namespace eSocial.Model.Eventos.XML
             public sCargoFuncao cargoFuncao;
             public struct sCargoFuncao
             {
-               public string codCargo, codFuncao;
+               public string codCargo, codFuncao, nmCargo, CBOCargo, nmFuncao, CBOFuncao;
             }
             public sRemuneracao remuneracao;
             public struct sRemuneracao
@@ -458,12 +411,17 @@ namespace eSocial.Model.Eventos.XML
             public sInfoDirigenteSindical infoDirigenteSindical;
             public struct sInfoDirigenteSindical
             {
-               public string categOrig, cnpjOrigem, dtAdmOrig, matricOrig;
+               public string categOrig, cnpjOrigem, dtAdmOrig, matricOrig, tpInsc, nrInsc, tpRegTrab, tpRegPrev;
             }
             public sInfoTrabCedido infoTrabCedido;
             public struct sInfoTrabCedido
             {
                public string categOrig, cnpCednt, matricCed, dtAdmCed, tpRegTrab, tpRegPrev, infOnus;
+            }
+            public sInfoMandElet infoMandElet;
+            public struct sInfoMandElet
+            {
+               public string categOrig, cnpjOrig, matricOrig, dtExercOrig, indRemunCargo, tpRegTrab, tpRegPrev;
             }
             public sInfoEstagiario infoEstagiario;
             public struct sInfoEstagiario
@@ -490,7 +448,7 @@ namespace eSocial.Model.Eventos.XML
          public sMudancaCPF mudancaCPF;
          public struct sMudancaCPF
          {
-            public string cpfAnt, dtAltCPF, observacao;
+            public string cpfAnt, dtAltCPF, matricAnt, observacao;
          }
          public sAfastamento afastamento;
          public struct sAfastamento

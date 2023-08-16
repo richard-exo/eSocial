@@ -20,8 +20,8 @@ namespace eSocial.Model {
       private string sCatalog = "eSocial";
       private string sUserID = "esocial";
       private string sPassword = "#e$ocial$68bE32";
-      //private string sDataSource = "sql.workoffice.com.br,5683";
-      private string sDataSource = "sql.workoffice.com.br";
+      private string sDataSource = "sql.workoffice.com.br,5683";
+      //private string sDataSource = "sql.workoffice.com.br";
       private string sConnection;
 
       BlockingCollection<string> lSQL = new BlockingCollection<string>();

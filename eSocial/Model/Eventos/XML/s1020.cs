@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1020 : bEvento_XML {
 
-        public s1020(string sID) : base("evtTabLotacao", "infoLotacao") {
+        public s1020(string sID) : base("evtTabLotacao", "infoLotacao", "v_S_01_01_00") {
 
             id = sID;
 
@@ -85,7 +85,11 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "tpInscContrat", infoLotacao.inclusao.dadosLotacao.infoEmprParcial.tpInscContrat),
             new XElement(ns + "nrInscContrat", infoLotacao.inclusao.dadosLotacao.infoEmprParcial.nrInscContrat),
             new XElement(ns + "tpInscProp", infoLotacao.inclusao.dadosLotacao.infoEmprParcial.tpInscProp),
-            new XElement(ns + "nrInscProp", infoLotacao.inclusao.dadosLotacao.infoEmprParcial.nrInscProp))
+            new XElement(ns + "nrInscProp", infoLotacao.inclusao.dadosLotacao.infoEmprParcial.nrInscProp)),
+
+            opElement("dadosOpPort", infoLotacao.inclusao.dadosLotacao.dadosOpPort.aliqRat,
+            new XElement(ns + "aliqRat", infoLotacao.inclusao.dadosLotacao.dadosOpPort.aliqRat),
+            new XElement(ns + "fap", infoLotacao.inclusao.dadosLotacao.dadosOpPort.fap))
 
             )), // alteracao
 
@@ -102,24 +106,7 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "dadosLotacao",
             new XElement(ns + "tpLotacao", infoLotacao.alteracao.dadosLotacao.tpLotacao),
             opTag("tpInsc", infoLotacao.alteracao.dadosLotacao.tpInsc),
-            opTag("nrInsc", infoLotacao.alteracao.dadosLotacao.nrInsc),
-
-            // fpasLotacao
-            new XElement(ns + "fpasLotacao",
-            new XElement(ns + "fpas", infoLotacao.alteracao.dadosLotacao.fpasLotacao.fPas),
-            new XElement(ns + "codTercs", infoLotacao.alteracao.dadosLotacao.fpasLotacao.codTercs),
-            opTag("codTercsSusp", infoLotacao.alteracao.dadosLotacao.fpasLotacao.codTercsSusp),
-
-             // procJudTerceiro_alteracao 1.99
-             from e in lProcJudTerceiro_alteracao
-             select e),
-
-            // infoEmprParcial 0.1
-            opElement("infoEmprParcial", infoLotacao.alteracao.dadosLotacao.infoEmprParcial.tpInscContrat,
-            new XElement(ns + "tpInscContrat", infoLotacao.alteracao.dadosLotacao.infoEmprParcial.tpInscContrat),
-            new XElement(ns + "nrInscContrat", infoLotacao.alteracao.dadosLotacao.infoEmprParcial.nrInscContrat),
-            new XElement(ns + "tpInscProp", infoLotacao.alteracao.dadosLotacao.infoEmprParcial.tpInscProp),
-            new XElement(ns + "nrInscProp", infoLotacao.alteracao.dadosLotacao.infoEmprParcial.nrInscProp))),
+            opTag("nrInsc", infoLotacao.alteracao.dadosLotacao.nrInsc)),
 
             // novaValidade 0.1
             opElement("novaValidade", infoLotacao.alteracao.novaValidade.iniValid,
@@ -211,6 +198,9 @@ namespace eSocial.Model.Eventos.XML {
                     }
                     public sInfoEmprParcial infoEmprParcial;
                     public struct sInfoEmprParcial { public string tpInscContrat, nrInscContrat, tpInscProp, nrInscProp; }
+
+                    public sDadosOpPort dadosOpPort;
+                    public struct sDadosOpPort { public string aliqRat, fap; }    
                 }
                 public sIdePeriodo novaValidade;
             }

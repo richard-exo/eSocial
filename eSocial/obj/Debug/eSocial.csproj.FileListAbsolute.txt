@@ -42,7 +42,6 @@ C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\bin\Debug\eSocial.exe.man
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\bin\Debug\eSocial.application
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\bin\Debug\eSocial.exe
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\bin\Debug\eSocial.pdb
-C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.csprojAssemblyReference.cache
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.frmMain.resources
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.Properties.Resources.resources
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.csproj.GenerateResource.cache
@@ -95,3 +94,19 @@ D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
 D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.application
 D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.exe
 D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.pdb
+C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
+C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.csproj.SuggestedBindingRedirects.cache
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.frmMain.resources
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.Properties.Resources.resources
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.csproj.GenerateResource.cache
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.exe
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.pdb
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\bin\Debug\eSocial.exe.config
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\bin\Debug\eSocial.exe.manifest
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\bin\Debug\eSocial.application
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\bin\Debug\eSocial.exe
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\bin\Debug\eSocial.pdb
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.csproj.CoreCompileInputs.cache
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
+C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.application

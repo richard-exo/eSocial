@@ -138,10 +138,8 @@ namespace eSocial.Model.Eventos.BD {
                   // trabEstrangeiro 0.1
                   gcl.setLevel("trabEstrangeiro", clear: true);
 
-                  s2200XML.trabalhador.trabEstrangeiro.dtChegada = validadores.aaaa_mm_dd(gcl.getVal("dtChegada"));               // 0.1
-                  s2200XML.trabalhador.trabEstrangeiro.classTrabEstrang = gcl.getVal("classTrabEstrang");
-                  s2200XML.trabalhador.trabEstrangeiro.casadoBr = gcl.getVal("casadoBr");
-                  s2200XML.trabalhador.trabEstrangeiro.filhosBr = gcl.getVal("filhosBr");
+                  s2200XML.trabalhador.trabImig.tmpResid = gcl.getVal("tmpResid");
+                  s2200XML.trabalhador.trabImig.condIng = gcl.getVal("condIng");
 
                   // infoDeficiencia 0.1
                   gcl.setLevel("infoDeficiencia", clear: true);
@@ -289,11 +287,13 @@ namespace eSocial.Model.Eventos.BD {
                   // infoContrato 0.1
                   gcl.setLevel("infoContrato", clear: true);
 
-                  s2200XML.vinculo.infoContrato.codCargo = gcl.getVal("codCargo");       // 0.1
-                  s2200XML.vinculo.infoContrato.codFuncao = gcl.getVal("codFuncao");     // 0.1
+                  s2200XML.vinculo.infoContrato.nmCargo = gcl.getVal("nmCargo");                                  // 0.1
+                  s2200XML.vinculo.infoContrato.CBOCargo = gcl.getVal("CBOCargo");                                // 0.1
+                  s2200XML.vinculo.infoContrato.nmFuncao = gcl.getVal("nmFuncao");                                // 0.1
+                  s2200XML.vinculo.infoContrato.CBOfuncao = gcl.getVal("CBOfuncao");                              // 0.1
+                  s2200XML.vinculo.infoContrato.acumCargo = gcl.getVal("acumCargo");                              // 0.1
+                  s2200XML.vinculo.infoContrato.dtIngrCarr = validadores.aaaa_mm_dd(gcl.getVal("dtIngrCarr"));    // 0.1
                   s2200XML.vinculo.infoContrato.codCateg = gcl.getVal("codCateg");
-                  s2200XML.vinculo.infoContrato.codCarreira = gcl.getVal("codCarreira"); // 0.1
-                  s2200XML.vinculo.infoContrato.dtIngrCarr = validadores.aaaa_mm_dd(gcl.getVal("dtIngrCarr"));   // 0.1
 
                   // remuneracao
                   gcl.setLevel("remuneracao", clear: true);
@@ -332,9 +332,10 @@ namespace eSocial.Model.Eventos.BD {
                   // horContratual 0.1
                   gcl.setLevel("horContratual", clear: true);
 
-                  s2200XML.vinculo.infoContrato.horContratual.qtdHrsSem = gcl.getVal("qtdHrsSem"); // 0.1
+                  s2200XML.vinculo.infoContrato.horContratual.qtdHrsSem = gcl.getVal("qtdHrsSem");    // 0.1
                   s2200XML.vinculo.infoContrato.horContratual.tpJornada = gcl.getVal("tpJornada");
-                  s2200XML.vinculo.infoContrato.horContratual.dscTpJorn = gcl.getVal("dscTpJorn"); // 0.1
+                  s2200XML.vinculo.infoContrato.horContratual.horNoturno = gcl.getVal("horNoturno");  // 0.1
+                  s2200XML.vinculo.infoContrato.horContratual.dscJorn = gcl.getVal("dscJorn");        // 0.1
                   s2200XML.vinculo.infoContrato.horContratual.tmpParc = gcl.getVal("tmpParc");
 
                   // horario 0.9

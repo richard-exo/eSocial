@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1010 : bEvento_XML {
 
-        public s1010(string sID) : base("evtTabRubrica", "infoRubrica") {
+        public s1010(string sID) : base("evtTabRubrica", "infoRubrica", "v_S_01_01_00") {
 
             id = sID;
 
@@ -78,7 +78,8 @@ namespace eSocial.Model.Eventos.XML {
                   new XElement(ns + "codIncCP", infoRubrica.inclusao.dadosRubrica.codIncCP),
                   new XElement(ns + "codIncIRRF", infoRubrica.inclusao.dadosRubrica.codIncIRRF),
                   new XElement(ns + "codIncFGTS", infoRubrica.inclusao.dadosRubrica.codIncFGTS),
-                  new XElement(ns + "codIncSIND", infoRubrica.inclusao.dadosRubrica.codIncSIND),
+                  opTag("codIncCPRP", infoRubrica.inclusao.dadosRubrica.codIncCPRP),
+                  opTag("tetoRemun", infoRubrica.inclusao.dadosRubrica.tetoRemun),
                   opTag("observacao", infoRubrica.inclusao.dadosRubrica.observacao),
 
                   // ideProcessoCP 0.99
@@ -92,10 +93,6 @@ namespace eSocial.Model.Eventos.XML {
 
                   // ideProcessoFGTS 0.99
                   from e in lIdeProcessoFGTS_inclusao
-                  select e,
-
-                  // ideProcessoSIND 0.99
-                  from e in lIdeProcessoSIND_inclusao
                   select e
 
                   ), // inclusão
@@ -118,25 +115,9 @@ namespace eSocial.Model.Eventos.XML {
                   new XElement(ns + "codIncCP", infoRubrica.alteracao.dadosRubrica.codIncCP),
                   new XElement(ns + "codIncIRRF", infoRubrica.alteracao.dadosRubrica.codIncIRRF),
                   new XElement(ns + "codIncFGTS", infoRubrica.alteracao.dadosRubrica.codIncFGTS),
-                  new XElement(ns + "codIncSIND", infoRubrica.alteracao.dadosRubrica.codIncSIND),
-                  opTag("observacao", infoRubrica.alteracao.dadosRubrica.observacao),
-
-                  // ideProcessoCP 0.99
-                  from e in lIdeProcessoCP_alteracao
-                  select e
-                  ),
-
-                  // ideProcessoIRRF 0.99
-                  from e in lIdeProcessoIRRF_alteracao
-                  select e,
-
-                  // ideProcessoFGTS 0.99
-                  from e in lIdeProcessoFGTS_alteracao
-                  select e,
-
-                  // ideProcessoSIND 0.99
-                  from e in lIdeProcessoSIND_alteracao
-                  select e,
+                  opTag("codIncCPRP", infoRubrica.alteracao.dadosRubrica.codIncCPRP),
+                  opTag("tetoRemun", infoRubrica.alteracao.dadosRubrica.tetoRemun),
+                  opTag("observacao", infoRubrica.alteracao.dadosRubrica.observacao)),
 
                   // novaValidade 0.1
                   opElement("novaValidade", infoRubrica.alteracao.novaValidade.iniValid,
@@ -290,7 +271,7 @@ namespace eSocial.Model.Eventos.XML {
 
                 public sDadosRubrica dadosRubrica;
                 public struct sDadosRubrica {
-                    public string dscRubr, codIncCP, codIncIRRF, codIncFGTS, codIncSIND, observacao;
+                    public string dscRubr, codIncCP, codIncIRRF, codIncFGTS, codIncCPRP, tetoRemun, observacao;
                     public string natRubr, tpRubr;
 
                     public sIdeProcessoCP ideProcessoCP;

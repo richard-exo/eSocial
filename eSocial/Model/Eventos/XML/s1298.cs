@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1298 : bEvento_XML {
 
-        public s1298(string sID) : base("evtReabreEvPer") {
+        public s1298(string sID) : base("evtReabreEvPer","", "v_S_01_01_00") {
 
             id = sID;
             ideEvento = new sIdeEvento();
@@ -24,6 +24,7 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Element(ns + "ideEvento").ReplaceNodes(
             new XElement(ns + "indApuracao", ideEvento.indApuracao),
             new XElement(ns + "perApur", ideEvento.perApur),
+            opTag("indGuia", ideEvento.indGuia),
             new XElement(ns + "tpAmb", ideEvento.tpAmb.GetHashCode()),
             new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode()),
             new XElement(ns + "verProc", ideEvento.verProc));
@@ -40,7 +41,7 @@ namespace eSocial.Model.Eventos.XML {
 
         public new sIdeEvento ideEvento;
         public new struct sIdeEvento {
-            public string indApuracao, perApur, verProc;
+            public string indApuracao, perApur, indGuia, verProc;
             public enTpAmb tpAmb;
             public enProcEmi procEmi;
         }

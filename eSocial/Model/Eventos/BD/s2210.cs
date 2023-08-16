@@ -60,6 +60,8 @@ namespace eSocial.Model.Eventos.BD
                s2210XML.cat.codSitGeradora = row["codSitGeradora"].ToString();
                s2210XML.cat.iniciatCAT = row["iniciatCAT"].ToString();
                s2210XML.cat.obsCAT = row["obsCAT"].ToString();
+               s2210XML.cat.ultDiaTrab = validadores.aaaa_mm_dd(row["ultDiaTrab"].ToString());
+               s2210XML.cat.houveAfast = row["houveAfast"].ToString();
 
                //// localAcidente
                s2210XML.cat.localAcidente.tpLocal = row["tpLocal"].ToString();

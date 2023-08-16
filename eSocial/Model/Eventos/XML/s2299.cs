@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s2299 : bEvento_XML {
 
-        public s2299(string sID) : base("evtDeslig", "infoDeslig") {
+        public s2299(string sID) : base("evtDeslig", "infoDeslig", "v_S_01_01_00") {
 
             id = sID;
 
@@ -20,6 +20,7 @@ namespace eSocial.Model.Eventos.XML {
             ideVinculo = new sIdeVinculo();
 
             infoDeslig = new sInfoDeslig();
+            infoDeslig.infoInterm = new sInfoDeslig.sInfoInterm();
             infoDeslig.observacoes = new sInfoDeslig.sObservacoes();
             infoDeslig.sucessaoVinc = new sInfoDeslig.sSucessaoVinc();
             infoDeslig.transfTit = new sInfoDeslig.sTransfTit();
@@ -63,6 +64,7 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Element(ns + "ideEvento").ReplaceNodes(
             new XElement(ns + "indRetif", ideEvento.indRetif),
             opTag("nrRecibo", ideEvento.nrRecibo),
+            opTag("indGuia", ideEvento.indGuia),
             new XElement(ns + "tpAmb", ideEvento.tpAmb.GetHashCode()),
             new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode()),
             new XElement(ns + "verProc", ideEvento.verProc));
@@ -76,7 +78,6 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Element(ns + "ideEmpregador").AddAfterSelf(
             new XElement(ns + "ideVinculo",
             new XElement(ns + "cpfTrab", ideVinculo.cpfTrab),
-            new XElement(ns + "nisTrab", ideVinculo.nisTrab),
             new XElement(ns + "matricula", ideVinculo.matricula)));
 
             // infoDeslig
@@ -84,15 +85,18 @@ namespace eSocial.Model.Eventos.XML {
 
             new XElement(ns + "mtvDeslig", infoDeslig.mtvDeslig),
             new XElement(ns + "dtDeslig", infoDeslig.dtDeslig),
+            //new XElement(ns + "dtAvPrv", infoDeslig.dtAvPrv),
+            opTag("dtAvPrv", infoDeslig.dtAvPrv),
             new XElement(ns + "indPagtoAPI", infoDeslig.indPagtoAPI),
             opTag("dtProjFimAPI", infoDeslig.dtProjFimAPI),
             new XElement(ns + "pensAlim", infoDeslig.pensAlim),
             opTag("percAliment", infoDeslig.percAliment),
             opTag("vrAlim", infoDeslig.vrAlim),
-            opTag("nrCertObito", infoDeslig.nrCertObito),
             opTag("nrProcTrab", infoDeslig.nrProcTrab),
-            new XElement(ns + "indCumprParc", infoDeslig.indCumprParc),
-            opTag("qtdDiasInterm", infoDeslig.qtdDiasInterm),
+
+            // infoInterm 0.1
+            opElement("infoInterm", infoDeslig.infoInterm.dia,
+            new XElement(ns + "dia", infoDeslig.infoInterm.dia)),
 
             // observacoes 0.99
             from e in lObservacoes
@@ -100,8 +104,8 @@ namespace eSocial.Model.Eventos.XML {
 
             // sucessaoVinc 0.1
             opElement("sucessaoVinc", infoDeslig.sucessaoVinc.cnpjSucessora,
-            new XElement(ns + "tpInscSuc", infoDeslig.sucessaoVinc.tpInscSuc),
-            new XElement(ns + "cnpjSucessora", infoDeslig.sucessaoVinc.cnpjSucessora)),
+            new XElement(ns + "tpInsc", infoDeslig.sucessaoVinc.tpInscSuc),
+            new XElement(ns + "nrInsc", infoDeslig.sucessaoVinc.cnpjSucessora)),
 
             // transTit 0.1
             opElement("transTit", infoDeslig.transfTit.cpfSubstituto,
@@ -260,8 +264,8 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "ideTabRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.ideTabRubr),
             opTag("qtdRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.qtdRubr),
             opTag("fatorRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.fatorRubr),
-            opTag("vrUnit", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrUnit),
-            new XElement(ns + "vrRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrRubr)));
+            new XElement(ns + "vrRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrRubr),
+            opTag("indApurIR", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.indApurIR)));
 
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sDetVerbas();
         }
@@ -315,8 +319,6 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "ideADC",
             new XElement(ns + "dtAcConv", infoDeslig.verbasResc.dmDev.infoPerAnt.ideADC.dtAcConv),
             new XElement(ns + "tpAcConv", infoDeslig.verbasResc.dmDev.infoPerAnt.ideADC.tpAcConv),
-            opTag("compAcConv", infoDeslig.verbasResc.dmDev.infoPerAnt.ideADC.compAcConv),
-            new XElement(ns + "dtEfAcConv", infoDeslig.verbasResc.dmDev.infoPerAnt.ideADC.dtEfAcConv),
             new XElement(ns + "dsc", infoDeslig.verbasResc.dmDev.infoPerAnt.ideADC.dsc),
 
             // idePeriodo 1.180
@@ -464,7 +466,7 @@ namespace eSocial.Model.Eventos.XML {
       public new sIdeEvento ideEvento;
       public new struct sIdeEvento
       {
-         public string indRetif, indApuracao, nrRecibo, perApur, verProc;
+         public string indRetif, indApuracao, nrRecibo, indGuia, perApur, verProc;
          public enTpAmb tpAmb;
          public enProcEmi procEmi;
       }
@@ -475,9 +477,12 @@ namespace eSocial.Model.Eventos.XML {
         public sInfoDeslig infoDeslig;
         public struct sInfoDeslig {
             public string mtvDeslig, indPagtoAPI, nrCertObito, nrProcTrab;
-            public string dtDeslig, dtProjFimAPI;
+            public string dtDeslig, dtAvPrv, dtProjFimAPI;
             public string pensAlim, indCumprParc, qtdDiasInterm;
             public string percAliment, vrAlim;
+
+            public sInfoInterm infoInterm;
+            public struct sInfoInterm { public string dia; } 
 
             public sObservacoes observacoes;
             public struct sObservacoes { public string observacao; }
@@ -515,7 +520,7 @@ namespace eSocial.Model.Eventos.XML {
 
                             public sDetVerbas detVerbas;
                             public struct sDetVerbas {
-                                public string qtdRubr, fatorRubr, vrUnit, vrRubr;
+                                public string qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR;
                                 public string codRubr, ideTabRubr;
                             }
                             public sInfoSaudeColet infoSaudeColet;

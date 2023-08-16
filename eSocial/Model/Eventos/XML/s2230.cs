@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s2230 : bEvento_XML {
 
-        public s2230(string sID) : base("evtAfastTemp", "infoAfastamento") {
+        public s2230(string sID) : base("evtAfastTemp", "infoAfastamento", "v_S_01_01_00") {
 
             id = sID;
 
@@ -24,8 +24,10 @@ namespace eSocial.Model.Eventos.XML {
 
             infoAfastamento.iniAfastamento.infoAtestado = new sInfoAfastamento.sIniAfastamento.sInfoAtestado();
             infoAfastamento.iniAfastamento.infoAtestado.emitente = new sInfoAfastamento.sIniAfastamento.sInfoAtestado.sEmitente();
+            infoAfastamento.iniAfastamento.perAquis = new sInfoAfastamento.sIniAfastamento.sPerAquis();
             infoAfastamento.iniAfastamento.infoCessao = new sInfoAfastamento.sIniAfastamento.sInfoCessao();
             infoAfastamento.iniAfastamento.infoMandSind = new sInfoAfastamento.sIniAfastamento.sInfoMandSind();
+            infoAfastamento.iniAfastamento.infoMandElet = new sInfoAfastamento.sIniAfastamento.sInfoMandElet();
 
             infoAfastamento.infoRetif = new sInfoAfastamento.sInfoRetif();
             infoAfastamento.fimAfastamento = new sInfoAfastamento.sFimAfastamento();
@@ -51,7 +53,6 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Element(ns + "ideEmpregador").AddAfterSelf(
             new XElement(ns + "ideVinculo",
             new XElement(ns + "cpfTrab", ideVinculo.cpfTrab),
-            opTag("nisTrab", ideVinculo.nisTrab),
             opTag("matricula", ideVinculo.matricula),
             opTag("codCateg", ideVinculo.codCateg)));
 
@@ -66,10 +67,15 @@ namespace eSocial.Model.Eventos.XML {
             opTag("tpAcidTransito", infoAfastamento.iniAfastamento.tpAcidTransito),
             opTag("observacao", infoAfastamento.iniAfastamento.observacao),
 
-            // infoAtestado 0.9
-            from e in lInfoAtestado
-            select e,
+            //// infoAtestado 0.9
+            //from e in lInfoAtestado
+            //select e,
 
+            // perAquis 0.1
+            opElement("perAquis", infoAfastamento.iniAfastamento.perAquis.dtInicio,
+            new XElement(ns + "dtInicio", infoAfastamento.iniAfastamento.perAquis.dtInicio),
+            opTag("dtFim", infoAfastamento.iniAfastamento.perAquis.dtFim)),
+  
             // infoCessao 0.1
             opElement("infoCessao", infoAfastamento.iniAfastamento.infoCessao.cnpjCess,
             new XElement(ns + "cnpjCess", infoAfastamento.iniAfastamento.infoCessao.cnpjCess),
@@ -78,7 +84,12 @@ namespace eSocial.Model.Eventos.XML {
             // infoMandSind 0.1
             opElement("infoMandSind", infoAfastamento.iniAfastamento.infoMandSind.cnpjSind,
             new XElement(ns + "cnpjSind", infoAfastamento.iniAfastamento.infoMandSind.cnpjSind),
-            new XElement(ns + "infOnusRemun", infoAfastamento.iniAfastamento.infoMandSind.infOnusRemun))
+            new XElement(ns + "infOnusRemun", infoAfastamento.iniAfastamento.infoMandSind.infOnusRemun)),
+
+            // infoMandElet 0.1
+            opElement("infoMandElet", infoAfastamento.iniAfastamento.infoMandElet.cnpjMandElet,
+            new XElement(ns + "cnpjMandElet", infoAfastamento.iniAfastamento.infoMandElet.cnpjMandElet),
+            opTag("indRemunCargo", infoAfastamento.iniAfastamento.infoMandElet.indRemunCargo))
 
             ), // iniAfastamento
 
@@ -156,6 +167,11 @@ namespace eSocial.Model.Eventos.XML {
                         public string ideOC;
                     }
                 }
+                public sPerAquis perAquis;
+                public struct sPerAquis
+                {
+                    public string dtInicio, dtFim; 
+                }
                 public sInfoCessao infoCessao;
                 public struct sInfoCessao {
                     public string cnpjCess;
@@ -165,6 +181,11 @@ namespace eSocial.Model.Eventos.XML {
                 public struct sInfoMandSind {
                     public string cnpjSind;
                     public string infOnusRemun;
+                }
+                public sInfoMandElet infoMandElet;
+                public struct sInfoMandElet
+                {
+                    public string cnpjMandElet, indRemunCargo;
                 }
             }
             public sFimAfastamento fimAfastamento;

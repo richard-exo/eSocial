@@ -12,11 +12,9 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
    public class s2205 : bEvento_XML {
 
-      public s2205(string sID) : base("evtAltCadastral") {
+      public s2205(string sID) : base("evtAltCadastral","", "v_S_01_01_00") {
 
          id = sID;
-
-         //ideEvento = new sIdeEvento();
          ideTrabalhador = new sIdeTrabalhador();
 
          alteracao = new sAlteracao();
@@ -34,7 +32,7 @@ namespace eSocial.Model.Eventos.XML {
          alteracao.dadosTrabalhador.endereco = new sAlteracao.sDadosTrabalhador.sEndereco();
          alteracao.dadosTrabalhador.endereco.brasil = new sAlteracao.sDadosTrabalhador.sEndereco.sBrasil();
          alteracao.dadosTrabalhador.endereco.exterior = new sAlteracao.sDadosTrabalhador.sEndereco.sExterior();
-         alteracao.dadosTrabalhador.trabEstrangeiro = new sAlteracao.sDadosTrabalhador.sTrabEstrangeiro();
+         alteracao.dadosTrabalhador.trabImig = new sAlteracao.sDadosTrabalhador.sTrabImig();
          alteracao.dadosTrabalhador.infoDeficiencia = new sAlteracao.sDadosTrabalhador.sInfoDeficiencia();
          alteracao.dadosTrabalhador.dependente = new sAlteracao.sDadosTrabalhador.sDependente();
          alteracao.dadosTrabalhador.aposentadoria = new sAlteracao.sDadosTrabalhador.sAposentadoria();
@@ -68,69 +66,24 @@ namespace eSocial.Model.Eventos.XML {
 
          // dadosTrabalhador   
          new XElement(ns + "dadosTrabalhador",
-         opTag("nisTrab", alteracao.dadosTrabalhador.nisTrab),
          new XElement(ns + "nmTrab", alteracao.dadosTrabalhador.nmTrab),
          new XElement(ns + "sexo", alteracao.dadosTrabalhador.sexo),
          new XElement(ns + "racaCor", alteracao.dadosTrabalhador.racaCor),
          opTag("estCiv", alteracao.dadosTrabalhador.estCiv),
          new XElement(ns + "grauInstr", alteracao.dadosTrabalhador.grauInstr),
          opTag("nmSoc", alteracao.dadosTrabalhador.nmSoc),
+         new XElement(ns + "paisNac", alteracao.dadosTrabalhador.paisNac),
 
          // nascimento   
-         new XElement(ns + "nascimento",
-         new XElement(ns + "dtNascto", alteracao.dadosTrabalhador.nascimento.dtNascto),
-         new XElement(ns + "codMunic", alteracao.dadosTrabalhador.nascimento.codMunic),
-         new XElement(ns + "uf", alteracao.dadosTrabalhador.nascimento.uf),
-         new XElement(ns + "paisNascto", alteracao.dadosTrabalhador.nascimento.paisNascto),
-         new XElement(ns + "paisNac", alteracao.dadosTrabalhador.nascimento.paisNac),
-         new XElement(ns + "nmMae", alteracao.dadosTrabalhador.nascimento.nmMae),
-         opTag("nmPai", alteracao.dadosTrabalhador.nascimento.nmPai)),
-
-         // documentos 0.1
-         opElement("documentos", alteracao.dadosTrabalhador.documentos.CTPS.nrCtps,
-
-         // CTPS 0.1
-         opElement("CTPS", alteracao.dadosTrabalhador.documentos.CTPS.nrCtps,
-         new XElement(ns + "nrCtps", alteracao.dadosTrabalhador.documentos.CTPS.nrCtps),
-         new XElement(ns + "serieCtps", alteracao.dadosTrabalhador.documentos.CTPS.serieCtps),
-         new XElement(ns + "ufCtps", alteracao.dadosTrabalhador.documentos.CTPS.ufCtps)),
-
-         // RIC 0.1
-         opElement("RIC", alteracao.dadosTrabalhador.documentos.RIC.nrRic,
-         new XElement(ns + "nrRic", alteracao.dadosTrabalhador.documentos.RIC.nrRic),
-         new XElement(ns + "orgaoEmissor", alteracao.dadosTrabalhador.documentos.RIC.orgaoEmissor),
-         opTag("dtExped", alteracao.dadosTrabalhador.documentos.RIC.dtExped)),
-
-         // RG 0.1
-         opElement("RG", alteracao.dadosTrabalhador.documentos.RG.nrRg,
-         new XElement(ns + "nrRg", alteracao.dadosTrabalhador.documentos.RG.nrRg),
-         new XElement(ns + "orgaoEmissor", alteracao.dadosTrabalhador.documentos.RG.orgaoEmissor),
-         opTag("dtExped", alteracao.dadosTrabalhador.documentos.RG.dtExped)),
-
-         // RNE 0.1
-         opElement("RNE", alteracao.dadosTrabalhador.documentos.RNE.nrRne,
-         new XElement(ns + "nrRne", alteracao.dadosTrabalhador.documentos.RNE.nrRne),
-         new XElement(ns + "orgaoEmissor", alteracao.dadosTrabalhador.documentos.RNE.orgaoEmissor),
-         opTag("dtExped", alteracao.dadosTrabalhador.documentos.RNE.dtExped)),
-
-         // OC 0.1
-         opElement("OC", alteracao.dadosTrabalhador.documentos.OC.nrOc,
-         new XElement(ns + "nrOc", alteracao.dadosTrabalhador.documentos.OC.nrOc),
-         new XElement(ns + "orgaoEmissor", alteracao.dadosTrabalhador.documentos.OC.orgaoEmissor),
-         opTag("dtExped", alteracao.dadosTrabalhador.documentos.OC.dtExped),
-         opTag("dtValid", alteracao.dadosTrabalhador.documentos.OC.dtValid)),
-
-         // CNH 0.1
-         opElement("CNH", alteracao.dadosTrabalhador.documentos.CNH.nrRegCnh,
-         new XElement(ns + "nrRegCnh", alteracao.dadosTrabalhador.documentos.CNH.nrRegCnh),
-         opTag("dtExped", alteracao.dadosTrabalhador.documentos.CNH.dtExped),
-         new XElement(ns + "ufCnh", alteracao.dadosTrabalhador.documentos.CNH.ufCnh),
-         new XElement(ns + "dtValid", alteracao.dadosTrabalhador.documentos.CNH.dtValid),
-         opTag("dtPriHab", alteracao.dadosTrabalhador.documentos.CNH.dtPriHab),
-         new XElement(ns + "categoriaCnh", alteracao.dadosTrabalhador.documentos.CNH.categoriaCnh))
-
-         ), //documentos
-
+         //new XElement(ns + "nascimento",
+         //new XElement(ns + "dtNascto", alteracao.dadosTrabalhador.nascimento.dtNascto),
+         //new XElement(ns + "codMunic", alteracao.dadosTrabalhador.nascimento.codMunic),
+         //new XElement(ns + "uf", alteracao.dadosTrabalhador.nascimento.uf),
+         //new XElement(ns + "paisNascto", alteracao.dadosTrabalhador.nascimento.paisNascto),
+         //new XElement(ns + "paisNac", alteracao.dadosTrabalhador.nascimento.paisNac),
+         //new XElement(ns + "nmMae", alteracao.dadosTrabalhador.nascimento.nmMae),
+         //opTag("nmPai", alteracao.dadosTrabalhador.nascimento.nmPai)),
+                  
          // endereco
          new XElement(ns + "endereco",
 
@@ -158,11 +111,9 @@ namespace eSocial.Model.Eventos.XML {
          ), // endereco
 
          // trabEstrangeiro 0.1
-         opElement("trabEstrangeiro", alteracao.dadosTrabalhador.trabEstrangeiro.dtChegada,
-         new XElement(ns + "dtChegada", alteracao.dadosTrabalhador.trabEstrangeiro.dtChegada),
-         new XElement(ns + "classTrabEstrang", alteracao.dadosTrabalhador.trabEstrangeiro.classTrabEstrang),
-         new XElement(ns + "casadoBr", alteracao.dadosTrabalhador.trabEstrangeiro.casadoBr),
-         new XElement(ns + "filhosBr", alteracao.dadosTrabalhador.trabEstrangeiro.filhosBr)),
+         opElement("trabImig", alteracao.dadosTrabalhador.trabImig.condIng,
+         opTag("tmpResid", alteracao.dadosTrabalhador.trabImig.tmpResid),
+         new XElement(ns + "condIng", alteracao.dadosTrabalhador.trabImig.condIng)),
 
          // infoDeficiencia 0.1
          opElement("infoDeficiencia", alteracao.dadosTrabalhador.infoDeficiencia.defFisica,
@@ -178,10 +129,6 @@ namespace eSocial.Model.Eventos.XML {
          // dependente 0.99
          from e in lDependente
          select e,
-
-         // aposentadoria 0.1
-         opElement("aposentadoria", alteracao.dadosTrabalhador.aposentadoria.trabAposent,
-         new XElement(ns + "trabAposent", alteracao.dadosTrabalhador.aposentadoria.trabAposent)),
 
          // contato 0.1
          from e in lContato
@@ -206,6 +153,7 @@ namespace eSocial.Model.Eventos.XML {
          new XElement(ns + "nmDep", alteracao.dadosTrabalhador.dependente.nmDep),
          new XElement(ns + "dtNascto", alteracao.dadosTrabalhador.dependente.dtNascto),
          opTag("cpfDep", alteracao.dadosTrabalhador.dependente.cpfDep),
+         opTag("sexoDep", alteracao.dadosTrabalhador.dependente.sexoDep),
          new XElement(ns + "depIRRF", alteracao.dadosTrabalhador.dependente.depIRRF),
          new XElement(ns + "depSF", alteracao.dadosTrabalhador.dependente.depSF),
          new XElement(ns + "incTrab", alteracao.dadosTrabalhador.dependente.incTrab)));
@@ -222,9 +170,7 @@ namespace eSocial.Model.Eventos.XML {
          lContato.Add(
          new XElement(ns + "contato",
          opTag("fonePrinc", alteracao.dadosTrabalhador.contato.fonePrinc),
-         opTag("foneAlternat", alteracao.dadosTrabalhador.contato.foneAlternat),
-         opTag("emailPrinc", alteracao.dadosTrabalhador.contato.emailPrinc),
-         opTag("emailAlternat", alteracao.dadosTrabalhador.contato.emailAlternat)));
+         opTag("emailPrinc", alteracao.dadosTrabalhador.contato.emailPrinc)));
 
          alteracao.dadosTrabalhador.contato = new sAlteracao.sDadosTrabalhador.sContato();
       }
@@ -252,7 +198,7 @@ namespace eSocial.Model.Eventos.XML {
          public sDadosTrabalhador dadosTrabalhador;
          public struct sDadosTrabalhador {
 
-            public string nisTrab, nmTrab, sexo, grauInstr, nmSoc;
+            public string nisTrab, nmTrab, sexo, grauInstr, nmSoc, paisNac;
             public string racaCor, estCiv;
 
             public sNascimento nascimento;
@@ -313,18 +259,16 @@ namespace eSocial.Model.Eventos.XML {
                public struct sExterior { public string paisResid, dscLograd, nrLograd, complemento, bairro, nmCid, codPostal; }
             }
 
-            public sTrabEstrangeiro trabEstrangeiro;
-            public struct sTrabEstrangeiro {
-               public string classTrabEstrang;
-               public string casadoBr, filhosBr;
-               public string dtChegada;
+            public sTrabImig trabImig;
+            public struct sTrabImig {
+               public string tmpResid, condIng;
             }
             public sInfoDeficiencia infoDeficiencia;
             public struct sInfoDeficiencia { public string defFisica, defVisual, defAuditiva, defMental, defIntelectual, reabReadap, infoCota, observacao; }
 
             public sDependente dependente;
             public struct sDependente {
-               public string tpDep, nmDep, cpfDep, depIRRF, depSF, incTrab;
+               public string tpDep, nmDep, cpfDep, sexoDep, depIRRF, depSF, incTrab;
                public string dtNascto;
             }
             public sAposentadoria aposentadoria;

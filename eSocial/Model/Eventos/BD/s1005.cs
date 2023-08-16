@@ -58,7 +58,8 @@ namespace eSocial.Model.Eventos.BD {
                   // aliqGilrat
                   //if (row["aliqRat"].ToString()!="0,00")
                   //{
-                     incAlt.dadosEstab.aliqGilrat.aliqRat = row["aliqRat"].ToString();
+                     if (row["aliqRat"].ToString()!="0")
+                        incAlt.dadosEstab.aliqGilrat.aliqRat = row["aliqRat"].ToString();
 
                      if (row["tpInsc"].ToString() != "2") // Se não for CPF
                      {

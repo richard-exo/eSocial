@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s2200 : bEvento_XML {
 
-        public s2200(string sID) : base("evtAdmissao") {
+        public s2200(string sID) : base("evtAdmissao", "", "v_S_01_01_00") {
 
             id = sID;
 
@@ -31,7 +31,7 @@ namespace eSocial.Model.Eventos.XML {
             trabalhador.endereco = new sTrabalhador.sEndereco();
             trabalhador.endereco.brasil = new sTrabalhador.sEndereco.sBrasil();
             trabalhador.endereco.exterior = new sTrabalhador.sEndereco.sExterior();
-            trabalhador.trabEstrangeiro = new sTrabalhador.sTrabEstrangeiro();
+            trabalhador.trabImig = new sTrabalhador.sTrabImig();
             trabalhador.infoDeficiencia = new sTrabalhador.sInfoDeficiencia();
             trabalhador.dependente = new sTrabalhador.sDependente();
             trabalhador.aposentadoria = new sTrabalhador.sAposentadoria();
@@ -91,69 +91,18 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Add(
             new XElement(ns + "trabalhador",
             new XElement(ns + "cpfTrab", trabalhador.cpfTrab),
-            new XElement(ns + "nisTrab", trabalhador.nisTrab),
             new XElement(ns + "nmTrab", trabalhador.nmTrab),
             new XElement(ns + "sexo", trabalhador.sexo),
             new XElement(ns + "racaCor", trabalhador.racaCor),
             opTag("estCiv", trabalhador.estCiv),
             new XElement(ns + "grauInstr", trabalhador.grauInstr),
-            opTag("indPriEmpr", trabalhador.indPriEmpr),
             opTag("nmSoc", trabalhador.nmSoc),
 
             // nascimento
             new XElement(ns + "nascimento",
             new XElement(ns + "dtNascto", trabalhador.nascimento.dtNascto),
-            opTag("codMunic", trabalhador.nascimento.codMunic),
-            opTag("uf", trabalhador.nascimento.uf),
             new XElement(ns + "paisNascto", trabalhador.nascimento.paisNascto),
-            new XElement(ns + "paisNac", trabalhador.nascimento.paisNac),
-            opTag("nmMae", trabalhador.nascimento.nmMae),
-            opTag("nmPai", trabalhador.nascimento.nmPai)),
-
-            // documentos 0.1
-            opElement("documentos", trabalhador.documentos.CTPS.nrCtps,
-
-            // CTPS 0.1
-            opElement("CTPS", trabalhador.documentos.CTPS.nrCtps,
-            new XElement(ns + "nrCtps", trabalhador.documentos.CTPS.nrCtps),
-            new XElement(ns + "serieCtps", trabalhador.documentos.CTPS.serieCtps),
-            new XElement(ns + "ufCtps", trabalhador.documentos.CTPS.ufCtps)),
-
-            // RIC 0.1
-            opElement("RIC", trabalhador.documentos.RIC.nrRic,
-            new XElement(ns + "nrRic", trabalhador.documentos.RIC.nrRic),
-            new XElement(ns + "orgaoEmissor", trabalhador.documentos.RIC.orgaoEmissor),
-            opTag("dtExped", trabalhador.documentos.RIC.dtExped)),
-
-            // RG 0.1
-            opElement("RG", trabalhador.documentos.RG.nrRg,
-            new XElement(ns + "nrRg", trabalhador.documentos.RG.nrRg),
-            new XElement(ns + "orgaoEmissor", trabalhador.documentos.RG.orgaoEmissor),
-            opTag("dtExped", trabalhador.documentos.RG.dtExped)),
-
-            // RNE 0.1
-            opElement("RNE", trabalhador.documentos.RNE.nrRne,
-            new XElement(ns + "nrRne", trabalhador.documentos.RNE.nrRne),
-            new XElement(ns + "orgaoEmissor", trabalhador.documentos.RNE.orgaoEmissor),
-            opTag("dtExped", trabalhador.documentos.RNE.dtExped)),
-
-            // OC 0.1
-            opElement("OC", trabalhador.documentos.OC.nrOc,
-            new XElement(ns + "nrOc", trabalhador.documentos.OC.nrOc),
-            new XElement(ns + "orgaoEmissor", trabalhador.documentos.OC.orgaoEmissor),
-            opTag("dtExped", trabalhador.documentos.OC.dtExped),
-            opTag("dtValid", trabalhador.documentos.OC.dtValid)),
-
-            // CNH 0.1
-            opElement("CNH", trabalhador.documentos.CNH.nrRegCnh,
-            new XElement(ns + "nrRegCnh", trabalhador.documentos.CNH.nrRegCnh),
-            opTag("dtExped", trabalhador.documentos.CNH.dtExped),
-            new XElement(ns + "ufCnh", trabalhador.documentos.CNH.ufCnh),
-            new XElement(ns + "dtValid", trabalhador.documentos.CNH.dtValid),
-            opTag("dtPriHab", trabalhador.documentos.CNH.dtPriHab),
-            new XElement(ns + "categoriaCnh", trabalhador.documentos.CNH.categoriaCnh))
-
-            ), //documentos
+            new XElement(ns + "paisNac", trabalhador.nascimento.paisNac)),
 
             // endereco
             new XElement(ns + "endereco",
@@ -182,11 +131,9 @@ namespace eSocial.Model.Eventos.XML {
             ), // endereco
 
             // trabEstrangeiro 0.1
-            opElement("trabEstrangeiro", trabalhador.trabEstrangeiro.dtChegada,
-            new XElement(ns + "dtChegada", trabalhador.trabEstrangeiro.dtChegada),
-            new XElement(ns + "classTrabEstrang", trabalhador.trabEstrangeiro.classTrabEstrang),
-            new XElement(ns + "casadoBr", trabalhador.trabEstrangeiro.casadoBr),
-            new XElement(ns + "filhosBr", trabalhador.trabEstrangeiro.filhosBr)),
+            opElement("trabImig", trabalhador.trabImig.condIng,
+            opTag("tmpResid", trabalhador.trabImig.tmpResid),
+            new XElement(ns + "condIng", trabalhador.trabImig.condIng)),
 
             // infoDeficiencia 0.1
             opElement("infoDeficiencia", trabalhador.infoDeficiencia.defFisica,
@@ -203,10 +150,6 @@ namespace eSocial.Model.Eventos.XML {
             from e in lDependente
             select e,
 
-            // aposentadoria 0.1
-            opElement("aposentadoria", trabalhador.aposentadoria.trabAposent,
-            new XElement(ns + "trabAposent", trabalhador.aposentadoria.trabAposent)),
-
             // contato 0.1
             from e in lContato
             select e
@@ -219,7 +162,6 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "matricula", vinculo.matricula),
             new XElement(ns + "tpRegTrab", vinculo.tpRegTrab),
             new XElement(ns + "tpRegPrev", vinculo.tpRegPrev),
-            opTag("nrRecInfPrelim", vinculo.nrRecInfPrelim),
             new XElement(ns + "cadIni", vinculo.cadIni),
 
             // infoRegimeTrab
@@ -236,21 +178,14 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "cnpjSindCategProf", vinculo.infoRegimeTrab.infoCeletista.cnpjSindCategProf),
 
             // FGTS
-            new XElement(ns + "FGTS",
-            new XElement(ns + "opcFGTS", vinculo.infoRegimeTrab.infoCeletista.FGTS.opcFGTS),
+            opElement("FGTS", vinculo.infoRegimeTrab.infoCeletista.FGTS.dtOpcFGTS,
             opTag("dtOpcFGTS", vinculo.infoRegimeTrab.infoCeletista.FGTS.dtOpcFGTS)),
 
             // trabTemporario
             opElement("trabTemporario", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.hipLeg,
             new XElement(ns + "hipLeg", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.hipLeg),
             new XElement(ns + "justContr", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.justContr),
-            new XElement(ns + "tpInclContr", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.tpInclContr),
-
-            // ideTomadorServ
-            new XElement(ns + "ideTomadorServ",
-            new XElement(ns + "tpInsc", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.ideTomadorServ.tpInsc),
-            new XElement(ns + "nrInsc", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.ideTomadorServ.nrInsc),
-
+                       
             // ideEstabVinc
             opElement("ideEstabVinc", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.ideTomadorServ.ideEstabVinc.tpInsc,
             new XElement(ns + "tpInsc", vinculo.infoRegimeTrab.infoCeletista.trabTemporario.ideTomadorServ.ideEstabVinc.tpInsc),
@@ -263,32 +198,30 @@ namespace eSocial.Model.Eventos.XML {
             // aprend
             opElement("aprend", vinculo.infoRegimeTrab.infoCeletista.aprend.tpInsc,
             new XElement(ns + "tpInsc", vinculo.infoRegimeTrab.infoCeletista.aprend.tpInsc),
-            new XElement(ns + "nrInsc", vinculo.infoRegimeTrab.infoCeletista.aprend.nrInsc))))
+            new XElement(ns + "nrInsc", vinculo.infoRegimeTrab.infoCeletista.aprend.nrInsc)))
 
             ), // infoCeletista
 
             // infoEstatutario
             opElement("infoEstatutario", vinculo.infoRegimeTrab.infoEstatutario.indProvim,
-            new XElement(ns + "indProvim", vinculo.infoRegimeTrab.infoEstatutario.indProvim),
             new XElement(ns + "tpProv", vinculo.infoRegimeTrab.infoEstatutario.tpProv),
-            new XElement(ns + "dtNomeacao", vinculo.infoRegimeTrab.infoEstatutario.dtNomeacao),
-            new XElement(ns + "dtPosse", vinculo.infoRegimeTrab.infoEstatutario.dtPosse),
             new XElement(ns + "dtExercicio", vinculo.infoRegimeTrab.infoEstatutario.dtExercicio),
             new XElement(ns + "tpPlanRP", vinculo.infoRegimeTrab.infoEstatutario.tpPlanRP),
-
-            // infoDecJud 0.1
-            opElement("infoDecJud", vinculo.infoRegimeTrab.infoEstatutario.infoDecJud.nrProcJud,
-            new XElement(ns + "nrProcJud", vinculo.infoRegimeTrab.infoEstatutario.infoDecJud.nrProcJud)))
+            opTag("indTetoRGPS", vinculo.infoRegimeTrab.infoEstatutario.indTetoRGPS),
+            opTag("indAbonoPerm", vinculo.infoRegimeTrab.infoEstatutario.indAbonoPerm),
+            opTag("dtIniAbono", vinculo.infoRegimeTrab.infoEstatutario.dtIniAbono))
 
             ), // infoRegimeTrab
 
             // infoContrato
             new XElement(ns + "infoContrato",
-            opTag("codCargo", vinculo.infoContrato.codCargo),
-            opTag("codFuncao", vinculo.infoContrato.codFuncao),
+            opTag("nmCargo", vinculo.infoContrato.nmCargo),
+            opTag("CBOCargo", vinculo.infoContrato.CBOCargo),
+            opTag("dtIngrCargo", vinculo.infoContrato.dtIngrCargo),
+            opTag("nmFuncao", vinculo.infoContrato.nmFuncao),
+            opTag("CBOfuncao", vinculo.infoContrato.CBOfuncao),
+            opTag("acumCargo", vinculo.infoContrato.acumCargo),
             new XElement(ns + "codCateg", vinculo.infoContrato.codCateg),
-            opTag("codCarreira", vinculo.infoContrato.codCarreira),
-            opTag("dtIngrCarr", vinculo.infoContrato.dtIngrCarr),
 
             // remuneracao
             new XElement(ns + "remuneracao",
@@ -312,8 +245,8 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "nrInsc", vinculo.infoContrato.localTrabalho.localTrabGeral.nrInsc),
             opTag("descComp", vinculo.infoContrato.localTrabalho.localTrabGeral.descComp)),
 
-            // localTrabDom 0.1
-            opElement("localTrabDom", vinculo.infoContrato.localTrabalho.localTrabDom.tpLograd,
+            //  localTempDom 0.1
+            opElement("localTempDom", vinculo.infoContrato.localTrabalho.localTrabDom.tpLograd,
             new XElement(ns + "tpLograd", vinculo.infoContrato.localTrabalho.localTrabDom.tpLograd),
             new XElement(ns + "dscLograd", vinculo.infoContrato.localTrabalho.localTrabDom.dscLograd),
             new XElement(ns + "nrLograd", vinculo.infoContrato.localTrabalho.localTrabDom.nrLograd),
@@ -329,16 +262,9 @@ namespace eSocial.Model.Eventos.XML {
             opElement("horContratual", vinculo.infoContrato.horContratual.qtdHrsSem,
             opTag("qtdHrsSem", vinculo.infoContrato.horContratual.qtdHrsSem),
             new XElement(ns + "tpJornada", vinculo.infoContrato.horContratual.tpJornada),
-            opTag("dscTpJorn", vinculo.infoContrato.horContratual.dscTpJorn),
             new XElement(ns + "tmpParc", vinculo.infoContrato.horContratual.tmpParc),
-
-            // horario 0.99
-            from e in lHorario
-            select e),
-
-            // filiacaoSindical 0.2
-            from e in lFiliacaoSindical
-            select e,
+            opTag("horNoturno", vinculo.infoContrato.horContratual.horNoturno),
+            new XElement(ns + "dscJorn", vinculo.infoContrato.horContratual.dscJorn)),
 
             // alvaraJudicial 0.1
             opElement("alvaraJudicial", vinculo.infoContrato.alvaraJudicial.nrProcJud,
@@ -350,10 +276,14 @@ namespace eSocial.Model.Eventos.XML {
 
             ),  // infoContrato
 
+            // treiCap 0.1
+            opElement("treiCap", vinculo.treiCap.codTreiCap,
+            new XElement(ns + "codTreiCap", vinculo.treiCap.codTreiCap)),
+
             // sucessaoVinc 0.1
             opElement("sucessaoVinc", vinculo.sucessaoVinc.cnpjEmpregAnt,
-            new XElement(ns + "tpInscAnt", vinculo.sucessaoVinc.tpInscAnt),
-            new XElement(ns + "cnpjEmpregAnt", vinculo.sucessaoVinc.cnpjEmpregAnt),
+            new XElement(ns + "tpInsc", vinculo.sucessaoVinc.tpInscAnt),
+            new XElement(ns + "nrInsc", vinculo.sucessaoVinc.cnpjEmpregAnt),
             opTag("matricAnt", vinculo.sucessaoVinc.matricAnt),
             new XElement(ns + "dtTransf", vinculo.sucessaoVinc.dtTransf),
             opTag("observacao", vinculo.sucessaoVinc.observacao)),
@@ -378,7 +308,11 @@ namespace eSocial.Model.Eventos.XML {
 
             // desligamento 0.1
             opElement("desligamento", vinculo.desligamento.dtDeslig,
-            new XElement(ns + "dtDeslig", vinculo.desligamento.dtDeslig))
+            new XElement(ns + "dtDeslig", vinculo.desligamento.dtDeslig)),
+
+            // cessao 0.1
+            opElement("cessao", vinculo.cessao.dtIniCessao,
+            new XElement(ns + "dtIniCessao", vinculo.cessao.dtIniCessao))
 
             )); // vinculo
 
@@ -398,6 +332,7 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "nmDep", trabalhador.dependente.nmDep),
             new XElement(ns + "dtNascto", trabalhador.dependente.dtNascto),
             opTag("cpfDep", trabalhador.dependente.cpfDep),
+            opTag("sexoDep", trabalhador.dependente.sexoDep),
             new XElement(ns + "depIRRF", trabalhador.dependente.depIRRF),
             new XElement(ns + "depSF", trabalhador.dependente.depSF),
             new XElement(ns + "incTrab", trabalhador.dependente.incTrab)));
@@ -414,9 +349,7 @@ namespace eSocial.Model.Eventos.XML {
             lContato.Add(
             new XElement(ns + "contato",
             opTag("fonePrinc", trabalhador.contato.fonePrinc),
-            opTag("foneAlternat", trabalhador.contato.foneAlternat),
-            opTag("emailPrinc", trabalhador.contato.emailPrinc),
-            opTag("emailAlternat", trabalhador.contato.emailAlternat)));
+            opTag("emailPrinc", trabalhador.contato.emailPrinc)));
 
             trabalhador.contato = new sTrabalhador.sContato();
         }
@@ -552,18 +485,17 @@ namespace eSocial.Model.Eventos.XML {
                 public struct sExterior { public string paisResid, dscLograd, nrLograd, complemento, bairro, nmCid, codPostal; }
             }
 
-            public sTrabEstrangeiro trabEstrangeiro;
-            public struct sTrabEstrangeiro {
-                public string classTrabEstrang;
-                public string casadoBr, filhosBr;
-                public string dtChegada;
+            public sTrabImig trabImig;
+            public struct sTrabImig {
+                public string tmpResid;
+                public string condIng;
             }
             public sInfoDeficiencia infoDeficiencia;
             public struct sInfoDeficiencia { public string defFisica, defVisual, defAuditiva, defMental, defIntelectual, reabReadap, infoCota, observacao; }
 
             public sDependente dependente;
             public struct sDependente {
-                public string tpDep, nmDep, cpfDep, depIRRF, depSF, incTrab;
+                public string tpDep, nmDep, cpfDep, sexoDep, depIRRF, depSF, incTrab;
                 public string dtNascto;
             }
             public sAposentadoria aposentadoria;
@@ -620,7 +552,7 @@ namespace eSocial.Model.Eventos.XML {
                 }
                 public sInfoEstatutario infoEstatutario;
                 public struct sInfoEstatutario {
-                    public string indProvim, tpProv, tpPlanRP;
+                    public string indProvim, tpProv, tpPlanRP, indTetoRGPS, indAbonoPerm, dtIniAbono;
                     public string dtNomeacao, dtPosse, dtExercicio;
 
                     public sInfoDecJud infoDecJud;
@@ -629,10 +561,9 @@ namespace eSocial.Model.Eventos.XML {
             }
             public sInfoContrato infoContrato;
             public struct sInfoContrato {
-                public string codCargo, codFuncao, codCarreira;
+                public string nmCargo, CBOCargo, dtIngrCargo, nmFuncao, CBOfuncao, acumCargo, dtIngrCarr;
                 public string codCateg;
-                public string dtIngrCarr;
-
+            
                 public sRemuneracao remuneracao;
                 public struct sRemuneracao {
                     public string dscSalVar;
@@ -665,9 +596,11 @@ namespace eSocial.Model.Eventos.XML {
                 }
                 public sHorContratual horContratual;
                 public struct sHorContratual {
-                    public string dscTpJorn, tmpParc;
+                    public string tmpParc;
                     public string qtdHrsSem;
                     public string tpJornada;
+                    public string horNoturno;
+                    public string dscJorn;
 
                     public sHorario horario;
                     public struct sHorario {
@@ -683,6 +616,12 @@ namespace eSocial.Model.Eventos.XML {
 
                 public sObservacoes observacoes;
                 public struct sObservacoes { public string observacao; }
+            }
+
+            public sTreiCap treiCap;
+            public struct sTreiCap
+            {
+               public string codTreiCap;
             }
 
             public sSucessaoVinc sucessaoVinc;
@@ -713,7 +652,9 @@ namespace eSocial.Model.Eventos.XML {
             public sDesligamento desligamento;
             public struct sDesligamento { public string dtDeslig; }
 
-        }
+            public sCessao cessao;
+            public struct sCessao { public string dtIniCessao; }
+      }
         #endregion
     }
 }

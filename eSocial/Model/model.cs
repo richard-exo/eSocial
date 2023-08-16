@@ -51,7 +51,10 @@ namespace eSocial.Model
             if (BuscaConfig("s2250") == "1") lEvento.Add(new s2250());
             if (BuscaConfig("s2299") == "1") lEvento.Add(new s2299());
             if (BuscaConfig("s2300") == "1") lEvento.Add(new s2300());
+            if (BuscaConfig("s2306") == "1") lEvento.Add(new s2306());
             if (BuscaConfig("s2399") == "1") lEvento.Add(new s2399());
+            if (BuscaConfig("s2500") == "1") lEvento.Add(new s2500());
+            if (BuscaConfig("s2501") == "1") lEvento.Add(new s2501());
             if (BuscaConfig("s3000") == "1") lEvento.Add(new s3000());
 
             // Periódicos
@@ -94,7 +97,10 @@ namespace eSocial.Model
                lEvento.Add(new s2250());
                lEvento.Add(new s2299());
                lEvento.Add(new s2300());
+               lEvento.Add(new s2306());
                lEvento.Add(new s2399());
+               lEvento.Add(new s2500());
+               lEvento.Add(new s2501());
                lEvento.Add(new s3000());
             }
 

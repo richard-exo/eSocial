@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
    public class s3000 : bEvento_XML {
 
-      public s3000(string sID) : base("evtExclusao", "infoExclusao") {
+      public s3000(string sID) : base("evtExclusao", "infoExclusao", "v_S_01_01_00") {
 
          id = sID;
 
@@ -43,13 +43,14 @@ namespace eSocial.Model.Eventos.XML {
 
          // ideTrabalhador 0.1
          opElement("ideTrabalhador", infoExclusao.ideTrabalhador.cpfTrab,
-         new XElement(ns + "cpfTrab", infoExclusao.ideTrabalhador.cpfTrab),
-         opTag("nisTrab", infoExclusao.ideTrabalhador.nisTrab)),
+         new XElement(ns + "cpfTrab", infoExclusao.ideTrabalhador.cpfTrab)),
 
          // ideFolhaPagto 0.1
-         opElement("ideFolhaPagto", infoExclusao.ideFolhaPagto.indApuracao,
-         new XElement(ns + "indApuracao", infoExclusao.ideFolhaPagto.indApuracao),
-         new XElement(ns + "perApur", infoExclusao.ideFolhaPagto.perApur)));
+         opElement("ideFolhaPagto", infoExclusao.ideFolhaPagto.perApur,
+         //new XElement(ns + "indApuracao", infoExclusao.ideFolhaPagto.indApuracao),
+         opTag("indApuracao", infoExclusao.ideFolhaPagto.indApuracao),
+         //new XElement(ns + "perApur", infoExclusao.ideFolhaPagto.perApur)));
+         opTag("perApur", infoExclusao.ideFolhaPagto.perApur)));
 
          return x509.signXMLSHA256(xml, cert);
 

@@ -26,6 +26,8 @@ namespace eSocial.Model.Eventos.BD {
                {
                   // Registra o funcionário
                   lista1200.Add(row["id_funcionario"].ToString());
+                  
+                  string sMesano = row["mesano"].ToString();
 
                   sEvento evento = initEvento(row["tpAmb"].ToString(), row["id_arquivo"].ToString(), row["id_evento"].ToString(), row["id_empresa"].ToString(), row["id_cliente"].ToString(), row["id_funcionario"].ToString());
 
@@ -76,8 +78,8 @@ namespace eSocial.Model.Eventos.BD {
                   s1200XML.ideTrabalhador.infoComplem.dtNascto = validadores.aaaa_mm_dd(row["dtNascto"].ToString());
 
                   // sucessaoVinc 0.1
-                  s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.tpInscAnt = row["tpInscAnt"].ToString();
-                  s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.cnpjEmpregAnt = row["cnpjEmpregAnt"].ToString();
+                  s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.tpInsc = row["tpInscAnt"].ToString();
+                  s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.nrInsc = row["cnpjEmpregAnt"].ToString();
                   s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.matricAnt = row["matricAnt"].ToString();         // 0.1
                   s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.dtAdm = validadores.aaaa_mm_dd(row["dtAdm"].ToString());
                   s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.observacao = row["observacao"].ToString();       // 0.1
@@ -159,10 +161,14 @@ namespace eSocial.Model.Eventos.BD {
                                  {
                                     s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.codRubr = gcl.getVal("codRubr");
                                     s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.ideTabRubr = validadores.ideTabRubr(gcl.getVal("ideTabRubr"), evento.nomeEmpresa, evento.nrInsc);
-                                    s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.qtdRubr = gcl.getVal("qtdRubr");     // 0.1
+                                    if (gcl.getVal("qtdRubr") != null && gcl.getVal("qtdRubr").ToString() != "000.00")
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.qtdRubr = gcl.getVal("qtdRubr");     // 0.1
                                     s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.fatorRubr = gcl.getVal("fatorRubr"); // 0.1
-                                    s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrUnit = gcl.getVal("vrUnit").Replace(",", ".");       // 0.1
+                                    //s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrUnit = gcl.getVal("vrUnit").Replace(",", ".");       // 0.1
                                     s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrRubr = gcl.getVal("vrRubr").Replace(",", ".");
+                                    
+                                    if (int.Parse(sMesano)>=202107)
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR = gcl.getVal("indApurIR"); ; // 0=normal 1=especial
 
                                     s1200XML.add_itensRemun_infoPerApur();
                                  }
@@ -280,7 +286,8 @@ namespace eSocial.Model.Eventos.BD {
                                        {
                                           s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.codRubr = gcl.getVal("codRubr");
                                           s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.ideTabRubr = validadores.ideTabRubr(gcl.getVal("ideTabRubr"), evento.nomeEmpresa, evento.nrInsc);
-                                          s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.qtdRubr = gcl.getVal("qtdRubr");     // 0.1
+                                          if (gcl.getVal("qtdRubr") != null && gcl.getVal("qtdRubr").ToString() != "000.00")
+                                             s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.qtdRubr = gcl.getVal("qtdRubr");     // 0.1
                                           s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.fatorRubr = gcl.getVal("fatorRubr"); // 0.1
                                           s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.vrUnit = gcl.getVal("vrUnit").Replace(",", ".");       // 0.1
                                           s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerAnt.itensRemun.vrRubr = gcl.getVal("vrRubr").Replace(",", ".");       // 0.1

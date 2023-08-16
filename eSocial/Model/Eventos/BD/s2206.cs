@@ -75,11 +75,12 @@ namespace eSocial.Model.Eventos.BD
                   s2206XML.altContratual.infoRegimeTrab.infoEstatutario.tpPlanRP = row["tpPlanRP"].ToString();
 
                   // infoContrato
-                  s2206XML.altContratual.infoContrato.codCargo = row["codCargo"].ToString();
-                  s2206XML.altContratual.infoContrato.codFuncao = row["codFuncao"].ToString();
+                  s2206XML.altContratual.infoContrato.nmCargo = row["nmCargo"].ToString();
+                  s2206XML.altContratual.infoContrato.CBOCargo = row["CBOCargo"].ToString();
+                  s2206XML.altContratual.infoContrato.nmFuncao = row["nmFuncao"].ToString();
+                  s2206XML.altContratual.infoContrato.CBOFuncao = row["CBOFuncao"].ToString();
+                  s2206XML.altContratual.infoContrato.acumCargo = row["acumCargo"].ToString();
                   s2206XML.altContratual.infoContrato.codCateg = row["codCateg"].ToString();
-                  s2206XML.altContratual.infoContrato.codCarreira = row["codCarreira"].ToString();
-                  s2206XML.altContratual.infoContrato.dtIngrCarr = validadores.aaaa_mm_dd(row["dtIngrCarr"].ToString());
 
                   // remuneracao
                   s2206XML.altContratual.infoContrato.remuneracao.vrSalFx = row["vrSalFx"].ToString().Replace(",", ".");
@@ -111,39 +112,12 @@ namespace eSocial.Model.Eventos.BD
                   s2206XML.altContratual.infoContrato.localTrabalho.localTrabDom.uf = row["uf"].ToString();
 
                   // horContratual
-                  s2206XML.altContratual.infoContrato.horContratual.qtdHrsSem = row["qtdHrsSem"].ToString();
-                  s2206XML.altContratual.infoContrato.horContratual.tpJornada = row["tpJornada"].ToString();
-                  s2206XML.altContratual.infoContrato.horContratual.dscTpJorn = row["dscTpJorn"].ToString();
-                  s2206XML.altContratual.infoContrato.horContratual.tmpParc = row["tmpParc"].ToString();
-
-                  // horario
-                  //s2206XML.altContratual.infoContrato.horContratual.horario.dia = row["dia"].ToString();
-                  //s2206XML.altContratual.infoContrato.horContratual.horario.codHorContrat = row["codHorContrat"].ToString();
-
-                  // horario 0.9
-                  List<string> lista2206horario = new List<string>();
-
-                  gcl.setLevel("horario", clear: true);
-
-                  var tbHorario = from DataRow r in tbEventos.Rows
-                                  where !string.IsNullOrEmpty(r[$"dia{gcl.getLevel}"].ToString()) &&
-                                  r["id_funcionario"].ToString().Equals(evento.id_funcionario)
-                                  select r;
-
-                  foreach (var horario in tbHorario)
-                  {
-                     gcl.setLevel(row: horario);
-
-                     if (!lista2206horario.Contains(gcl.getVal("codHorContrat").ToString()))
-                     {
-                        // Registra codHorContrat
-                        lista2206horario.Add(gcl.getVal("codHorContrat").ToString());
-
-                        s2206XML.altContratual.infoContrato.horContratual.horario.dia = gcl.getVal("dia");
-                        s2206XML.altContratual.infoContrato.horContratual.horario.codHorContrat = gcl.getVal("codHorContrat");
-                        s2206XML.add_horario();
-                     }
-                  }
+                  s2206XML.altContratual.infoContrato.horContratual.qtdHrsSem  = row["qtdHrsSem"].ToString();
+                  s2206XML.altContratual.infoContrato.horContratual.tpJornada  = row["tpJornada"].ToString();
+                  s2206XML.altContratual.infoContrato.horContratual.dscTpJorn  = row["dscTpJorn"].ToString();
+                  s2206XML.altContratual.infoContrato.horContratual.horNoturno = row["horNoturno"].ToString(); 
+                  s2206XML.altContratual.infoContrato.horContratual.dscJorn    = row["dscJorn"].ToString();
+                  s2206XML.altContratual.infoContrato.horContratual.tmpParc    = row["tmpParc"].ToString();
 
                   // filiacaoSindical
                   s2206XML.altContratual.infoContrato.filiacaoSindical.cnpjSindTrab = row["cnpjSindTrab"].ToString();
@@ -180,7 +154,7 @@ namespace eSocial.Model.Eventos.BD
                   s2206XML.altContratual.infoContrato.observacoes.observacao = row["observacao"].ToString();
 
                   // servPubl
-                  s2206XML.altContratual.infoContrato.servPubl.mtvAlter = row["mtvAlter"].ToString();
+                  s2206XML.altContratual.infoContrato.treiCap.codTreiCap = row["codTreiCap"].ToString();
 
                   evento.eventoAssinadoXML = s2206XML.genSignedXML(evento.certificado);
                   lEventos.Add(evento);

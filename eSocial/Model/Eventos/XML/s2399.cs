@@ -13,7 +13,7 @@ namespace eSocial.Model.Eventos.XML
 {
     public class s2399 : bEvento_XML
     {
-        public s2399(string sID) : base("evtTSVTermino")
+        public s2399(string sID) : base("evtTSVTermino", "", "v_S_01_01_00")
         {
             id = sID;
             ideEvento = new sIdeEvento();
@@ -41,6 +41,7 @@ namespace eSocial.Model.Eventos.XML
             xml.Elements().ElementAt(0).Element(ns + "ideEvento").ReplaceNodes(
             new XElement(ns + "indRetif", ideEvento.indRetif),
             opTag("nrRecibo", ideEvento.nrRecibo),
+            opTag("indGuia", ideEvento.indGuia),
             new XElement(ns + "tpAmb", ideEvento.tpAmb.GetHashCode()),
             new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode()),
             new XElement(ns + "verProc", ideEvento.verProc));
@@ -54,8 +55,9 @@ namespace eSocial.Model.Eventos.XML
             xml.Elements().ElementAt(0).Add(
             new XElement(ns + "ideTrabSemVinculo",
             new XElement(ns + "cpfTrab", trabalhador.cpfTrab),
-            opTag("nisTrab", trabalhador.nisTrab),
-            new XElement(ns + "codCateg", trabalhador.codCateg)));
+            opTag("matricula", trabalhador.matricula),
+            //new XElement(ns + "codCateg", trabalhador.codCateg)
+            opTag("codCateg", trabalhador.codCateg)));
 
             // infoTSVTermino
             xml.Elements().ElementAt(0).Add(
@@ -65,6 +67,7 @@ namespace eSocial.Model.Eventos.XML
             opTag("pensAlim", infoTSVTermino.pensAlim),
             opTag("percAliment", infoTSVTermino.percAliment),
             opTag("vrAlim", infoTSVTermino.vrAlim),
+            opTag("nrProcTrab", infoTSVTermino.nrProcTrab),
 
             // mudancaCPF 
             opElement("mudancaCPF",
@@ -136,16 +139,16 @@ namespace eSocial.Model.Eventos.XML
             new XElement(ns + "ideTabRubr", verbasResc.dmDev.ideEstabLot.detVerbas.ideTabRubr),
             opTag("qtdRubr", verbasResc.dmDev.ideEstabLot.detVerbas.qtdRubr),
             opTag("fatorRubr", verbasResc.dmDev.ideEstabLot.detVerbas.fatorRubr),
-            opTag("vrUnit", verbasResc.dmDev.ideEstabLot.detVerbas.vrUnit),
             new XElement(ns + "vrRubr", verbasResc.dmDev.ideEstabLot.detVerbas.vrRubr),
+            opTag("indApurIR", verbasResc.dmDev.ideEstabLot.detVerbas.indApurIR),
 
-            // infoSaudeColet 
-            from e in lItensInfoSaudeColet
-            select e,
+            //// infoSaudeColet 
+            //from e in lItensInfoSaudeColet
+            //select e,
 
-            // infoAgNocivo 0.1
-            opElement("infoAgNocivo", verbasResc.dmDev.ideEstabLot.infoAgNocivo.grauExp,
-            new XElement(ns + "grauExp", verbasResc.dmDev.ideEstabLot.infoAgNocivo.grauExp)),
+            //// infoAgNocivo 0.1
+            //opElement("infoAgNocivo", verbasResc.dmDev.ideEstabLot.infoAgNocivo.grauExp,
+            //new XElement(ns + "grauExp", verbasResc.dmDev.ideEstabLot.infoAgNocivo.grauExp)),
 
             // infoSimples 0.1
             opElement("infoSimples", verbasResc.dmDev.ideEstabLot.infoSimples.indSimples,
@@ -157,7 +160,11 @@ namespace eSocial.Model.Eventos.XML
 
             // infoMV 
             from e in lInfoMV
-            select e
+            select e,
+
+            // quarentena 0.1
+            opElement("quarentena", infoTSVTermino.quarentena,
+            new XElement(ns + "dtFimQuar", infoTSVTermino.quarentena))
 
             ));
 
@@ -245,7 +252,7 @@ namespace eSocial.Model.Eventos.XML
         public new sIdeEvento ideEvento;
         public new struct sIdeEvento
         {
-            public string indRetif, indApuracao, nrRecibo, perApur, verProc;
+            public string indRetif, indApuracao, nrRecibo, indGuia, perApur, verProc;
             public enTpAmb tpAmb;
             public enProcEmi procEmi;
         }
@@ -253,14 +260,14 @@ namespace eSocial.Model.Eventos.XML
         public sTrabalhador trabalhador;
         public struct sTrabalhador
         {
-            public string cpfTrab, nisTrab, codCateg;
+            public string cpfTrab, matricula, codCateg;
 
         }
 
         public sInfoTSVTermino infoTSVTermino;
         public struct sInfoTSVTermino
         {
-            public string dtTerm, mtvDesligTSV, pensAlim, percAliment, vrAlim;
+            public string dtTerm, mtvDesligTSV, pensAlim, percAliment, vrAlim, nrProcTrab;
 
             public sMudancaCPF mudancaCPF;
             public struct sMudancaCPF
@@ -291,7 +298,7 @@ namespace eSocial.Model.Eventos.XML
                     public sDetVerbas detVerbas;
                     public struct sDetVerbas
                     {
-                        public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr;
+                        public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR;
                     }
 
                     public sInfoSaudeColet infoSaudeColet;

@@ -10,7 +10,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     class s1070 : bEvento_XML {
 
-        public s1070(string sID) : base("evtTabProcesso", "infoProcesso") {
+        public s1070(string sID) : base("evtTabProcesso", "infoProcesso", "v_S_01_01_00") {
 
             id = sID;
 
@@ -77,7 +77,7 @@ namespace eSocial.Model.Eventos.XML {
             )), // inclusao
 
             // alteracao 0.1
-            opElement("inclusao", infoProcesso.alteracao.ideProcesso.tpProc,
+            opElement("alteracao", infoProcesso.alteracao.ideProcesso.tpProc,
             new XElement(ns + "ideProcesso",
             new XElement(ns + "tpProc", infoProcesso.alteracao.ideProcesso.tpProc),
             new XElement(ns + "nrProc", infoProcesso.alteracao.ideProcesso.nrProc),
@@ -89,16 +89,6 @@ namespace eSocial.Model.Eventos.XML {
             opTag("indAutoria", infoProcesso.alteracao.dadosProc.indAutoria),
             new XElement(ns + "indMatProc", infoProcesso.alteracao.dadosProc.indMatProc),
             opTag("observacao", infoProcesso.alteracao.dadosProc.observacao),
-
-            // dadosProcJud
-            opElement("dadosProcJud", infoProcesso.alteracao.dadosProc.dadosProcJud.ufVara,
-            new XElement(ns + "ufVara", infoProcesso.alteracao.dadosProc.dadosProcJud.ufVara),
-            new XElement(ns + "codMunic", infoProcesso.alteracao.dadosProc.dadosProcJud.codMunic),
-            new XElement(ns + "idVara", infoProcesso.alteracao.dadosProc.dadosProcJud.idVara)),
-
-            // infoSusp 0.99
-            from e in lInfoSusp_alteracao
-            select e,
 
             // novaValidade 0.1
             opElement("novaValidade", infoProcesso.alteracao.novaValidade.iniValid,

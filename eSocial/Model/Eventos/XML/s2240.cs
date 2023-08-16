@@ -14,7 +14,7 @@ namespace eSocial.Model.Eventos.XML
    public class s2240 : bEvento_XML
    {
 
-      public s2240(string sID) : base("evtExpRisco","", "v_S_01_00_00")
+      public s2240(string sID) : base("evtExpRisco","", "v_S_01_01_00")
       {
          id = sID;
 
@@ -106,7 +106,7 @@ namespace eSocial.Model.Eventos.XML
          opTag("tecMedicao", infoExpRisco.agNoc.tecMedicao),
 
          // epcEpi   
-         new XElement(ns + "epcEpi",
+         opElement("epcEpi", infoExpRisco.agNoc.epcEpi.utilizEPI,
          new XElement(ns + "utilizEPC", infoExpRisco.agNoc.epcEpi.utilizEpc),
          opTag("eficEpc", infoExpRisco.agNoc.epcEpi.eficEpc),
          new XElement(ns + "utilizEPI", infoExpRisco.agNoc.epcEpi.utilizEPI),
@@ -134,10 +134,14 @@ namespace eSocial.Model.Eventos.XML
       List<XElement> lEpi = new List<XElement>();
       public void add_epi()
       {
+         //lEpi.Add(
+         //opElement("epi", infoExpRisco.agNoc.epcEpi.epi.dscEPI,
+         //opTag("docAval", infoExpRisco.agNoc.epcEpi.epi.docAval),
+         //opTag("dscEPI", infoExpRisco.agNoc.epcEpi.epi.dscEPI)));
+
          lEpi.Add(
-         opElement("epi", infoExpRisco.agNoc.epcEpi.epi.dscEPI,
-         opTag("docAval", infoExpRisco.agNoc.epcEpi.epi.docAval),
-         opTag("dscEPI", infoExpRisco.agNoc.epcEpi.epi.dscEPI)));
+         opElement("epi", infoExpRisco.agNoc.epcEpi.epi.docAval,
+         opTag("docAval", infoExpRisco.agNoc.epcEpi.epi.docAval)));
 
          infoExpRisco.agNoc.epcEpi.epi = new sInfoExpRisco.sAgNoc.sEpcEpi.sEpi();
       }
@@ -151,10 +155,10 @@ namespace eSocial.Model.Eventos.XML
          lRespReg.Add(
          new XElement(ns + "respReg",
          new XElement(ns + "cpfResp", infoExpRisco.respReg.cpfResp),
-         new XElement(ns + "ideOC", infoExpRisco.respReg.ideOC),
+         opTag("ideOC", infoExpRisco.respReg.ideOC),
          opTag("dscOC", infoExpRisco.respReg.dscOC),
-         new XElement(ns + "nrOC", infoExpRisco.respReg.nrOC),
-         new XElement(ns + "ufOC", infoExpRisco.respReg.ufOC)));
+         opTag("nrOC", infoExpRisco.respReg.nrOC),
+         opTag("ufOC", infoExpRisco.respReg.ufOC)));
 
          infoExpRisco.respReg = new sInfoExpRisco.sRespReg();
       }

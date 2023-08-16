@@ -87,9 +87,11 @@ namespace eSocial.Model.Eventos.BD
 
 								s2240XML.infoExpRisco.agNoc.codAgNoc = gcl.getVal("codigo");
 								s2240XML.infoExpRisco.agNoc.dscAgNoc = gcl.getVal("dsc");
-								s2240XML.infoExpRisco.agNoc.tpAval = gcl.getVal("tpAval");
-								s2240XML.infoExpRisco.agNoc.intConc = gcl.getVal("intConc").Replace(",", ".");
-								s2240XML.infoExpRisco.agNoc.limTol = gcl.getVal("limTol").Replace(",", ".");
+								if (gcl.getVal("tpAval").ToString()!="0")
+									s2240XML.infoExpRisco.agNoc.tpAval = gcl.getVal("tpAval");
+								s2240XML.infoExpRisco.agNoc.intConc = gcl.getVal("intConc").Replace(",", ".");								
+								if (gcl.getVal("limTol").ToString()!="0")
+									s2240XML.infoExpRisco.agNoc.limTol = gcl.getVal("limTol").Replace(",", ".");
 								s2240XML.infoExpRisco.agNoc.unMed = gcl.getVal("unMed");
 								s2240XML.infoExpRisco.agNoc.tecMedicao = gcl.getVal("tecMedicao");
 

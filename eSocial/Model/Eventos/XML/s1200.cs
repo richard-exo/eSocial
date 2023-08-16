@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1200 : bEvento_XML {
 
-        public s1200(string sID) : base("evtRemun") {
+        public s1200(string sID) : base("evtRemun", "", "v_S_01_01_00") {
 
             id = sID;
 
@@ -56,6 +56,7 @@ namespace eSocial.Model.Eventos.XML {
             opTag("nrRecibo", ideEvento.nrRecibo),
             new XElement(ns + "indApuracao", ideEvento.indApuracao),
             new XElement(ns + "perApur", ideEvento.perApur),
+            opTag("indGuia", ideEvento.indGuia),
             new XElement(ns + "tpAmb", ideEvento.tpAmb.GetHashCode().ToString()),
             new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode().ToString()),
             new XElement(ns + "verProc", ideEvento.verProc));
@@ -69,7 +70,6 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Add(
             new XElement(ns + "ideTrabalhador",
             new XElement(ns + "cpfTrab", ideTrabalhador.cpfTrab),
-            opTag("nisTrab", ideTrabalhador.nisTrab),
 
             // infoMV 0.1
             opElement("infoMV", ideTrabalhador.infoMV.indMV,
@@ -85,9 +85,9 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "dtNascto", ideTrabalhador.infoComplem.dtNascto),
 
             // sucessaoVinc 0.1
-            opElement("sucessaoVinc", ideTrabalhador.infoComplem.sucessaoVinc.cnpjEmpregAnt,
-            new XElement(ns + "tpInscAnt", ideTrabalhador.infoComplem.sucessaoVinc.tpInscAnt),
-            new XElement(ns + "cnpjEmpregAnt", ideTrabalhador.infoComplem.sucessaoVinc.cnpjEmpregAnt),
+            opElement("sucessaoVinc", ideTrabalhador.infoComplem.sucessaoVinc.nrInsc,
+            new XElement(ns + "tpInsc", ideTrabalhador.infoComplem.sucessaoVinc.tpInsc),
+            new XElement(ns + "nrInsc", ideTrabalhador.infoComplem.sucessaoVinc.nrInsc),
             opTag("matricAnt", ideTrabalhador.infoComplem.sucessaoVinc.matricAnt),
             new XElement(ns + "dtAdm", ideTrabalhador.infoComplem.sucessaoVinc.dtAdm),
             opTag("observacao", ideTrabalhador.infoComplem.sucessaoVinc.observacao))
@@ -99,8 +99,8 @@ namespace eSocial.Model.Eventos.XML {
             select e,
 
             // infoInterm 0.1
-            opElement("infoInterm", ideTrabalhador.infoInterm.qtdDiasInterm,
-            new XElement(ns + "qtdDiasInterm", ideTrabalhador.infoInterm.qtdDiasInterm))
+            opElement("infoInterm", ideTrabalhador.infoInterm.dia,
+            new XElement(ns + "dia", ideTrabalhador.infoInterm.dia))
 
             )); // ideTrabalhador
 
@@ -140,7 +140,7 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "procJudTrab",
             new XElement(ns + "tpTrib", ideTrabalhador.procJudTrab.tpTrib),
             new XElement(ns + "nrProcJud", ideTrabalhador.procJudTrab.nrProcJud),
-            opTag("codSusp", ideTrabalhador.procJudTrab.codSusp)));
+            new XElement(ns + "codSusp", ideTrabalhador.procJudTrab.codSusp)));
 
             ideTrabalhador.procJudTrab = new sIdeTrabalhador.sProcJudTrab();
         }
@@ -217,32 +217,32 @@ namespace eSocial.Model.Eventos.XML {
         List<XElement> lRemunPerApur = new List<XElement>();
         public void add_remunPerApur() {
 
-            lRemunPerApur.Add(
-            new XElement(ns + "remunPerApur",
-            opTag("matricula", dmDev.infoPerApur.ideEstabLot.remunPerApur.matricula),
-            opTag("indSimples", dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples),
+         lRemunPerApur.Add(
+         new XElement(ns + "remunPerApur",
+         opTag("matricula", dmDev.infoPerApur.ideEstabLot.remunPerApur.matricula),
+         opTag("indSimples", dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples),
 
-            // itensRemun 1.200
-            from e in lItensRemun_infoPerApur
-            select e,
+         // itensRemun 1.200
+         from e in lItensRemun_infoPerApur
+         select e,
 
-           // infoSaudeColet 0.1
-           opElement("infoSaudeColet", lDetOper_infoPerApur,
+        //// infoSaudeColet 0.1
+        //opElement("infoSaudeColet", lDetOper_infoPerApur,
 
-           // detOper 1.99
-           from e in lDetOper_infoPerApur
-           select e),
+        //// detOper 1.99
+        //from e in lDetOper_infoPerApur
+        //select e),
 
-           // infoAgNocivo 0.1
-           opElement("infoAgNocivo", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp,
-           new XElement(ns + "grauExp", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp)),
+        // infoAgNocivo 0.1
+        opElement("infoAgNocivo", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp,
+        new XElement(ns + "grauExp", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp))));
 
-           // infoTrabInterm 0.99
-           from e in lInfoTrabInterm_infoPerApur
-           select e));
+           //// infoTrabInterm 0.99
+           //from e in lInfoTrabInterm_infoPerApur
+           //select e));
 
             dmDev.infoPerApur.ideEstabLot.remunPerApur = new sIdeEstabLot.sRemunPer();
-            dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet = new sIdeEstabLot.sRemunPer.sInfoSaudeColet();
+            //dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet = new sIdeEstabLot.sRemunPer.sInfoSaudeColet();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo = new sIdeEstabLot.sRemunPer.sInfoAgNocivo();
 
         }
@@ -260,10 +260,8 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "ideTabRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.ideTabRubr),
             opTag("qtdRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.qtdRubr),
             opTag("fatorRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.fatorRubr),
-            opTag("indSimples", dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples),
-            opTag("vrUnit", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrUnit),
-
-            new XElement(ns + "vrRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrRubr)));
+            new XElement(ns + "vrRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrRubr),
+            opTag("indApurIR", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR)));
 
             dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun = new sIdeEstabLot.sRemunPer.sItensRemun();
         }
@@ -327,8 +325,6 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "ideADC",
             opTag("dtAcConv", dmDev.infoPerAnt.ideADC.dtAcConv),
             new XElement(ns + "tpAcConv", dmDev.infoPerAnt.ideADC.tpAcConv),
-            opTag("compAcConv", dmDev.infoPerAnt.ideADC.compAcConv),
-            opTag("dtEfAcConv", dmDev.infoPerAnt.ideADC.dtEfAcConv),
             new XElement(ns + "dsc", dmDev.infoPerAnt.ideADC.dsc),
             new XElement(ns + "remunSuc", dmDev.infoPerAnt.ideADC.remunSuc),
 
@@ -415,8 +411,8 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "ideTabRubr", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.ideTabRubr),
             opTag("qtdRubr", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.qtdRubr),
             opTag("fatorRubr", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.fatorRubr),
-            opTag("vrUnit", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.vrUnit),
-            new XElement(ns + "vrRubr", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.vrRubr)));
+            new XElement(ns + "vrRubr", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.vrRubr),
+            opTag("indApurIR", dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun.indApurIR)));
 
             dmDev.infoPerAnt.ideADC.idePeriodo.ideEstabLot.remunPerAnt.itensRemun = new sIdeEstabLot.sRemunPer.sItensRemun();
         }
@@ -429,7 +425,7 @@ namespace eSocial.Model.Eventos.XML {
         public new sIdeEvento ideEvento;
         public new struct sIdeEvento {
             public string indRetif, indApuracao;
-            public string perApur, verProc, nrRecibo;
+            public string perApur, indGuia, verProc, nrRecibo;
             public enProcEmi procEmi;
             public enTpAmb tpAmb;
         }
@@ -460,13 +456,13 @@ namespace eSocial.Model.Eventos.XML {
 
                 public sSucessaoVinc sucessaoVinc;
                 public struct sSucessaoVinc {
-                    public string tpInscAnt, cnpjEmpregAnt, matricAnt, observacao;
+                    public string tpInsc, nrInsc, matricAnt, observacao;
                     public string dtAdm;
                 }
             }
 
             public sInfoInterm infoInterm;
-            public struct sInfoInterm { public string qtdDiasInterm; }
+            public struct sInfoInterm { public string dia; }
 
             public sProcJudTrab procJudTrab;
             public struct sProcJudTrab {
@@ -485,7 +481,7 @@ namespace eSocial.Model.Eventos.XML {
                 public string matricula, indSimples;
 
                 public sItensRemun itensRemun;
-                public struct sItensRemun { public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr; }
+                public struct sItensRemun { public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR; }
 
                 public sInfoSaudeColet infoSaudeColet;
                 public struct sInfoSaudeColet {

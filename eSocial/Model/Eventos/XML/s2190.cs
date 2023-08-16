@@ -11,13 +11,8 @@ using eSocial.Controller;
 
 namespace eSocial.Model.Eventos.XML {
    public class s2190 : bEvento_XML {
-        //public s2190(string sID) : base("evtAdmPrelim", "infoRegPrelim") {
 
-        //   id = sID;
-        //   infoRegPrelim = new sInfoRegPrelim();
-        //}
-
-        public s2190(string sID) : base("evtAdmPrelim")
+        public s2190(string sID) : base("evtAdmPrelim", "", "v_S_01_01_00")
         {
             id = sID;
             infoRegPrelim = new sInfoRegPrelim();
@@ -27,6 +22,8 @@ namespace eSocial.Model.Eventos.XML {
 
          // ideEvento
          xml.Elements().ElementAt(0).Element(ns + "ideEvento").ReplaceNodes(
+         new XElement(ns + "indRetif", ideEvento.indRetif),
+         opTag("nrRecibo", ideEvento.nrRecibo),
          new XElement(ns + "tpAmb", ideEvento.tpAmb.GetHashCode()),
          new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode()),
          new XElement(ns + "verProc", ideEvento.verProc));
@@ -37,17 +34,14 @@ namespace eSocial.Model.Eventos.XML {
          new XElement(ns + "nrInsc", ideEmpregador.nrInsc));
 
          // infoRegPrelim
-         //xml.Elements().ElementAt(0).Element(ns + tagEvento).ReplaceNodes(
-         //new XElement(ns + "cpfTrab", infoRegPrelim.cpfTrab),
-         //new XElement(ns + "dtNascto", infoRegPrelim.dtNascto),
-         //new XElement(ns + "dtAdm", infoRegPrelim.dtAdm));
-
-         // infoRegPrelim
          xml.Elements().ElementAt(0).Add(
          new XElement(ns + "infoRegPrelim",
          new XElement(ns + "cpfTrab", infoRegPrelim.cpfTrab),
          new XElement(ns + "dtNascto", infoRegPrelim.dtNascto),
-         new XElement(ns + "dtAdm", infoRegPrelim.dtAdm)));
+         new XElement(ns + "dtAdm", infoRegPrelim.dtAdm),
+         new XElement(ns + "matricula", infoRegPrelim.matricula),
+         new XElement(ns + "codCateg", infoRegPrelim.codCateg),
+         new XElement(ns + "natAtividade", infoRegPrelim.natAtividade)));
 
          return x509.signXMLSHA256(xml, cert);
       }
@@ -56,7 +50,7 @@ namespace eSocial.Model.Eventos.XML {
 
       public new sIdeEvento ideEvento;
       public new struct sIdeEvento {
-         public string verProc;
+         public string verProc, indRetif, nrRecibo;
             public enTpAmb tpAmb;
             public enProcEmi procEmi;
         }
@@ -64,7 +58,7 @@ namespace eSocial.Model.Eventos.XML {
       public sInfoRegPrelim infoRegPrelim;
       public struct sInfoRegPrelim {
          public string cpfTrab;
-         public string dtNascto, dtAdm;
+         public string dtNascto, dtAdm, matricula, codCateg, natAtividade;
       }
 
       #endregion

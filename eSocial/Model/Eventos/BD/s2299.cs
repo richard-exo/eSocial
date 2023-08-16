@@ -53,6 +53,7 @@ namespace eSocial.Model.Eventos.BD{
                     // infoDeslig
                     s2299XML.infoDeslig.mtvDeslig = row["mtvDeslig"].ToString();
                     s2299XML.infoDeslig.dtDeslig = validadores.aaaa_mm_dd(row["dtDeslig"].ToString());
+                    s2299XML.infoDeslig.dtAvPrv = validadores.aaaa_mm_dd(row["dtAvPrv"].ToString());
                     s2299XML.infoDeslig.indPagtoAPI = row["indPagtoAPI"].ToString();
                     s2299XML.infoDeslig.dtProjFimAPI = validadores.aaaa_mm_dd(row["dtProjFimAPI"].ToString());
                     s2299XML.infoDeslig.pensAlim = row["pensAlim"].ToString();
@@ -140,10 +141,12 @@ namespace eSocial.Model.Eventos.BD{
                               bTemVerbas = true;
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.codRubr = gcl.getVal("codRubr");
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.ideTabRubr = gcl.getVal("ideTabRubr");
-                              s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.qtdRubr = gcl.getVal("qtdRubr").Replace(":", "");
+                              if (gcl.getVal("qtdRubr")!=null && gcl.getVal("qtdRubr").ToString()!="000.00")
+                                 s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.qtdRubr = gcl.getVal("qtdRubr").Replace(":", "");
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.fatorRubr = gcl.getVal("fatorRubr");
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrUnit = gcl.getVal("vrUnit");
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrRubr = gcl.getVal("vrRubr").Replace(",", ".");
+                              s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.indApurIR = gcl.getVal("indApurIR");
 
                               s2299XML.add_detVerbas_infoPerApur();
                            }

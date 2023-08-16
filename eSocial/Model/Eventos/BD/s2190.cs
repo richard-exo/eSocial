@@ -24,6 +24,8 @@ namespace eSocial.Model.Eventos.BD {
                // ### Evento
 
                // ideEvento
+               s2190XML.ideEvento.indRetif = row["indRetif"].ToString();
+               s2190XML.ideEvento.nrRecibo = row["nrRecibo"].ToString(); // 0.1
                s2190XML.ideEvento.tpAmb = evento.tpAmb;
                s2190XML.ideEvento.procEmi = enProcEmi.appEmpregador_1;
                s2190XML.ideEvento.verProc = versao;
@@ -36,6 +38,9 @@ namespace eSocial.Model.Eventos.BD {
                s2190XML.infoRegPrelim.cpfTrab = row["cpfTrab"].ToString();
                s2190XML.infoRegPrelim.dtNascto = validadores.aaaa_mm_dd(row["dtNascto"].ToString());
                s2190XML.infoRegPrelim.dtAdm = validadores.aaaa_mm_dd(row["dtAdm"].ToString());
+               s2190XML.infoRegPrelim.matricula = row["matricula"].ToString();
+               s2190XML.infoRegPrelim.codCateg = row["codCateg"].ToString();
+               s2190XML.infoRegPrelim.natAtividade = row["natAtividade"].ToString();
 
                evento.eventoAssinadoXML = s2190XML.genSignedXML(evento.certificado);
                lEventos.Add(evento);

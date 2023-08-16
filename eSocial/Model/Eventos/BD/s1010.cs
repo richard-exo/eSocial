@@ -59,7 +59,7 @@ namespace eSocial.Model.Eventos.BD {
                   incAlt.dadosRubrica.codIncCP = row["codIncCP"].ToString();
                   incAlt.dadosRubrica.codIncIRRF = row["codIncIRRF"].ToString();
                   incAlt.dadosRubrica.codIncFGTS = row["codIncFGTS"].ToString();
-                  incAlt.dadosRubrica.codIncSIND = row["codIncSIND"].ToString();
+                  incAlt.dadosRubrica.codIncCPRP = row["codIncCPRP"].ToString();
 
                   if (row["modoEnvio"].ToString().Equals(enModoEnvio.inclusao.GetHashCode().ToString())) {
                      s1010XML.infoRubrica.inclusao = incAlt;

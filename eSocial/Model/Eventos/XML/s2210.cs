@@ -10,7 +10,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
    class s2210 : bEvento_XML {
 
-      public s2210(string sID) : base("evtCAT", "", "v_S_01_00_00") {
+      public s2210(string sID) : base("evtCAT", "", "v_S_01_01_00") {
 
          id = sID;
 
@@ -41,13 +41,6 @@ namespace eSocial.Model.Eventos.XML {
          new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode()),
          new XElement(ns + "verProc", ideEvento.verProc));
 
-         //// ideRegistrador
-         //xml.Elements().ElementAt(0).Element(ns + "ideEvento").AddAfterSelf(
-         //new XElement(ns + "ideRegistrador",
-         //new XElement(ns + "tpRegistrador", ideRegistrador.tpRegistrador),
-         //opTag("tpInsc", ideRegistrador.tpInsc),
-         //opTag("nrInsc", ideRegistrador.nrInsc)));
-
          // ideEmpregador
          xml.Elements().ElementAt(0).Element(ns + "ideEmpregador").ReplaceNodes(
          new XElement(ns + "tpInsc", ideEmpregador.tpInsc.GetHashCode()),
@@ -66,7 +59,7 @@ namespace eSocial.Model.Eventos.XML {
          new XElement(ns + "dtAcid", cat.dtAcid),
          new XElement(ns + "tpAcid", cat.tpAcid),
          new XElement(ns + "hrAcid", cat.hrAcid),
-         new XElement(ns + "hrsTrabAntesAcid", cat.hrsTrabAntesAcid),
+         opTag("hrsTrabAntesAcid", cat.hrsTrabAntesAcid),
          new XElement(ns + "tpCat", cat.tpCat),
          new XElement(ns + "indCatObito", cat.indCatObito),
          opTag("dtObito", cat.dtObito),
@@ -74,6 +67,8 @@ namespace eSocial.Model.Eventos.XML {
          opTag("codSitGeradora", cat.codSitGeradora),
          new XElement(ns + "iniciatCAT", cat.iniciatCAT),
          opTag("obsCAT", cat.obsCAT),
+         opTag("ultDiaTrab", cat.ultDiaTrab),
+         opTag("houveAfast", cat.houveAfast),
 
          // localAcidente
          new XElement(ns + "localAcidente",
@@ -236,7 +231,7 @@ namespace eSocial.Model.Eventos.XML {
       public sCat cat;
       public struct sCat {
          public string tpCat, iniciatCAT, codSitGeradora;
-         public string hrAcid, hrsTrabAntesAcid, indCatObito, indComunPolicia, obsCAT;
+         public string hrAcid, hrsTrabAntesAcid, indCatObito, indComunPolicia, obsCAT, ultDiaTrab, houveAfast;
          public string dtAcid, tpAcid, dtObito;
 
          public sLocalAcidente localAcidente;

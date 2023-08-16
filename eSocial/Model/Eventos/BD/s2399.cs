@@ -51,7 +51,7 @@ namespace eSocial.Model.Eventos.BD
                         gcl.setLevel("trabalhador", row);
 
                         s2399XML.trabalhador.cpfTrab = gcl.getVal("cpfTrab");
-                        s2399XML.trabalhador.nisTrab = gcl.getVal("nisTrab");
+                        s2399XML.trabalhador.matricula = gcl.getVal("matricula");
                         s2399XML.trabalhador.codCateg = gcl.getVal("codCateg");                        
 
                         // infoTSVTermino

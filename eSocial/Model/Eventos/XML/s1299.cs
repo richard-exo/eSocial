@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1299 : bEvento_XML {
 
-        public s1299(string sID) : base("evtFechaEvPer") {
+        public s1299(string sID) : base("evtFechaEvPer", "", "v_S_01_01_00") {
 
             id = sID;
 
@@ -27,6 +27,7 @@ namespace eSocial.Model.Eventos.XML {
             xml.Elements().ElementAt(0).Element(ns + "ideEvento").ReplaceNodes(
             new XElement(ns + "indApuracao", ideEvento.indApuracao),
             new XElement(ns + "perApur", ideEvento.perApur),
+            opTag("indGuia", ideEvento.indGuia),
             new XElement(ns + "tpAmb", ideEvento.tpAmb.GetHashCode()),
             new XElement(ns + "procEmi", ideEvento.procEmi.GetHashCode()),
             new XElement(ns + "verProc", ideEvento.verProc));
@@ -36,24 +37,17 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "tpInsc", ideEmpregador.tpInsc.GetHashCode()),
             new XElement(ns + "nrInsc", ideEmpregador.nrInsc));
 
-            // ideRespInf 0.1
-            xml.Elements().ElementAt(0).Add(
-            opElement("ideRespInf", ideRespInf.nmResp,
-            new XElement(ns + "nmResp", ideRespInf.nmResp),
-            new XElement(ns + "cpfResp", ideRespInf.cpfResp),
-            new XElement(ns + "telefone", ideRespInf.telefone),
-            opTag("email", ideRespInf.email)));
-
             // infoFech
             xml.Elements().ElementAt(0).Add(
             new XElement(ns + "infoFech",
             new XElement(ns + "evtRemun", infoFech.evtRemun),
             new XElement(ns + "evtPgtos", infoFech.evtPgtos),
-            new XElement(ns + "evtAqProd", infoFech.evtAqProd),
             new XElement(ns + "evtComProd", infoFech.evtComProd),
             new XElement(ns + "evtContratAvNP", infoFech.evtContratAvNP),
             new XElement(ns + "evtInfoComplPer", infoFech.evtInfoComplPer),
-            opTag("compSemMovto", infoFech.compSemMovto)
+            opTag("indExcApur1250", infoFech.indExcApur1250),
+            opTag("transDCTFWeb", infoFech.transDCTFWeb),
+            opTag("naoValid", infoFech.naoValid)
 
             ));
 
@@ -64,7 +58,7 @@ namespace eSocial.Model.Eventos.XML {
 
         public new sIdeEvento ideEvento;
         public new struct sIdeEvento {
-            public string indApuracao, perApur, verProc;
+            public string indApuracao, perApur, indGuia, verProc;
             public enTpAmb tpAmb;
             public enProcEmi procEmi;
         }
@@ -74,7 +68,7 @@ namespace eSocial.Model.Eventos.XML {
 
         public sInfoFech infoFech;
         public struct sInfoFech {
-            public string evtRemun, evtPgtos, evtAqProd, evtComProd, evtContratAvNP, evtInfoComplPer, compSemMovto;
+            public string evtRemun, evtPgtos, evtAqProd, evtComProd, evtContratAvNP, evtInfoComplPer, compSemMovto, indExcApur1250, transDCTFWeb, naoValid;
         }
 
         #endregion

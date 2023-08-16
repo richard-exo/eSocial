@@ -58,6 +58,7 @@ namespace eSocial.Model.Eventos.BD{
 						s2205XML.alteracao.dadosTrabalhador.estCiv = row["estCiv_trabalhador"].ToString();
 						s2205XML.alteracao.dadosTrabalhador.grauInstr = row["grauInstr_trabalhador"].ToString();
 						s2205XML.alteracao.dadosTrabalhador.nmSoc = row["nmSoc_trabalhador"].ToString();
+						s2205XML.alteracao.dadosTrabalhador.paisNac = row["paisNac_trabalhador"].ToString();
 
 						//// nascimento
 						s2205XML.alteracao.dadosTrabalhador.nascimento.dtNascto = validadores.aaaa_mm_dd(row["dtNascto_nascimento"].ToString());
@@ -117,10 +118,8 @@ namespace eSocial.Model.Eventos.BD{
 						s2205XML.alteracao.dadosTrabalhador.endereco.exterior.codPostal = row["codPostal_exterior"].ToString();
 
 						//// trabEstrangeiro
-						s2205XML.alteracao.dadosTrabalhador.trabEstrangeiro.dtChegada = validadores.aaaa_mm_dd(row["dtChegada_trabEstrangeiro"].ToString());
-						s2205XML.alteracao.dadosTrabalhador.trabEstrangeiro.classTrabEstrang = row["classTrabEstrang_trabEstrangeiro"].ToString();
-						s2205XML.alteracao.dadosTrabalhador.trabEstrangeiro.casadoBr = row["casadoBr_trabEstrangeiro"].ToString();
-						s2205XML.alteracao.dadosTrabalhador.trabEstrangeiro.filhosBr = row["filhosBr_trabEstrangeiro"].ToString();
+						s2205XML.alteracao.dadosTrabalhador.trabImig.tmpResid = row["tmpResid_trabEstrangeiro"].ToString();
+						s2205XML.alteracao.dadosTrabalhador.trabImig.condIng = row["condIng_trabEstrangeiro"].ToString();
 
 						//// infoDeficiencia
 						s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.defFisica = row["defFisica_infoDeficiencia"].ToString();

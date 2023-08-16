@@ -48,11 +48,10 @@ namespace eSocial.Model.Eventos.BD {
                s2230XML.infoAfastamento.iniAfastamento.tpAcidTransito = row["tpAcidTransito"].ToString(); // 0.1
                s2230XML.infoAfastamento.iniAfastamento.observacao = row["observacao"].ToString();         // 0.1
 
-              
-                // infoAtestado 0.9
-                gcl.setLevel("infoAtestado", clear: true);
+               // infoAtestado 0.9
+               gcl.setLevel("infoAtestado", clear: true);
 
-                var tbInfoAtestado = from DataRow r in tbEventos.Rows
+               var tbInfoAtestado = from DataRow r in tbEventos.Rows
                                     where !string.IsNullOrEmpty(r["qtdDiasAfast"].ToString()) &&
                                     r["id_funcionario"].ToString().Equals(evento.id_funcionario)
                                     select r;
@@ -74,7 +73,10 @@ namespace eSocial.Model.Eventos.BD {
                         s2230XML.add_infoAtestado();
                     }
                 }
-               
+
+               // perAquis 0.1
+               s2230XML.infoAfastamento.iniAfastamento.perAquis.dtInicio = validadores.aaaa_mm_dd(row["dtAquisicao1"].ToString());
+               s2230XML.infoAfastamento.iniAfastamento.perAquis.dtFim = validadores.aaaa_mm_dd(row["dtAquisicao2"].ToString());
 
                // infoCessao 0.1
                s2230XML.infoAfastamento.iniAfastamento.infoCessao.cnpjCess = row["cnpjCess"].ToString();

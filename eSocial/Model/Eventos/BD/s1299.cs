@@ -50,6 +50,10 @@ namespace eSocial.Model.Eventos.BD {
                //s1299XML.infoFech.compSemMovto = row["compSemMovto"].ToString();       
                s1299XML.infoFech.compSemMovto = validadores.aaaa_mm(row["compSemMovto"].ToString()); // 0.1
 
+               s1299XML.infoFech.indExcApur1250 = row["indExcApur1250"].ToString();
+               s1299XML.infoFech.transDCTFWeb = row["transDCTFWeb"].ToString();
+               s1299XML.infoFech.naoValid = row["naoValid"].ToString();
+
                evento.eventoAssinadoXML = s1299XML.genSignedXML(evento.certificado);
                lEventos.Add(evento);
             }

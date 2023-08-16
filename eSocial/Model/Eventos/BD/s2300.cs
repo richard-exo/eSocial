@@ -142,10 +142,11 @@ namespace eSocial.Model.Eventos.BD
                   // trabEstrangeiro 0.1
                   gcl.setLevel("trabEstrangeiro", clear: true);
 
-                  s2300XML.trabalhador.trabEstrangeiro.dtChegada = validadores.aaaa_mm_dd(gcl.getVal("dtChegada"));               // 0.1
-                  s2300XML.trabalhador.trabEstrangeiro.classTrabEstrang = gcl.getVal("classTrabEstrang");
-                  s2300XML.trabalhador.trabEstrangeiro.casadoBr = gcl.getVal("casadoBr");
-                  s2300XML.trabalhador.trabEstrangeiro.filhosBr = gcl.getVal("filhosBr");
+                  if (gcl.getVal("tmpResid") != "0")
+                     s2300XML.trabalhador.trabImig.tmpResid = gcl.getVal("tmpResid");
+
+                  if (gcl.getVal("condIng") != "0")
+                     s2300XML.trabalhador.trabImig.condIng = gcl.getVal("condIng");
 
                   // infoDeficiencia 0.1
                   gcl.setLevel("infoDeficiencia", clear: true);
@@ -210,6 +211,7 @@ namespace eSocial.Model.Eventos.BD
                   s2300XML.infoTSVInicio.cadIni = gcl.getVal("cadIni");
                   s2300XML.infoTSVInicio.codCateg = gcl.getVal("codCateg");
                   s2300XML.infoTSVInicio.dtInicio = validadores.aaaa_mm_dd(gcl.getVal("dtInicio"));
+                  s2300XML.infoTSVInicio.matricula = gcl.getVal("matricula").ToString().Trim();
 
                   if (gcl.getVal("natAtividade")!="0")
                     s2300XML.infoTSVInicio.natAtividade = gcl.getVal("natAtividade"); // 0.1
@@ -217,6 +219,8 @@ namespace eSocial.Model.Eventos.BD
                   // cargoFuncao 0.1
                   gcl.setLevel("cargoFuncao", clear: true);
 
+                  s2300XML.infoTSVInicio.infoComplementares.cargoFuncao.nmCargo = gcl.getVal("nmCargo");
+                  s2300XML.infoTSVInicio.infoComplementares.cargoFuncao.CBOCargo = gcl.getVal("CBOCargo");
                   s2300XML.infoTSVInicio.infoComplementares.cargoFuncao.codCargo = gcl.getVal("codCargo");
                   s2300XML.infoTSVInicio.infoComplementares.cargoFuncao.codFuncao = gcl.getVal("codFuncao");
 
