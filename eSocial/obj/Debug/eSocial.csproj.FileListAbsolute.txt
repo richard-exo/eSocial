@@ -95,7 +95,6 @@ D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.application
 D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.exe
 D:\GitHub\eSocial\eSocial\obj\Debug\eSocial.pdb
 C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
-C:\Dropbox\Projweb2012\App2012\Desktop\eSocial\eSocial\obj\Debug\eSocial.csproj.SuggestedBindingRedirects.cache
 C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
 C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.frmMain.resources
 C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.Properties.Resources.resources

@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
    public class s2205 : bEvento_XML {
 
-      public s2205(string sID) : base("evtAltCadastral","", "v_S_01_01_00") {
+      public s2205(string sID) : base("evtAltCadastral","", "v_S_01_02_00") {
 
          id = sID;
          ideTrabalhador = new sIdeTrabalhador();

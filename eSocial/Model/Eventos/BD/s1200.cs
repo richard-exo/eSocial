@@ -17,6 +17,7 @@ namespace eSocial.Model.Eventos.BD {
          try {
             List<string> lista1200 = new List<string>();
             List<string> lista1200DmDev = new List<string>();
+            List<string> lista1200infoPerApur = new List<string>();
             List<string> lista1200infoComplCont = new List<string>();
             List<string> lista1200remunOutrEmpr = new List<string>();                       
 
@@ -157,20 +158,29 @@ namespace eSocial.Model.Eventos.BD {
 
                                  gcl.setLevel(row: itensRemun);
 
-                                 if (gcl.getVal("vrRubr").ToString() != "0,00")
-                                 {
-                                    s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.codRubr = gcl.getVal("codRubr");
-                                    s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.ideTabRubr = validadores.ideTabRubr(gcl.getVal("ideTabRubr"), evento.nomeEmpresa, evento.nrInsc);
-                                    if (gcl.getVal("qtdRubr") != null && gcl.getVal("qtdRubr").ToString() != "000.00")
-                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.qtdRubr = gcl.getVal("qtdRubr");     // 0.1
-                                    s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.fatorRubr = gcl.getVal("fatorRubr"); // 0.1
-                                    //s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrUnit = gcl.getVal("vrUnit").Replace(",", ".");       // 0.1
-                                    s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrRubr = gcl.getVal("vrRubr").Replace(",", ".");
-                                    
-                                    if (int.Parse(sMesano)>=202107)
-                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR = gcl.getVal("indApurIR"); ; // 0=normal 1=especial
+                                 string sChave = gcl.getVal("chave");
 
-                                    s1200XML.add_itensRemun_infoPerApur();
+                                 // Só executa 1x para evento+tipo
+                                 if (!lista1200infoPerApur.Contains(sChave))
+                                 {
+                                    // Registra o infoPerApur
+                                    lista1200infoPerApur.Add(sChave);
+
+                                    if (gcl.getVal("vrRubr").ToString() != "0,00")
+                                    {
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.codRubr = gcl.getVal("codRubr");
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.ideTabRubr = validadores.ideTabRubr(gcl.getVal("ideTabRubr"), evento.nomeEmpresa, evento.nrInsc);
+                                       if (gcl.getVal("qtdRubr") != null && gcl.getVal("qtdRubr").ToString() != "000.00")
+                                          s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.qtdRubr = gcl.getVal("qtdRubr");     // 0.1
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.fatorRubr = gcl.getVal("fatorRubr"); // 0.1
+                                                                                                                                           //s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrUnit = gcl.getVal("vrUnit").Replace(",", ".");       // 0.1
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrRubr = gcl.getVal("vrRubr").Replace(",", ".");
+
+                                       if (int.Parse(sMesano) >= 202107)
+                                          s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR = gcl.getVal("indApurIR"); ; // 0=normal 1=especial
+
+                                       s1200XML.add_itensRemun_infoPerApur();
+                                    }
                                  }
                               }
 

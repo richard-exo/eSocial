@@ -9,14 +9,13 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
 using eSocial.Controller;
-using static eSocial.Model.Eventos.XML.s2500.sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sIdePeriodo;
 
 namespace eSocial.Model.Eventos.XML
 {
    public class s2500 : bEvento_XML
    {
 
-      public s2500(string sID) : base("evtProcTrab", "infoProcesso", "v_S_01_01_00")
+      public s2500(string sID) : base("evtProcTrab", "infoProcesso", "v_S_01_02_00")
       {
 
          id = sID;
@@ -40,6 +39,7 @@ namespace eSocial.Model.Eventos.XML
 
          ideTrab.infoContr.ideEstab = new sIdeTrab.sInfoContr.sIdeEstab();
          ideTrab.infoContr.ideEstab.infoVlr = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr();
+         ideTrab.infoContr.ideEstab.infoVlr.abono = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sAbono();
          ideTrab.infoContr.ideEstab.infoVlr.idePeriodo = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sIdePeriodo();
          ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sIdePeriodo.sBaseCalculo();
          ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.infoAgNocivo = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sIdePeriodo.sBaseCalculo.sInfoAgNocivo ();
@@ -104,8 +104,8 @@ namespace eSocial.Model.Eventos.XML
          //new XElement(ns + "tpDep", ideTrab.dependente.tpDep),
          //opTag("descDep", ideTrab.dependente.descDep)),
 
-         from e in lDependente
-         select e,
+         //from e in lDependente
+         //select e,
 
          // infoContr 0.99
          from e in lInfoContr
@@ -124,7 +124,7 @@ namespace eSocial.Model.Eventos.XML
       List<XElement> lDependente = new List<XElement>();
       public void add_dependente()
       {
-         lInfoContr.Add(
+         lDependente.Add(
          opElement("dependente", ideTrab.dependente.cpfDep,
          new XElement(ns + "cpfDep", ideTrab.dependente.cpfDep),
          new XElement(ns + "tpDep", ideTrab.dependente.tpDep),
@@ -150,7 +150,7 @@ namespace eSocial.Model.Eventos.XML
          new XElement(ns + "indCateg", ideTrab.infoContr.indCateg),
          new XElement(ns + "indNatAtiv", ideTrab.infoContr.indNatAtiv),
          new XElement(ns + "indMotDeslig", ideTrab.infoContr.indMotDeslig),
-         opTag("indUnic", ideTrab.infoContr.indUnic),
+         //opTag("indUnic", ideTrab.infoContr.indUnic),
          opTag("matricula", ideTrab.infoContr.matricula),
          opTag("codCateg", ideTrab.infoContr.codCateg),
          opTag("dtInicio", ideTrab.infoContr.dtInicio),
@@ -193,14 +193,17 @@ namespace eSocial.Model.Eventos.XML
          new XElement(ns + "infoDeslig",
          new XElement(ns + "dtDeslig", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.dtDeslig),
          new XElement(ns + "mtvDeslig", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.mtvDeslig),
-         opTag("dtProjFimAPI", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.dtProjFimAPI))
+         opTag("dtProjFimAPI", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.dtProjFimAPI),
+         opTag("pensAlim", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.pensAlim),
+         opTag("percAliment", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.percAliment),
+         opTag("vrAlim", ideTrab.infoContr.infoCompl.infoVinc.infoDeslig.vrAlim))
 
          ),
 
          // infoTerm 0.1
          opElement("infoTerm", ideTrab.infoContr.infoCompl.infoTerm.dtTerm,
          new XElement(ns + "dtDeslig", ideTrab.infoContr.infoCompl.infoTerm.dtTerm),
-         opTag("dtProjFimAPI", ideTrab.infoContr.infoCompl.infoTerm.mtvDesligTSV))),
+         opTag("mtvDesligTSV", ideTrab.infoContr.infoCompl.infoTerm.mtvDesligTSV))),
 
          // mudCategAtiv 0.99
          from e in lMudCategAtiv
@@ -219,13 +222,20 @@ namespace eSocial.Model.Eventos.XML
          new XElement(ns + "infoVlr",
          new XElement(ns + "compIni", ideTrab.infoContr.ideEstab.infoVlr.compIni),
          new XElement(ns + "compFim", ideTrab.infoContr.ideEstab.infoVlr.compFim),
-         new XElement(ns + "repercProc", ideTrab.infoContr.ideEstab.infoVlr.repercProc),
-         new XElement(ns + "vrRemun", ideTrab.infoContr.ideEstab.infoVlr.vrRemun),
-         new XElement(ns + "vrAPI", ideTrab.infoContr.ideEstab.infoVlr.vrAPI),
-         new XElement(ns + "vr13API", ideTrab.infoContr.ideEstab.infoVlr.vr13API),
-         new XElement(ns + "vrInden", ideTrab.infoContr.ideEstab.infoVlr.vrInden),
-         opTag("vrBaseIndenFGTS", ideTrab.infoContr.ideEstab.infoVlr.vrBaseIndenFGTS),
-         opTag("pagDiretoResc", ideTrab.infoContr.ideEstab.infoVlr.pagDiretoResc),
+         //new XElement(ns + "repercProc", ideTrab.infoContr.ideEstab.infoVlr.repercProc),
+         //new XElement(ns + "vrRemun", ideTrab.infoContr.ideEstab.infoVlr.vrRemun),
+         //new XElement(ns + "vrAPI", ideTrab.infoContr.ideEstab.infoVlr.vrAPI),
+         //new XElement(ns + "vr13API", ideTrab.infoContr.ideEstab.infoVlr.vr13API),
+         //new XElement(ns + "vrInden", ideTrab.infoContr.ideEstab.infoVlr.vrInden),
+         //opTag("vrBaseIndenFGTS", ideTrab.infoContr.ideEstab.infoVlr.vrBaseIndenFGTS),
+         //opTag("pagDiretoResc", ideTrab.infoContr.ideEstab.infoVlr.pagDiretoResc),
+         new XElement(ns + "indReperc", ideTrab.infoContr.ideEstab.infoVlr.indReperc),
+         opTag("indenSD", ideTrab.infoContr.ideEstab.infoVlr.indenSD),
+         opTag("indenAbono", ideTrab.infoContr.ideEstab.infoVlr.indenAbono),
+
+         //  idePeriodo 0-9
+         from e in lAbono
+         select e,
 
          //  idePeriodo 0-360
          from e in lPeriodo
@@ -265,10 +275,25 @@ namespace eSocial.Model.Eventos.XML
          lObservacoes = new List<XElement>();
          lMudCategAtiv = new List<XElement>();
          lUnicContr = new List<XElement>();
-         lPeriodo= new List<XElement>();
+         lAbono = new List<XElement>();
+         lPeriodo = new List<XElement>();
          ideTrab.infoContr = new sIdeTrab.sInfoContr();
       }
 
+      #endregion
+
+      #region abono
+      List<XElement> lAbono = new List<XElement>();
+      public void add_abono()
+      {
+         lAbono.Add(
+         opElement("infoFGTS", ideTrab.infoContr.ideEstab.infoVlr.abono.abono,
+         new XElement(ns + "abono", ideTrab.infoContr.ideEstab.infoVlr.abono.abono)
+
+         ));
+
+         ideTrab.infoContr.ideEstab.infoVlr.abono = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sAbono();
+      }
       #endregion
 
       #region periodo
@@ -307,8 +332,8 @@ namespace eSocial.Model.Eventos.XML
          new XElement(ns + "baseCalculo",
          new XElement(ns + "vrBcCpMensal", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.vrBcCpMensal),
          new XElement(ns + "vrBcCp13", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.vrBcCp13),
-         new XElement(ns + "vrBcFgts", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.vrBcFgts),
-         new XElement(ns + "vrBcFgts13", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.vrBcFgts13),
+         //new XElement(ns + "vrBcFgts", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.vrBcFgts),
+         //new XElement(ns + "vrBcFgts13", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.baseCalculo.vrBcFgts13),
 
          //  infoAgNocivo 
          new XElement(ns + "infoAgNocivo",
@@ -323,11 +348,10 @@ namespace eSocial.Model.Eventos.XML
       public void add_infoFGTS()
       {
          lInfoFGTS.Add(
-         opElement("infoFGTS", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFgtsGuia,
-         new XElement(ns + "vrBcFgtsGuia", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFgtsGuia),
-         new XElement(ns + "vrBcFgts13Guia", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFgts13Guia),
-         new XElement(ns + "vrBcFgts", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFgtsGuia),
-         new XElement(ns + "pagDireto", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.pagDireto)));
+         opElement("infoFGTS", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.temInfoFGTS,
+         new XElement(ns + "vrBcFGTSProcTrab", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSProcTrab),
+         new XElement(ns + "vrBcFGTSSefip", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSSefip),
+         new XElement(ns + "vrBcFGTSDecAnt", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSDecAnt)));
 
          ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sIdePeriodo.sInfoFGTS();
       }
@@ -371,7 +395,7 @@ namespace eSocial.Model.Eventos.XML
 
          lObservacoes.Add(
          opElement("observacoes", ideTrab.infoContr.infoCompl.infoVinc.observacoes.observacao,
-         new XElement(ns + "codRubr", ideTrab.infoContr.infoCompl.infoVinc.observacoes.observacao)));
+         new XElement(ns + "observacao", ideTrab.infoContr.infoCompl.infoVinc.observacoes.observacao)));
 
          ideTrab.infoContr.infoCompl.infoVinc.observacoes = new sIdeTrab.sInfoContr.sInfoCompl.sInfoVinc.sObservacoes();
       }
@@ -478,7 +502,7 @@ namespace eSocial.Model.Eventos.XML
 
                   public sInfoDeslig infoDeslig;
                   public struct sInfoDeslig { 
-                     public string dtDeslig, mtvDeslig, dtProjFimAPI; }
+                     public string dtDeslig, mtvDeslig, dtProjFimAPI, pensAlim, percAliment, vrAlim; }
                }
 
                public sInfoTerm infoTerm;
@@ -500,7 +524,13 @@ namespace eSocial.Model.Eventos.XML
 
                public sInfoVlr infoVlr;
                public struct sInfoVlr { 
-                  public string compIni, compFim, repercProc, vrRemun, vrAPI, vr13API, vrInden, vrBaseIndenFGTS, pagDiretoResc;
+                  public string compIni, compFim, repercProc, vrRemun, vrAPI, vr13API, vrInden, vrBaseIndenFGTS, pagDiretoResc, indReperc, indenSD, indenAbono;
+
+                  public sAbono abono;
+                  public struct sAbono
+                  {
+                     public string abono;
+                  }
 
                   public sIdePeriodo idePeriodo;
                   public struct sIdePeriodo { 
@@ -517,7 +547,7 @@ namespace eSocial.Model.Eventos.XML
 
                      public sInfoFGTS infoFGTS;
                      public struct sInfoFGTS { 
-                        public string vrBcFgtsGuia, vrBcFgts13Guia, pagDireto; }
+                        public string temInfoFGTS, vrBcFGTSProcTrab, vrBcFGTSSefip, vrBcFGTSDecAnt; }
 
                      public sBaseMudCateg baseMudCateg;
                      public struct sBaseMudCateg { 

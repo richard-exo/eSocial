@@ -20,6 +20,7 @@ namespace eSocial.Model.Eventos.BD {
                sEvento evento = initEvento(row["tpAmb"].ToString(), row["id_arquivo"].ToString(), row["id_evento"].ToString(), row["id_empresa"].ToString(), row["id_cliente"].ToString(), row["id_funcionario"].ToString());
 
                s1000XML = new XML.s1000(evento.id);
+               //s1000XML = new XML.s1000((row["id_cliente"].ToString()=="380837" ? "123456789101234567890123456789" : evento.id));
 
                // ### Evento
 
@@ -81,6 +82,7 @@ namespace eSocial.Model.Eventos.BD {
                      incAlt.infoCadastro.indOpcCP = row["indOpcCP"].ToString();
                   incAlt.infoCadastro.indOptRegEletron = row["indOptRegEletron"].ToString();                  
                   incAlt.infoCadastro.indEtt = row["indEtt"].ToString();
+                  incAlt.infoCadastro.indTribFolhaPisCofins = row["indTribFolhaPisCofins"].ToString();
 
                   // contato
                   incAlt.infoCadastro.contato.nmCtt = row["nmCtt"].ToString();

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading;
-using System.Xml;
 using System.Xml.Linq;
 using eSocial.Controller;
 
@@ -349,7 +343,7 @@ namespace eSocial.Model.Eventos.XML
    public class s1000 : bEvento_XML
    {
 
-      public s1000(string sID) : base("evtInfoEmpregador", "infoEmpregador", "v_S_01_01_00")
+      public s1000(string sID) : base("evtInfoEmpregador", "infoEmpregador", "v_S_01_02_00")
       {
 
          id = sID;
@@ -402,10 +396,11 @@ namespace eSocial.Model.Eventos.XML
          xml.Elements().ElementAt(0).Element(ns + tagInfo).ReplaceNodes(
 
          // inclusao 0.1
-         opElement("inclusao", infoEmpregador.inclusao.idePeriodo.iniValid,
+         opElement("inclusao", infoEmpregador.inclusao.infoCadastro.classTrib,
 
          // idePeriodo
-         new XElement(ns + "idePeriodo",
+         //new XElement(ns + "idePeriodo",
+         opElement("idePeriodo", infoEmpregador.inclusao.idePeriodo.iniValid,
          new XElement(ns + "iniValid", infoEmpregador.inclusao.idePeriodo.iniValid),
          opTag("fimValid", infoEmpregador.inclusao.idePeriodo.fimValid)),
 
@@ -420,6 +415,7 @@ namespace eSocial.Model.Eventos.XML
          new XElement(ns + "indOptRegEletron", infoEmpregador.inclusao.infoCadastro.indOptRegEletron),
          opTag("cnpjEFR", infoEmpregador.inclusao.infoCadastro.cnpjEFR),
          opTag("dtTrans11096", infoEmpregador.inclusao.infoCadastro.dtTrans11096),
+         opTag("indTribFolhaPisCofins", infoEmpregador.inclusao.infoCadastro.indTribFolhaPisCofins),
 
          // dadosIsencao 0.1
          opElement("dadosIsencao", infoEmpregador.inclusao.infoCadastro.dadosIsencao.ideMinLei,
@@ -443,10 +439,11 @@ namespace eSocial.Model.Eventos.XML
          ), // inclusao
 
          // alteracao 0.1
-         opElement("alteracao", infoEmpregador.alteracao.idePeriodo.iniValid,
+         opElement("alteracao", infoEmpregador.alteracao.infoCadastro.classTrib,
 
           // idePeriodo
-          new XElement(ns + "idePeriodo",
+          //new XElement(ns + "idePeriodo",
+          opElement("idePeriodo", infoEmpregador.alteracao.idePeriodo.iniValid,
           new XElement(ns + "iniValid", infoEmpregador.alteracao.idePeriodo.iniValid),
           opTag("fimValid", infoEmpregador.alteracao.idePeriodo.fimValid)),
 
@@ -461,6 +458,7 @@ namespace eSocial.Model.Eventos.XML
           new XElement(ns + "indOptRegEletron", infoEmpregador.alteracao.infoCadastro.indOptRegEletron),
           opTag("cnpjEFR", infoEmpregador.alteracao.infoCadastro.cnpjEFR),
           opTag("dtTrans11096", infoEmpregador.alteracao.infoCadastro.dtTrans11096),
+          opTag("indTribFolhaPisCofins", infoEmpregador.alteracao.infoCadastro.indTribFolhaPisCofins),
 
           // dadosIsencao 0.1
           opElement("dadosIsencao", infoEmpregador.alteracao.infoCadastro.dadosIsencao.ideMinLei,
@@ -475,14 +473,14 @@ namespace eSocial.Model.Eventos.XML
 
           // infoOrgInternacional 0.1
           opElement("infoOrgInternacional", infoEmpregador.alteracao.infoCadastro.infoOrgInternacional.indAcordoIsenMulta,
-          new XElement(ns + "indAcordoIsenMulta", infoEmpregador.alteracao.infoCadastro.infoOrgInternacional.indAcordoIsenMulta)),
+          new XElement(ns + "indAcordoIsenMulta", infoEmpregador.alteracao.infoCadastro.infoOrgInternacional.indAcordoIsenMulta))),
 
           // novaValidade 0.1
           opElement("novaValidade", infoEmpregador.alteracao.novaValidade.iniValid,
           new XElement(ns + "iniValid", infoEmpregador.alteracao.novaValidade.iniValid),
           opTag("fimValid", infoEmpregador.alteracao.novaValidade.fimValid))
 
-          )), // alteracao
+          ), // alteracao
 
           // exclusao 0.1
           opElement("exclusao", infoEmpregador.exclusao.iniValid,
@@ -516,7 +514,7 @@ namespace eSocial.Model.Eventos.XML
       {
          public string nmRazao, classTrib, multTabRubricas, indEntEd, indEtt, natJurid;
          public string indCoop, indConstr, indDesFolha, indOpcCP, indOptRegEletron, nrRegEtt;
-         public string indPorte, cnpjEFR, dtTrans11096;
+         public string indPorte, cnpjEFR, dtTrans11096, indTribFolhaPisCofins;
 
          public sDadosIsencao dadosIsencao;
          public struct sDadosIsencao

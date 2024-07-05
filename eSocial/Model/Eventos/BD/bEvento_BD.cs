@@ -59,6 +59,9 @@ namespace eSocial.Model.Eventos.BD {
 
          retEvento.id = validadores.ID(retEvento.tpInsc.GetHashCode().ToString(), retEvento.nrInsc, retEvento.natJurid);
 
+         //if (info["ID_anterior"].ToString() != "")
+         //   retEvento.id = info["ID_anterior"].ToString();
+
          retEvento.tpAmb = (enTpAmb)Enum.Parse(typeof(enTpAmb), evtTpAmb);
 
          retEvento.id_evento = id_evento;

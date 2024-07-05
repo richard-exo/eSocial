@@ -14,7 +14,7 @@ namespace eSocial.Model.Eventos.XML
    public class s2220 : bEvento_XML
    {
 
-      public s2220(string sID) : base("evtMonit", "", "v_S_01_01_00")
+      public s2220(string sID) : base("evtMonit", "", "v_S_01_02_00")
       {
          id = sID;
 

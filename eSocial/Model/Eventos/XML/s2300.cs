@@ -8,12 +8,13 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
 using eSocial.Controller;
+using static eSocial.Model.Eventos.XML.s2300;
 
 namespace eSocial.Model.Eventos.XML
 {
    public class s2300 : bEvento_XML
    {
-      public s2300(string sID) : base("evtTSVInicio", "", "v_S_01_01_00")
+      public s2300(string sID) : base("evtTSVInicio", "", "v_S_01_02_00")
       {
          id = sID;
          ideEvento = new sIdeEvento();
@@ -48,6 +49,7 @@ namespace eSocial.Model.Eventos.XML
          infoTSVInicio.infoComplementares.infoEstagiario.instEnsino = new sInfoTSVInicio.sInfoComplementares.sInfoEstagiario.sInstEnsino();
          infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao = new sInfoTSVInicio.sInfoComplementares.sInfoEstagiario.sAgeIntegracao();
          infoTSVInicio.infoComplementares.infoEstagiario.supervisorEstagiario = new sInfoTSVInicio.sInfoComplementares.sInfoEstagiario.sSupervisorEstagiario();
+         infoTSVInicio.infoComplementares.localTrabGeral = new sInfoTSVInicio.sInfoComplementares.sLocalTrabGeral();
          infoTSVInicio.mudancaCPF = new sInfoTSVInicio.sMudancaCPF();
          infoTSVInicio.afastamento = new sInfoTSVInicio.sAfastamento();
          infoTSVInicio.termino = new sInfoTSVInicio.sTermino();
@@ -218,6 +220,11 @@ namespace eSocial.Model.Eventos.XML
          // supervisorEstagio
          opElement("supervisorEstagio",
          opTag("cpfSupervisor", infoTSVInicio.infoComplementares.infoEstagiario.supervisorEstagiario.cpfSupervisor)),
+
+         opElement("localTrabGeral", infoTSVInicio.infoComplementares.localTrabGeral.tpInsc,
+         opTag("tpInsc", infoTSVInicio.infoComplementares.localTrabGeral.tpInsc),
+         opTag("nrInsc", infoTSVInicio.infoComplementares.localTrabGeral.nrInsc),
+         opTag("descComp", infoTSVInicio.infoComplementares.localTrabGeral.descComp)),
 
          // mudancaCPF 
          opElement("mudancaCPF", infoTSVInicio.mudancaCPF.cpfAnt,
@@ -443,6 +450,11 @@ namespace eSocial.Model.Eventos.XML
                {
                   public string cpfSupervisor, nmSuperv;
                }
+            }
+            public sLocalTrabGeral localTrabGeral;
+            public struct sLocalTrabGeral
+            {
+               public string tpInsc, nrInsc, descComp;
             }
          }
          public sMudancaCPF mudancaCPF;

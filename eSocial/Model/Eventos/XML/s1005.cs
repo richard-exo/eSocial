@@ -14,7 +14,7 @@ namespace eSocial.Model.Eventos.XML
    public class s1005 : bEvento_XML
    {
 
-      public s1005(string sID) : base("evtTabEstab", "infoEstab", "v_S_01_01_00")
+      public s1005(string sID) : base("evtTabEstab", "infoEstab", "v_S_01_02_00")
       {
 
          id = sID;
@@ -99,7 +99,7 @@ namespace eSocial.Model.Eventos.XML
          opElement("procAdmJudFap", infoEstab.inclusao.dadosEstab.aliqGilrat.procAdmJudFap.tpProc,
          new XElement(ns + "tpProc", infoEstab.inclusao.dadosEstab.aliqGilrat.procAdmJudFap.tpProc),
          new XElement(ns + "nrProc", infoEstab.inclusao.dadosEstab.aliqGilrat.procAdmJudFap.nrProc),
-         new XElement(ns + "codSusp", infoEstab.inclusao.dadosEstab.aliqGilrat.procAdmJudFap.codSusp)))),
+         new XElement(ns + "codSusp", infoEstab.inclusao.dadosEstab.aliqGilrat.procAdmJudFap.codSusp))),
 
          // infoCaepf 0.1
          opElement("infoCaepf", infoEstab.inclusao.dadosEstab.infoCaepf.tpCaepf,
@@ -120,7 +120,7 @@ namespace eSocial.Model.Eventos.XML
 
          // infoPCD 0.1
          opElement("infoPCD", infoEstab.inclusao.dadosEstab.infoTrab.infoPCD.nrProcJud,
-         opTag("nrProcJud", infoEstab.inclusao.dadosEstab.infoTrab.infoPCD.nrProcJud)))
+         opTag("nrProcJud", infoEstab.inclusao.dadosEstab.infoTrab.infoPCD.nrProcJud))))
 
          ), // inclusao
 

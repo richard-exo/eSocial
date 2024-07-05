@@ -308,26 +308,36 @@ namespace eSocial.Model.Eventos.BD
                      s2300XML.infoTSVInicio.infoComplementares.infoEstagiario.ageIntegracao.uf = gcl.getVal("uf");
                   }
 
-                  // mudancaCPF 0.1
-                  gcl.setLevel("mudancaCPF", clear: true);
+                  // localTrabGeral 0.1
+                  gcl.setLevel("localTrabGeral", clear: true);
 
-                  if (gcl.getVal("cpfAnt") != "")
+                  if (gcl.getVal("nrInsc") != "")
                   {
-                     s2300XML.infoTSVInicio.mudancaCPF.cpfAnt = gcl.getVal("cpfAnt");
-                     s2300XML.infoTSVInicio.mudancaCPF.dtAltCPF = validadores.aaaa_mm_dd(gcl.getVal("dtAltCPF"));
-                     s2300XML.infoTSVInicio.mudancaCPF.observacao = gcl.getVal("observacao");
+                     s2300XML.infoTSVInicio.infoComplementares.localTrabGeral.tpInsc = gcl.getVal("tpInsc");
+                     s2300XML.infoTSVInicio.infoComplementares.localTrabGeral.nrInsc = gcl.getVal("nrInsc");
+                     s2300XML.infoTSVInicio.infoComplementares.localTrabGeral.descComp = gcl.getVal("descComp");
                   }
 
-                  // afastamento 0.1
-                  gcl.setLevel("afastamento", clear: true);
+                  //// mudancaCPF 0.1
+                  //gcl.setLevel("mudancaCPF", clear: true);
 
-                  s2300XML.infoTSVInicio.afastamento.dtIniAfast = validadores.aaaa_mm_dd(gcl.getVal("dtIniAfast"));
-                  s2300XML.infoTSVInicio.afastamento.codMotAfast = gcl.getVal("codMotAfast");
+                  //if (gcl.getVal("cpfAnt") != "")
+                  //{
+                  //   s2300XML.infoTSVInicio.mudancaCPF.cpfAnt = gcl.getVal("cpfAnt");
+                  //   s2300XML.infoTSVInicio.mudancaCPF.dtAltCPF = validadores.aaaa_mm_dd(gcl.getVal("dtAltCPF"));
+                  //   s2300XML.infoTSVInicio.mudancaCPF.observacao = gcl.getVal("observacao");
+                  //}
 
-                  // afastamento 0.1
-                  gcl.setLevel("termino", clear: true);
+                  //// afastamento 0.1
+                  //gcl.setLevel("afastamento", clear: true);
 
-                  s2300XML.infoTSVInicio.termino.dtTerm = validadores.aaaa_mm_dd(gcl.getVal("dtTerm"));
+                  //s2300XML.infoTSVInicio.afastamento.dtIniAfast = validadores.aaaa_mm_dd(gcl.getVal("dtIniAfast"));
+                  //s2300XML.infoTSVInicio.afastamento.codMotAfast = gcl.getVal("codMotAfast");
+
+                  //// afastamento 0.1
+                  //gcl.setLevel("termino", clear: true);
+
+                  //s2300XML.infoTSVInicio.termino.dtTerm = validadores.aaaa_mm_dd(gcl.getVal("dtTerm"));
 
                   evento.eventoAssinadoXML = s2300XML.genSignedXML(evento.certificado);
                   lEventos.Add(evento);

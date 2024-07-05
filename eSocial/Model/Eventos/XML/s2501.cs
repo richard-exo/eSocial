@@ -15,7 +15,7 @@ namespace eSocial.Model.Eventos.XML
    public class s2501 : bEvento_XML
    {
 
-      public s2501(string sID) : base("evtContProc", "ideTrab", "v_S_01_01_00")
+      public s2501(string sID) : base("evtContProc", "ideTrab", "v_S_01_02_00")
       {
 
          id = sID;
@@ -26,6 +26,10 @@ namespace eSocial.Model.Eventos.XML
          ideTrab.calcTrib = new sIdeTrab.sCalcTrib();
          ideTrab.calcTrib.infoCRContrib = new sIdeTrab.sCalcTrib.sInfoCRContrib();
          ideTrab.infoCRIRRF = new sIdeTrab.sInfoCRIRRF();
+         ideTrab.infoCRIRRF.infoIR = new sIdeTrab.sInfoCRIRRF.sInfoIR();
+         ideTrab.infoCRIRRF.infoRRA = new sIdeTrab.sInfoCRIRRF.sInfoRRA();
+         ideTrab.infoCRIRRF.infoRRA.despProcJud = new sIdeTrab.sInfoCRIRRF.sInfoRRA.sDespProcJud();
+         ideTrab.infoCRIRRF.infoRRA.ideAdv = new sIdeTrab.sInfoCRIRRF.sInfoRRA.sIdeAdv();
       }
 
       public override XElement genSignedXML(X509Certificate2 cert)
@@ -67,7 +71,9 @@ namespace eSocial.Model.Eventos.XML
          );
 
          lCalcTrib = new List<XElement>();
+         lCalcTribInfo = new List<XElement>();
          lInfoCRIRRF = new List<XElement>();
+         lInfoAdv = new List<XElement>();
 
          return x509.signXMLSHA256(xml, cert);
       }
@@ -84,19 +90,25 @@ namespace eSocial.Model.Eventos.XML
          new XAttribute("perRef", ideTrab.calcTrib.perRef),
          new XAttribute("vrBcCpMensal", ideTrab.calcTrib.vrBcCpMensal),
          new XAttribute("vrBcCp13", ideTrab.calcTrib.vrBcCp13),
-         new XAttribute("vrRendIRRF", ideTrab.calcTrib.vrRendIRRF),
-         new XAttribute("vrRendIRRF13", ideTrab.calcTrib.vrRendIRRF13)
 
-         //// infoCRContrib 0.99
-         //opElement("infoCRContrib", ideTrab.calcTrib.infoCRContrib.tpCR,
-         //new XAttribute("tpCR", ideTrab.calcTrib.infoCRContrib.tpCR),
-         //new XAttribute("vrCR", ideTrab.calcTrib.infoCRContrib.vrCR)
-
-         //)));
+         // infoCRContrib 0.99
+         from e in lCalcTribInfo
+         select e
 
          ));
 
          ideTrab.calcTrib = new sIdeTrab.sCalcTrib();
+      }
+
+      List<XElement> lCalcTribInfo = new List<XElement>();
+      public void add_calcTribInfo()
+      {
+         lCalcTribInfo.Add(
+         opElement("infoCRContrib", ideTrab.calcTrib.infoCRContrib.tpCR,
+         new XAttribute("tpCR", ideTrab.calcTrib.infoCRContrib.tpCR),
+         new XAttribute("vrCR", ideTrab.calcTrib.infoCRContrib.vrCR)));
+
+         ideTrab.calcTrib.infoCRContrib = new sIdeTrab.sCalcTrib.sInfoCRContrib();
       }
 
       #endregion
@@ -106,16 +118,51 @@ namespace eSocial.Model.Eventos.XML
       List<XElement> lInfoCRIRRF = new List<XElement>();
       public void add_infoCRIRRF()
       {
-
          lInfoCRIRRF.Add(
          opElement("infoCRIRRF", ideTrab.infoCRIRRF.tpCR,
-         new XElement(ns + "tpCR", ideTrab.infoCRIRRF.tpCR),
-         new XElement(ns + "vrCR", ideTrab.infoCRIRRF.vrCR)
+         new XAttribute("tpCR", ideTrab.infoCRIRRF.tpCR),
+         new XAttribute("vrCR", ideTrab.infoCRIRRF.vrCR),
 
-         ));
+         // infoCRContrib 0.99
+         opElement("infoIR", ideTrab.infoCRIRRF.infoIR.vrRendTrib,
+         new XAttribute("vrRendTrib", ideTrab.infoCRIRRF.infoIR.vrRendTrib),
+         new XAttribute("vrRendTrib13", ideTrab.infoCRIRRF.infoIR.vrRendTrib13),
+         new XAttribute("vrRendMoleGrave", ideTrab.infoCRIRRF.infoIR.vrRendMoleGrave),
+         new XAttribute("vrRendIsen65", ideTrab.infoCRIRRF.infoIR.vrRendIsen65),
+         new XAttribute("vrJurosMora", ideTrab.infoCRIRRF.infoIR.vrJurosMora),
+         new XAttribute("vrRendIsenNTrib", ideTrab.infoCRIRRF.infoIR.vrRendIsenNTrib),
+         new XAttribute("descIsenNTrib", ideTrab.infoCRIRRF.infoIR.descIsenNTrib),
+         new XAttribute("vrPrevOficial", ideTrab.infoCRIRRF.infoIR.vrPrevOficial)),
+
+         opElement("infoRRA", ideTrab.infoCRIRRF.infoRRA.descRRA,
+         new XAttribute("descRRA", ideTrab.infoCRIRRF.infoRRA.descRRA),
+         new XAttribute("qtdMesesRRA", ideTrab.infoCRIRRF.infoRRA.qtdMesesRRA),
+
+         opElement("despProcJud", ideTrab.infoCRIRRF.infoRRA.despProcJud.vlrDespCustas,
+         new XAttribute("vlrDespCustas", ideTrab.infoCRIRRF.infoRRA.despProcJud.vlrDespCustas),
+         new XAttribute("vlrDespAdvogados", ideTrab.infoCRIRRF.infoRRA.despProcJud.vlrDespAdvogados)),
+
+         // ideAdv - 99
+         from e in lInfoAdv
+         select e
+
+         )));
 
          ideTrab.infoCRIRRF = new sIdeTrab.sInfoCRIRRF();
       }
+
+      List<XElement> lInfoAdv = new List<XElement>();
+      public void add_infoAdv()
+      {
+         lInfoAdv.Add(
+         opElement("ideAdv", ideTrab.infoCRIRRF.infoRRA.ideAdv.tpInsc,
+         new XAttribute("tpInsc", ideTrab.infoCRIRRF.infoRRA.ideAdv.tpInsc),
+         new XAttribute("nrInsc", ideTrab.infoCRIRRF.infoRRA.ideAdv.nrInsc),
+         new XAttribute("vlrAdv", ideTrab.infoCRIRRF.infoRRA.ideAdv.vlrAdv)));
+
+         ideTrab.infoCRIRRF.infoRRA.ideAdv = new sIdeTrab.sInfoCRIRRF.sInfoRRA.sIdeAdv();
+      }
+
 
       #endregion
 
@@ -143,7 +190,7 @@ namespace eSocial.Model.Eventos.XML
          public sCalcTrib calcTrib;
          public struct sCalcTrib
          {
-            public string perRef, vrBcCpMensal, vrBcCp13, vrRendIRRF, vrRendIRRF13;
+            public string perRef, vrBcCpMensal, vrBcCp13;
 
             public sInfoCRContrib infoCRContrib;
             public struct sInfoCRContrib
@@ -156,9 +203,32 @@ namespace eSocial.Model.Eventos.XML
          public struct sInfoCRIRRF
          {
             public string tpCR, vrCR;
+
+            public sInfoIR infoIR;
+            public struct sInfoIR
+            {
+               public string vrRendTrib, vrRendTrib13, vrRendMoleGrave, vrRendIsen65, vrJurosMora, vrRendIsenNTrib, descIsenNTrib, vrPrevOficial;
+            }
+
+            public sInfoRRA infoRRA;
+            public struct sInfoRRA
+            {
+               public string descRRA, qtdMesesRRA;
+
+               public sDespProcJud despProcJud;
+               public struct sDespProcJud
+               {
+                  public string vlrDespCustas, vlrDespAdvogados;
+               }
+
+               public sIdeAdv ideAdv;
+               public struct sIdeAdv
+               {
+                  public string tpInsc, nrInsc, vlrAdv;
+               }
+            }
          }
       }
-
 
       #endregion
 

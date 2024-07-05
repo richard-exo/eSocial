@@ -303,7 +303,10 @@ namespace eSocial.Model.Eventos.BD
                         //// infoVlr 1
                         s2500XML.ideTrab.infoContr.ideEstab.infoVlr.compIni = validadores.aaaa_mm(gcl.getVal("compIni"));
                         s2500XML.ideTrab.infoContr.ideEstab.infoVlr.compFim = validadores.aaaa_mm(gcl.getVal("compFim"));
-                        s2500XML.ideTrab.infoContr.ideEstab.infoVlr.repercProc = gcl.getVal("repercProc");
+                        s2500XML.ideTrab.infoContr.ideEstab.infoVlr.indReperc = gcl.getVal("indReperc");
+                        s2500XML.ideTrab.infoContr.ideEstab.infoVlr.indenSD = gcl.getVal("indenSD");
+                        s2500XML.ideTrab.infoContr.ideEstab.infoVlr.indenAbono = gcl.getVal("indenAbono");
+                        //s2500XML.ideTrab.infoContr.ideEstab.infoVlr.repercProc = gcl.getVal("repercProc");
                         s2500XML.ideTrab.infoContr.ideEstab.infoVlr.vrRemun = gcl.getVal("vrRemun").Replace(",", ".");
                         s2500XML.ideTrab.infoContr.ideEstab.infoVlr.vrAPI= gcl.getVal("vrAPI").Replace(",", ".");
                         s2500XML.ideTrab.infoContr.ideEstab.infoVlr.vr13API= gcl.getVal("vr13API").Replace(",", ".");
@@ -384,9 +387,10 @@ namespace eSocial.Model.Eventos.BD
                                     lista2500InfoFGTS.Add(sIDchave8);
 
                                     // infoFGTS 0 - 1
-                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFgts13Guia = gcl.getVal("vrBcFgtsGuia").Replace(",", ".");
-                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFgts13Guia = gcl.getVal("vrBcFgts13Guia").Replace(",", ".");
-                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.pagDireto = gcl.getVal("pagDireto");
+                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.temInfoFGTS = gcl.getVal("temInfoFGTS");
+                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSProcTrab = gcl.getVal("vrBcFGTSProcTrab").Replace(",", ".");
+                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSSefip = gcl.getVal("vrBcFGTSSefip").Replace(",", ".");
+                                    s2500XML.ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSDecAnt = gcl.getVal("vrBcFGTSDecAnt").Replace(",", ".");
 
                                     s2500XML.add_infoFGTS();
                                  }

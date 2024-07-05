@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s2200 : bEvento_XML {
 
-        public s2200(string sID) : base("evtAdmissao", "", "v_S_01_01_00") {
+        public s2200(string sID) : base("evtAdmissao", "", "v_S_01_02_00") {
 
             id = sID;
 
@@ -335,7 +335,8 @@ namespace eSocial.Model.Eventos.XML {
             opTag("sexoDep", trabalhador.dependente.sexoDep),
             new XElement(ns + "depIRRF", trabalhador.dependente.depIRRF),
             new XElement(ns + "depSF", trabalhador.dependente.depSF),
-            new XElement(ns + "incTrab", trabalhador.dependente.incTrab)));
+            new XElement(ns + "incTrab", trabalhador.dependente.incTrab),
+            opTag("descrDep", trabalhador.dependente.descrDep)));
 
             trabalhador.dependente = new sTrabalhador.sDependente();
         }
@@ -495,7 +496,7 @@ namespace eSocial.Model.Eventos.XML {
 
             public sDependente dependente;
             public struct sDependente {
-                public string tpDep, nmDep, cpfDep, sexoDep, depIRRF, depSF, incTrab;
+                public string tpDep, nmDep, cpfDep, sexoDep, depIRRF, depSF, incTrab, descrDep;
                 public string dtNascto;
             }
             public sAposentadoria aposentadoria;

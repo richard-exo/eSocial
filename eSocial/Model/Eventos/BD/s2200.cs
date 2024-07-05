@@ -182,6 +182,7 @@ namespace eSocial.Model.Eventos.BD {
                            s2200XML.trabalhador.dependente.depIRRF = gcl.getVal("depIRRF");
                            s2200XML.trabalhador.dependente.depSF = gcl.getVal("depSF");
                            s2200XML.trabalhador.dependente.incTrab = gcl.getVal("incTrab");
+                           s2200XML.trabalhador.dependente.descrDep = gcl.getVal("descrDep");
 
                            s2200XML.add_dependente();
                         }
