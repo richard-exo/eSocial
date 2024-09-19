@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\eSocial",
+    "\\eSocial\\Model",
+    "\\eSocial\\Model\\Eventos",
+    "\\eSocial\\Model\\Eventos\\BD",
+    "\\eSocial\\Model\\Eventos\\Retorno",
+    "\\eSocial\\Model\\Eventos\\XML"
   ],
+  "SelectedNode": "\\eSocial\\Model\\fSQL.cs",
   "PreviewInSolutionExplorer": false
 }

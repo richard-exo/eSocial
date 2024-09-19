@@ -71,7 +71,7 @@ namespace eSocial.Model.Eventos.XML
          );
 
          lCalcTrib = new List<XElement>();
-         lCalcTribInfo = new List<XElement>();
+         //lCalcTribInfo = new List<XElement>();
          lInfoCRIRRF = new List<XElement>();
          lInfoAdv = new List<XElement>();
 
@@ -98,6 +98,7 @@ namespace eSocial.Model.Eventos.XML
          ));
 
          ideTrab.calcTrib = new sIdeTrab.sCalcTrib();
+         lCalcTribInfo = new List<XElement>();
       }
 
       List<XElement> lCalcTribInfo = new List<XElement>();
