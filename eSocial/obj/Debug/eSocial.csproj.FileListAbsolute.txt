@@ -109,12 +109,15 @@ C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\bin\Debug\eSocial.pdb
 C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.csproj.CoreCompileInputs.cache
 C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
 C:\Users\wande\Dropbox\Projweb2012\TSQL\eSocial\eSocial\obj\Debug\eSocial.application
+<<<<<<< HEAD
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.frmMain.resources
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.Properties.Resources.resources
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.csproj.GenerateResource.cache
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.exe
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.pdb
+=======
+>>>>>>> 5fa1f534834245b521ddfb603c327d8c709fc0d5
 C:\gitHub\eSocial\eSocial\bin\Debug\eSocial.exe.config
 C:\gitHub\eSocial\eSocial\bin\Debug\eSocial.exe.manifest
 C:\gitHub\eSocial\eSocial\bin\Debug\eSocial.application
