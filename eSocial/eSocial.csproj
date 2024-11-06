@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationRevision>60</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,7 +53,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ADD2529494A306240BAA771D65FF7C03B8FEEAA1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F1DF8C41DC39EE3B4590A3E9A462F523B74E11AC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>eSocial_TemporaryKey.pfx</ManifestKeyFile>
@@ -107,6 +107,7 @@
     <Compile Include="Model\Eventos\BD\s2399.cs" />
     <Compile Include="Model\Eventos\BD\s2500.cs" />
     <Compile Include="Model\Eventos\BD\s2501.cs" />
+    <Compile Include="Model\Eventos\BD\s2555.cs" />
     <Compile Include="Model\Eventos\BD\s3000.cs" />
     <Compile Include="Model\Eventos\BD\s2230.cs" />
     <Compile Include="Model\Eventos\BD\s2200.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Model\Eventos\XML\s2399.cs" />
     <Compile Include="Model\Eventos\XML\s2500.cs" />
     <Compile Include="Model\Eventos\XML\s2501.cs" />
+    <Compile Include="Model\Eventos\XML\s2555.cs" />
     <Compile Include="Model\Eventos\XML\s5011.cs" />
     <Compile Include="Model\Eventos\XML\s5012.cs" />
     <Compile Include="Model\fSQL.cs" />

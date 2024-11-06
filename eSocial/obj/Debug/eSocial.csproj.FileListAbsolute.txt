@@ -123,3 +123,17 @@ C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.application
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.exe
 C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.pdb
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.csproj.AssemblyReference.cache
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.frmMain.resources
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.Properties.Resources.resources
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.csproj.GenerateResource.cache
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.exe
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.pdb
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\bin\Debug\eSocial.exe.config
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\bin\Debug\eSocial.exe.manifest
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\bin\Debug\eSocial.application
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\bin\Debug\eSocial.exe
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\bin\Debug\eSocial.pdb
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.csproj.CoreCompileInputs.cache
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
+C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.application

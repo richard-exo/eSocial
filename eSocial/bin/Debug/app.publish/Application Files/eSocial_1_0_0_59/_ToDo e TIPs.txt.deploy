@@ -1,0 +1,169 @@
+﻿# TODO ################################################################################################################################################
+
+* Adicionar os eventos: 1005, 1020, 1050, 1060 (Não está em produção), 1200
+
+#TODO
+* Ressalvas
+  > 1050: Tabela ref.
+  > 1200: Um ev. por func.
+
+# Flow Chart ##########################################################################################################################################
+
+*** Tabelas
+
+> 1000 
+  > (1070)
+    > 1005
+    > 1010
+	> 1020
+	> 1030
+	> (1040)
+	> 1050
+	> 1060 (Inoperante - Primeira fase)
+
+*** Não periódicos
+
+> (2190) > 2200
+  > (2205) | (2206) | (2210) | (2230) | (2250) | (2299)
+
+> 1299 | (1298)
+
+> (3000)
+
+*** Periódicos
+
+> (1070)
+  > 1200 (Ler par. 6 - Pg 82 do manual)
+  > (1210)
+  > 1299 > (1298)
+  > (1300)
+
+# TIPs ################################################################################################################################################
+
+* Tipo de rubrica - S1010 (tpRubr) | FOL_provdesc
+  > Converter os códigos da coluna 'codigo', onde o primeiro caracter iniciar pelos números abaixo (Manual - Pag. 65)
+  > Cód. FOL_provdesc > Cód. eSocial
+    > 0 - 1
+	> 1 - 2
+	> 9 - 3
+
+* Após o envio, será retornado um protocolo de consulta.
+
+* Ao consultar o protocolo, será retornado o resultado de processamento de todos os eventos enviados neste protocolo,
+  contendo os recibos dos eventos que foram validados
+  > O recibo é a confirmação que o evento foi válidado e inserido no eSocial.
+
+1 - Enviar eventos de mesmo grupo
+    > Quando os eventos periódicos estiverem em aberto, evitar enviar tabelas ou outros grupos de eventos.
+
+2 - Consultar o WS com a periodicidade retornada pela tag tempoEstimadoConclusao, para evitar uso indevido.
+
+3 - CPFs - Preencher com zeros a direita até completar
+
+4 - Infos. importantes manual:
+    > Item 9.1 - Cadastro do empregador / Tabelas do empregador
+	  > iniValid: Indica o início (Abertura) das atividades da empresa/modalidade (Obrigatório)
+	  > fimValid: Data prevista para o encerramento das atividades da empresa/modalidade (Opcional)
+	  > Encerrar empresa: Encerrar antes todas as tabelas relativas a subgrupos (Funcionários, etc)
+
+	> Item 9.5 - Registro de Eventos Trabalhistas - RET
+	  > Tabelas (Eventos iniciais): Cadastro do empregador (S-1000)
+	  
+	  > Eventos não periódicos, geralmente enviados logo após o fato (Ex.: Acidente de trabalho)
+	    > Cadastro dos funcionários (S-2190)
+	  
+	  > Abertura eventos periódicos (Folha) (S-1200, S-1210) (Envio até o 07 dia do mês seguinte - Item 9.6.1)
+	    > Fechamento dos eventos periódicos (S-1299)
+		> Reabertura/Retificação de eventos periódicos (S-1298)
+
+	  > Item 9.6.2 (S-1295) - Evento de contingência para totalização das contr. sociais, caso não haja sucesso no fechamento dos eventos periódicos.
+		
+# Eventos 2.4.02 ######################################################################################################################################
+
+* Evento obrigatório
+- Evento não obrigatório
+X Evento excluído
+> Evento deve ser enviado antes do supracitado
+> (O) Evento necessário
+
+*** Tabelas: Base de dados contendo as informações que serão manipuladas pelos eventos periódicos e não periódicos, enviados antes de
+quaisquer outros eventos
+
+* S1000 - evtInfoEmpregador: Informações do Empregador/Contribuinte/Órgão Público
+
+* S1005 - evtTabEstab: Tabela de Estabelecimentos, Obras ou Unidades de Órgãos Públicos
+  > S1070 (Caso exista processo)
+
+* S1020 - evtTabLotacao: Tabela de Lotações Tributárias
+
+* S1010 - evtTabRubrica: Tabela de Rubricas
+  > S1070 (Caso exista processo)
+
+* S1030 - evtTabCargo: Tabela de Cargos/Empregos Públicos
+  > S1040 - evtTabFuncao: Tabela de Funções/Cargos em Comissão
+
+* S1050 - evtTabHorTur: Tabela de Horários/Turnos de Trabalho
+* S1060 - evtTabAmbiente: Tabela de Ambientes de Trabalho
+* S1070 - evtTabProcesso: Tabela de Processos Administrativos/Judiciais
+
+*** Eventos não periódicos
+
+- (S2190) - evtAdmissao: Admissão de Trabalhador / Registro Preliminar caso as informações do evento S2200 não sejam suficientes
+
+* S2200 - evtCadInicial: Cadastramento Inicial do Vínculo e Admissão/Ingresso de Trabalhador 						     
+  > S1005 (O)
+  > S1050
+  > S1070 (Caso exista processo)
+
+- S2205 - evtAltCadastral: Alteração de Dados Cadastrais do Trabalhador
+  > S2200 | S2300
+
+- S2206 - evtAltContratual: Alteração de Contrato de Trabalho
+  > S2200
+
+- S2210 - evtCAT: Comunicação de Acidente de Trabalho
+  > S2200 | S2300 (Se tpRegistrador=1)
+
+- S2230 - evtAfastTemp: Afastamento Temporário
+  > S2200 | S2300  
+
+* S2250 - evtAvPrevio: Aviso Prévio
+  > S2200
+
+* S2299 - evtDeslig: Desligamento
+  > S2200
+  > S1005, S1010
+
+* S3000 - evtExclusao: Exclusão de eventos
+  > S1200 - S1280, S2190 - S2399, S1300
+
+*** Eventos periódicos
+
+* S1200 - evtRemun: Remuneração de trabalhador vinculado ao Regime Geral de Previd. Social
+  > S1005, S1010 (O)
+  > S1070 (Caso exista processo)
+
+- S1210 - evtPgtos: Pagamentos de Rendimentos do Trabalho
+  > S1010 (O)
+  > S1200, S2200, S2299
+
+* S1299 - evtFechaEvPer: Fechamento dos Eventos Periódicos
+  > S1298 - evtReabreEvPer: Reabertura dos Eventos Periódicos						     
+
+* S1300 - evtContrSindPatr: Contribuição Sindical Patronal
+
+*** Eventos de retorno
+
+* S5001 - evtBasesTrab: Informações das contribuições sociais por trabalhador
+  > S1200, S2299 | S2399
+
+* S5002 - evtIrrfBenef: Imposto de Renda Retido na Fonte
+  > S1210
+
+# Prazos - Empresas privadas, incluindo Simples, MEIs e pessoas físicas (que possuam empregados) ######################################################
+
+Fase 1: 06/18: Apenas informações relativas às empresas, ou seja, cadastros do empregador/tabelas
+Fase 2: 09/18: Nesta fase, empresas passam a ser obrigadas a enviar informações relativas aos trabalhadores e seus vínculos com as empresas (eventos não periódicos), como admissões, afastamentos e desligamentos
+Fase 3: 11/18: Torna-se obrigatório o envio das folhas de pagamento
+Fase 4: 01/19: Substituição da GFIP (Guia de informações à Previdência Social) e compensação cruzada
+Fase 5: 01/19: Na última fase, deverão ser enviados os dados de segurança e saúde do trabalhador
