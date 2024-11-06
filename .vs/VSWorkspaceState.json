@@ -2,11 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\eSocial",
+<<<<<<< HEAD
+    "\\eSocial\\Model"
+=======
     "\\eSocial\\Model",
     "\\eSocial\\Model\\Eventos",
     "\\eSocial\\Model\\Eventos\\BD",
     "\\eSocial\\Model\\Eventos\\Retorno",
     "\\eSocial\\Model\\Eventos\\XML"
+>>>>>>> 5fa1f534834245b521ddfb603c327d8c709fc0d5
   ],
   "SelectedNode": "\\eSocial\\Model\\fSQL.cs",
   "PreviewInSolutionExplorer": false
