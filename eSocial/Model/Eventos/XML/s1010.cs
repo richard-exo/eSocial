@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1010 : bEvento_XML {
 
-        public s1010(string sID) : base("evtTabRubrica", "infoRubrica", "v_S_01_02_00") {
+        public s1010(string sID) : base("evtTabRubrica", "infoRubrica", "v_S_01_03_00") {
 
             id = sID;
 
@@ -79,6 +79,7 @@ namespace eSocial.Model.Eventos.XML {
                   new XElement(ns + "codIncIRRF", infoRubrica.inclusao.dadosRubrica.codIncIRRF),
                   new XElement(ns + "codIncFGTS", infoRubrica.inclusao.dadosRubrica.codIncFGTS),
                   opTag("codIncCPRP", infoRubrica.inclusao.dadosRubrica.codIncCPRP),
+                  opTag("codIncPisPasep", infoRubrica.inclusao.dadosRubrica.codIncPisPasep),
                   opTag("tetoRemun", infoRubrica.inclusao.dadosRubrica.tetoRemun),
                   opTag("observacao", infoRubrica.inclusao.dadosRubrica.observacao),
 
@@ -116,6 +117,7 @@ namespace eSocial.Model.Eventos.XML {
                   new XElement(ns + "codIncIRRF", infoRubrica.alteracao.dadosRubrica.codIncIRRF),
                   new XElement(ns + "codIncFGTS", infoRubrica.alteracao.dadosRubrica.codIncFGTS),
                   opTag("codIncCPRP", infoRubrica.alteracao.dadosRubrica.codIncCPRP),
+                  opTag("codIncPisPasep", infoRubrica.alteracao.dadosRubrica.codIncPisPasep),
                   opTag("tetoRemun", infoRubrica.alteracao.dadosRubrica.tetoRemun),
                   opTag("observacao", infoRubrica.alteracao.dadosRubrica.observacao)),
 
@@ -271,7 +273,7 @@ namespace eSocial.Model.Eventos.XML {
 
                 public sDadosRubrica dadosRubrica;
                 public struct sDadosRubrica {
-                    public string dscRubr, codIncCP, codIncIRRF, codIncFGTS, codIncCPRP, tetoRemun, observacao;
+                    public string dscRubr, codIncCP, codIncIRRF, codIncFGTS, codIncCPRP, codIncPisPasep, tetoRemun, observacao;
                     public string natRubr, tpRubr;
 
                     public sIdeProcessoCP ideProcessoCP;
