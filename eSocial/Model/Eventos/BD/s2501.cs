@@ -131,15 +131,26 @@ namespace eSocial.Model.Eventos.BD
 
                         s2501XML.ideTrab.infoCRIRRF.tpCR = gcl.getVal("tpCR");
                         s2501XML.ideTrab.infoCRIRRF.vrCR = gcl.getVal("vrCR").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.vrCR13 = gcl.getVal("vrCR13").Replace(",", ".");
 
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendTrib = gcl.getVal("vrRendTrib").Replace(",", ".");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendTrib13 = gcl.getVal("vrRendTrib13").Replace(",", ".");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendMoleGrave = gcl.getVal("vrRendMoleGrave").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendMoleGrave13 = gcl.getVal("vrRendMoleGrave13").Replace(",", ".");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendIsen65 = gcl.getVal("vrRendIsen65").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendIsen65Dec = gcl.getVal("vrRendIsen65Dec").Replace(",", ".");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrJurosMora = gcl.getVal("vrJurosMora").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.vrJurosMora13 = gcl.getVal("vrJurosMora13").Replace(",", ".");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrRendIsenNTrib = gcl.getVal("vrRendIsenNTrib").Replace(",", ".");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.descIsenNTrib = gcl.getVal("descIsenNTrib");
                         s2501XML.ideTrab.infoCRIRRF.infoIR.vrPrevOficial = gcl.getVal("vrPrevOficial").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.vrPrevOficial13 = gcl.getVal("vrPrevOficial13").Replace(",", ".");
+
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrDiarias = gcl.getVal("vlrDiarias").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAjudaCusto = gcl.getVal("vlrAjudaCusto").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrIndResContrato = gcl.getVal("vlrIndResContrato").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAbonoPec = gcl.getVal("vlrAbonoPec").Replace(",", ".");
+                        s2501XML.ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAuxMoradia = gcl.getVal("vlrAuxMoradia").Replace(",", ".");
 
                         s2501XML.ideTrab.infoCRIRRF.infoRRA.descRRA = gcl.getVal("descRRA");
                         s2501XML.ideTrab.infoCRIRRF.infoRRA.qtdMesesRRA = gcl.getVal("qtdMesesRRA");

@@ -34,6 +34,7 @@ namespace eSocial.Model.Eventos.XML {
             dmDev.infoPerApur = new sDmDev.sInfoPerApur();
             dmDev.infoPerApur.ideEstabLot = new sIdeEstabLot();
             dmDev.infoPerApur.ideEstabLot.remunPerApur = new sIdeEstabLot.sRemunPer();
+            dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha = new sIdeEstabLot.sRemunPer.sDescFolha();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet = new sIdeEstabLot.sRemunPer.sInfoSaudeColet();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet.detOper = new sIdeEstabLot.sRemunPer.sInfoSaudeColet.sDetOper();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet.detOper.detPlano = new sIdeEstabLot.sRemunPer.sInfoSaudeColet.sDetOper.sDetPlano();
@@ -232,6 +233,13 @@ namespace eSocial.Model.Eventos.XML {
         //// detOper 1.99
         //from e in lDetOper_infoPerApur
         //select e),
+
+        // descFolha 0.1
+        opElement("descFolha", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.tpDesc,
+        new XElement(ns + "tpDesc", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.tpDesc,
+        new XElement(ns + "instFinanc", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.instFinanc,
+        new XElement(ns + "nrDoc", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.nrContrato
+        )),
 
         // infoAgNocivo 0.1
         opElement("infoAgNocivo", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp,
@@ -482,6 +490,9 @@ namespace eSocial.Model.Eventos.XML {
 
                 public sItensRemun itensRemun;
                 public struct sItensRemun { public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR; }
+
+                public sDescFolha descFolha;
+                public struct sDescFolha { public string tpDesc, instFinanc, nrContrato; }
 
                 public sInfoSaudeColet infoSaudeColet;
                 public struct sInfoSaudeColet {

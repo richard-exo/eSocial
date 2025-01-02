@@ -143,6 +143,11 @@ namespace eSocial.Model.Eventos.BD {
                               s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.matricula = gcl.getVal("matricula");   // 0.1
                               s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples = gcl.getVal("indSimples"); // 0.1
 
+                              // descFolha 0.1
+                              s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.tpDesc = gcl.getVal("eConsignado");
+                              s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.instFinanc = gcl.getVal("instFinanc");
+                              s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.nrContrato = gcl.getVal("nrContrato");
+
                               // infoAgNocivo 0.1
                               s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp = gcl.getVal("grauExp");
 

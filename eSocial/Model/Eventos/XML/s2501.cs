@@ -27,6 +27,7 @@ namespace eSocial.Model.Eventos.XML
          ideTrab.calcTrib.infoCRContrib = new sIdeTrab.sCalcTrib.sInfoCRContrib();
          ideTrab.infoCRIRRF = new sIdeTrab.sInfoCRIRRF();
          ideTrab.infoCRIRRF.infoIR = new sIdeTrab.sInfoCRIRRF.sInfoIR();
+         ideTrab.infoCRIRRF.infoIR.rendIsen0561 = new sIdeTrab.sInfoCRIRRF.sInfoIR.sRendIsen0561();
          ideTrab.infoCRIRRF.infoRRA = new sIdeTrab.sInfoCRIRRF.sInfoRRA();
          ideTrab.infoCRIRRF.infoRRA.despProcJud = new sIdeTrab.sInfoCRIRRF.sInfoRRA.sDespProcJud();
          ideTrab.infoCRIRRF.infoRRA.ideAdv = new sIdeTrab.sInfoCRIRRF.sInfoRRA.sIdeAdv();
@@ -123,17 +124,29 @@ namespace eSocial.Model.Eventos.XML
          opElement("infoCRIRRF", ideTrab.infoCRIRRF.tpCR,
          new XAttribute("tpCR", ideTrab.infoCRIRRF.tpCR),
          new XAttribute("vrCR", ideTrab.infoCRIRRF.vrCR),
+         new XAttribute("vrCR13", ideTrab.infoCRIRRF.vrCR13),
 
          // infoCRContrib 0.99
          opElement("infoIR", ideTrab.infoCRIRRF.infoIR.vrRendTrib,
          new XAttribute("vrRendTrib", ideTrab.infoCRIRRF.infoIR.vrRendTrib),
          new XAttribute("vrRendTrib13", ideTrab.infoCRIRRF.infoIR.vrRendTrib13),
          new XAttribute("vrRendMoleGrave", ideTrab.infoCRIRRF.infoIR.vrRendMoleGrave),
+         new XAttribute("vrRendMoleGrave13", ideTrab.infoCRIRRF.infoIR.vrRendMoleGrave13),
          new XAttribute("vrRendIsen65", ideTrab.infoCRIRRF.infoIR.vrRendIsen65),
+         new XAttribute("vrRendIsen65Dec", ideTrab.infoCRIRRF.infoIR.vrRendIsen65Dec),
          new XAttribute("vrJurosMora", ideTrab.infoCRIRRF.infoIR.vrJurosMora),
+         new XAttribute("vrJurosMora13", ideTrab.infoCRIRRF.infoIR.vrJurosMora13),
          new XAttribute("vrRendIsenNTrib", ideTrab.infoCRIRRF.infoIR.vrRendIsenNTrib),
          new XAttribute("descIsenNTrib", ideTrab.infoCRIRRF.infoIR.descIsenNTrib),
-         new XAttribute("vrPrevOficial", ideTrab.infoCRIRRF.infoIR.vrPrevOficial)),
+         new XAttribute("vrPrevOficial", ideTrab.infoCRIRRF.infoIR.vrPrevOficial),
+         new XAttribute("vrPrevOficial13", ideTrab.infoCRIRRF.infoIR.vrPrevOficial13)),
+
+         opElement("rendIsen0561", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrIndResContrato,
+         new XAttribute("vlrDiarias", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrDiarias),
+         new XAttribute("vlrAjudaCusto", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAjudaCusto),
+         new XAttribute("vlrIndResContrato", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrIndResContrato),
+         new XAttribute("vlrAbonoPec", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAbonoPec),
+         new XAttribute("vlrAuxMoradia", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAuxMoradia)),
 
          opElement("infoRRA", ideTrab.infoCRIRRF.infoRRA.descRRA,
          new XAttribute("descRRA", ideTrab.infoCRIRRF.infoRRA.descRRA),
@@ -203,12 +216,19 @@ namespace eSocial.Model.Eventos.XML
          public sInfoCRIRRF infoCRIRRF;
          public struct sInfoCRIRRF
          {
-            public string tpCR, vrCR;
+            public string tpCR, vrCR, vrCR13;
 
             public sInfoIR infoIR;
             public struct sInfoIR
             {
-               public string vrRendTrib, vrRendTrib13, vrRendMoleGrave, vrRendIsen65, vrJurosMora, vrRendIsenNTrib, descIsenNTrib, vrPrevOficial;
+               public string vrRendTrib, vrRendTrib13, vrRendMoleGrave, vrRendMoleGrave13, vrRendIsen65, vrRendIsen65Dec,
+                  vrJurosMora, vrJurosMora13, vrRendIsenNTrib, descIsenNTrib, vrPrevOficial, vrPrevOficial13;
+
+               public sRendIsen0561 rendIsen0561;
+               public struct sRendIsen0561
+               {
+                  public string vlrDiarias, vlrAjudaCusto,vlrIndResContrato, vlrAbonoPec, vlrAuxMoradia;
+               }
             }
 
             public sInfoRRA infoRRA;
