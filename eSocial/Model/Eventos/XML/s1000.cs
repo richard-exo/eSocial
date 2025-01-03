@@ -343,7 +343,7 @@ namespace eSocial.Model.Eventos.XML
    public class s1000 : bEvento_XML
    {
 
-      public s1000(string sID) : base("evtInfoEmpregador", "infoEmpregador", "v_S_01_02_00")
+      public s1000(string sID) : base("evtInfoEmpregador", "infoEmpregador", "v_S_01_03_00")
       {
 
          id = sID;

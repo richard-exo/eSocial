@@ -14,7 +14,7 @@ namespace eSocial.Model.Eventos.XML
 {
    public class s2300 : bEvento_XML
    {
-      public s2300(string sID) : base("evtTSVInicio", "", "v_S_01_02_00")
+      public s2300(string sID) : base("evtTSVInicio", "", "v_S_01_03_00")
       {
          id = sID;
          ideEvento = new sIdeEvento();

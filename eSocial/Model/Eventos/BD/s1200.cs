@@ -143,11 +143,6 @@ namespace eSocial.Model.Eventos.BD {
                               s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.matricula = gcl.getVal("matricula");   // 0.1
                               s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples = gcl.getVal("indSimples"); // 0.1
 
-                              // descFolha 0.1
-                              s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.tpDesc = gcl.getVal("eConsignado");
-                              s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.instFinanc = gcl.getVal("instFinanc");
-                              s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.nrContrato = gcl.getVal("nrContrato");
-
                               // infoAgNocivo 0.1
                               s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp = gcl.getVal("grauExp");
 
@@ -183,6 +178,11 @@ namespace eSocial.Model.Eventos.BD {
 
                                        if (int.Parse(sMesano) >= 202107)
                                           s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR = gcl.getVal("indApurIR"); ; // 0=normal 1=especial
+
+                                       // descFolha 0.1
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.tpDesc = gcl.getVal("eConsignado");
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.instFinanc = gcl.getVal("instFinanc");
+                                       s1200XML.dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.nrContrato = gcl.getVal("nrContrato");
 
                                        s1200XML.add_itensRemun_infoPerApur();
                                     }

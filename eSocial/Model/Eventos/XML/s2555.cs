@@ -15,7 +15,7 @@ namespace eSocial.Model.Eventos.XML
    public class s2555 : bEvento_XML
    {
 
-      public s2555(string sID) : base("evtConsolidContProc", "ideProc", "v_S_01_02_00")
+      public s2555(string sID) : base("evtConsolidContProc", "ideProc", "v_S_01_03_00")
       {
 
          id = sID;

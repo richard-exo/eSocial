@@ -13,7 +13,7 @@ namespace eSocial.Model.Eventos.XML
 {
     public class s2399 : bEvento_XML
     {
-        public s2399(string sID) : base("evtTSVTermino", "", "v_S_01_02_00")
+        public s2399(string sID) : base("evtTSVTermino", "", "v_S_01_03_00")
         {
             id = sID;
             ideEvento = new sIdeEvento();

@@ -15,7 +15,7 @@ namespace eSocial.Model.Eventos.XML
    public class s2501 : bEvento_XML
    {
 
-      public s2501(string sID) : base("evtContProc", "ideTrab", "v_S_01_02_00")
+      public s2501(string sID) : base("evtContProc", "ideTrab", "v_S_01_03_00")
       {
 
          id = sID;
@@ -139,14 +139,14 @@ namespace eSocial.Model.Eventos.XML
          new XAttribute("vrRendIsenNTrib", ideTrab.infoCRIRRF.infoIR.vrRendIsenNTrib),
          new XAttribute("descIsenNTrib", ideTrab.infoCRIRRF.infoIR.descIsenNTrib),
          new XAttribute("vrPrevOficial", ideTrab.infoCRIRRF.infoIR.vrPrevOficial),
-         new XAttribute("vrPrevOficial13", ideTrab.infoCRIRRF.infoIR.vrPrevOficial13)),
+         new XAttribute("vrPrevOficial13", ideTrab.infoCRIRRF.infoIR.vrPrevOficial13),
 
          opElement("rendIsen0561", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrIndResContrato,
          new XAttribute("vlrDiarias", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrDiarias),
          new XAttribute("vlrAjudaCusto", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAjudaCusto),
          new XAttribute("vlrIndResContrato", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrIndResContrato),
          new XAttribute("vlrAbonoPec", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAbonoPec),
-         new XAttribute("vlrAuxMoradia", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAuxMoradia)),
+         new XAttribute("vlrAuxMoradia", ideTrab.infoCRIRRF.infoIR.rendIsen0561.vlrAuxMoradia))),
 
          opElement("infoRRA", ideTrab.infoCRIRRF.infoRRA.descRRA,
          new XAttribute("descRRA", ideTrab.infoCRIRRF.infoRRA.descRRA),

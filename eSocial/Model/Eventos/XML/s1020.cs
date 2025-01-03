@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1020 : bEvento_XML {
 
-        public s1020(string sID) : base("evtTabLotacao", "infoLotacao", "v_S_01_02_00") {
+        public s1020(string sID) : base("evtTabLotacao", "infoLotacao", "v_S_01_03_00") {
 
             id = sID;
 

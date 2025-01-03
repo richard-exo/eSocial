@@ -15,7 +15,7 @@ namespace eSocial.Model.Eventos.XML
    public class s2500 : bEvento_XML
    {
 
-      public s2500(string sID) : base("evtProcTrab", "infoProcesso", "v_S_01_02_00")
+      public s2500(string sID) : base("evtProcTrab", "infoProcesso", "v_S_01_03_00")
       {
 
          id = sID;

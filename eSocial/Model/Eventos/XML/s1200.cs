@@ -12,7 +12,7 @@ using eSocial.Controller;
 namespace eSocial.Model.Eventos.XML {
     public class s1200 : bEvento_XML {
 
-        public s1200(string sID) : base("evtRemun", "", "v_S_01_02_00") {
+        public s1200(string sID) : base("evtRemun", "", "v_S_01_03_00") {
 
             id = sID;
 
@@ -34,7 +34,7 @@ namespace eSocial.Model.Eventos.XML {
             dmDev.infoPerApur = new sDmDev.sInfoPerApur();
             dmDev.infoPerApur.ideEstabLot = new sIdeEstabLot();
             dmDev.infoPerApur.ideEstabLot.remunPerApur = new sIdeEstabLot.sRemunPer();
-            dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha = new sIdeEstabLot.sRemunPer.sDescFolha();
+            //dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha = new sIdeEstabLot.sRemunPer.sDescFolha();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet = new sIdeEstabLot.sRemunPer.sInfoSaudeColet();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet.detOper = new sIdeEstabLot.sRemunPer.sInfoSaudeColet.sDetOper();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet.detOper.detPlano = new sIdeEstabLot.sRemunPer.sInfoSaudeColet.sDetOper.sDetPlano();
@@ -218,32 +218,25 @@ namespace eSocial.Model.Eventos.XML {
         List<XElement> lRemunPerApur = new List<XElement>();
         public void add_remunPerApur() {
 
-         lRemunPerApur.Add(
-         new XElement(ns + "remunPerApur",
-         opTag("matricula", dmDev.infoPerApur.ideEstabLot.remunPerApur.matricula),
-         opTag("indSimples", dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples),
+            lRemunPerApur.Add(
+            new XElement(ns + "remunPerApur",
+            opTag("matricula", dmDev.infoPerApur.ideEstabLot.remunPerApur.matricula),
+            opTag("indSimples", dmDev.infoPerApur.ideEstabLot.remunPerApur.indSimples),
 
-         // itensRemun 1.200
-         from e in lItensRemun_infoPerApur
-         select e,
+            // itensRemun 1.200
+            from e in lItensRemun_infoPerApur
+            select e,
 
-        //// infoSaudeColet 0.1
-        //opElement("infoSaudeColet", lDetOper_infoPerApur,
+           //// infoSaudeColet 0.1
+           //opElement("infoSaudeColet", lDetOper_infoPerApur,
 
-        //// detOper 1.99
-        //from e in lDetOper_infoPerApur
-        //select e),
+           //// detOper 1.99
+           //from e in lDetOper_infoPerApur
+           //select e),
 
-        // descFolha 0.1
-        opElement("descFolha", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.tpDesc,
-        new XElement(ns + "tpDesc", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.tpDesc,
-        new XElement(ns + "instFinanc", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.instFinanc,
-        new XElement(ns + "nrDoc", dmDev.infoPerApur.ideEstabLot.remunPerApur.descFolha.nrContrato
-        )),
-
-        // infoAgNocivo 0.1
-        opElement("infoAgNocivo", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp,
-        new XElement(ns + "grauExp", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp))));
+           // infoAgNocivo 0.1
+           opElement("infoAgNocivo", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp,
+           new XElement(ns + "grauExp", dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo.grauExp))));
 
            //// infoTrabInterm 0.99
            //from e in lInfoTrabInterm_infoPerApur
@@ -252,7 +245,6 @@ namespace eSocial.Model.Eventos.XML {
             dmDev.infoPerApur.ideEstabLot.remunPerApur = new sIdeEstabLot.sRemunPer();
             //dmDev.infoPerApur.ideEstabLot.remunPerApur.infoSaudeColet = new sIdeEstabLot.sRemunPer.sInfoSaudeColet();
             dmDev.infoPerApur.ideEstabLot.remunPerApur.infoAgNocivo = new sIdeEstabLot.sRemunPer.sInfoAgNocivo();
-
         }
         #endregion
 
@@ -269,15 +261,23 @@ namespace eSocial.Model.Eventos.XML {
             opTag("qtdRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.qtdRubr),
             opTag("fatorRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.fatorRubr),
             new XElement(ns + "vrRubr", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.vrRubr),
-            opTag("indApurIR", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR)));
+            opTag("indApurIR", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.indApurIR),
+
+            // descFolha 0.1
+            opElement("descFolha", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.tpDesc,
+            new XElement(ns + "tpDesc", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.tpDesc),
+            new XElement(ns + "instFinanc", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.instFinanc),
+            new XElement(ns + "nrDoc", dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun.descFolha.nrContrato))
+
+            ));
 
             dmDev.infoPerApur.ideEstabLot.remunPerApur.itensRemun = new sIdeEstabLot.sRemunPer.sItensRemun();
-        }
-        #endregion
+      }
+      #endregion
 
-        #region detOper_infoPerApur
+      #region detOper_infoPerApur
 
-        List<XElement> lDetOper_infoPerApur = new List<XElement>();
+      List<XElement> lDetOper_infoPerApur = new List<XElement>();
         public void add_detOper_infoPerApur() {
 
             lDetOper_infoPerApur.Add(
@@ -489,10 +489,11 @@ namespace eSocial.Model.Eventos.XML {
                 public string matricula, indSimples;
 
                 public sItensRemun itensRemun;
-                public struct sItensRemun { public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR; }
+                public struct sItensRemun { public string codRubr, ideTabRubr, qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR;
 
-                public sDescFolha descFolha;
-                public struct sDescFolha { public string tpDesc, instFinanc, nrContrato; }
+                  public sDescFolha descFolha;
+                  public struct sDescFolha { public string tpDesc, instFinanc, nrContrato; }
+                }
 
                 public sInfoSaudeColet infoSaudeColet;
                 public struct sInfoSaudeColet {
