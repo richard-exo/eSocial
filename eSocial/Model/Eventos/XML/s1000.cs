@@ -415,7 +415,7 @@ namespace eSocial.Model.Eventos.XML
          new XElement(ns + "indOptRegEletron", infoEmpregador.inclusao.infoCadastro.indOptRegEletron),
          opTag("cnpjEFR", infoEmpregador.inclusao.infoCadastro.cnpjEFR),
          opTag("dtTrans11096", infoEmpregador.inclusao.infoCadastro.dtTrans11096),
-         opTag("indTribFolhaPisCofins", infoEmpregador.inclusao.infoCadastro.indTribFolhaPisCofins),
+         opTag("indTribFolhaPisPasep", infoEmpregador.inclusao.infoCadastro.indTribFolhaPisPasep),
 
          // dadosIsencao 0.1
          opElement("dadosIsencao", infoEmpregador.inclusao.infoCadastro.dadosIsencao.ideMinLei,
@@ -458,7 +458,7 @@ namespace eSocial.Model.Eventos.XML
           new XElement(ns + "indOptRegEletron", infoEmpregador.alteracao.infoCadastro.indOptRegEletron),
           opTag("cnpjEFR", infoEmpregador.alteracao.infoCadastro.cnpjEFR),
           opTag("dtTrans11096", infoEmpregador.alteracao.infoCadastro.dtTrans11096),
-          opTag("indTribFolhaPisCofins", infoEmpregador.alteracao.infoCadastro.indTribFolhaPisCofins),
+          opTag("indTribFolhaPisPasep", infoEmpregador.alteracao.infoCadastro.indTribFolhaPisPasep),
 
           // dadosIsencao 0.1
           opElement("dadosIsencao", infoEmpregador.alteracao.infoCadastro.dadosIsencao.ideMinLei,
@@ -514,7 +514,7 @@ namespace eSocial.Model.Eventos.XML
       {
          public string nmRazao, classTrib, multTabRubricas, indEntEd, indEtt, natJurid;
          public string indCoop, indConstr, indDesFolha, indOpcCP, indOptRegEletron, nrRegEtt;
-         public string indPorte, cnpjEFR, dtTrans11096, indTribFolhaPisCofins;
+         public string indPorte, cnpjEFR, dtTrans11096, indTribFolhaPisPasep;
 
          public sDadosIsencao dadosIsencao;
          public struct sDadosIsencao

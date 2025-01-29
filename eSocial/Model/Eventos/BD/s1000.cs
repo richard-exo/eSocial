@@ -82,7 +82,7 @@ namespace eSocial.Model.Eventos.BD {
                      incAlt.infoCadastro.indOpcCP = row["indOpcCP"].ToString();
                   incAlt.infoCadastro.indOptRegEletron = row["indOptRegEletron"].ToString();                  
                   incAlt.infoCadastro.indEtt = row["indEtt"].ToString();
-                  incAlt.infoCadastro.indTribFolhaPisCofins = row["indTribFolhaPisCofins"].ToString();
+                  incAlt.infoCadastro.indTribFolhaPisPasep = row["indTribFolhaPisPasep"].ToString();
 
                   // contato
                   incAlt.infoCadastro.contato.nmCtt = row["nmCtt"].ToString();
