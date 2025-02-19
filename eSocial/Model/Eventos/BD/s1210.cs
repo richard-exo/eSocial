@@ -405,7 +405,9 @@ namespace eSocial.Model.Eventos.BD {
                                           where r["id_funcionario"].ToString().Equals(evento.id_funcionario) &&
                                           !string.IsNullOrEmpty(r[$"dtPgto_infoPgto"].ToString()) &&
                                           r["id_infoIRComplem"].ToString().Equals(sIDchaveIRcomplem) &&
-                                          !r["id_planSaude"].ToString().Equals("0")
+                                          !r["id_planSaude"].ToString().Equals("0") &&                                          
+                                          !r["cnpjOper_planSaude"].ToString().Equals("") &&
+                                          r["id_infoDepSau"].ToString().Equals("0") 
                                           select r;
 
                         foreach (var planSaude in tbPlanSaude)
