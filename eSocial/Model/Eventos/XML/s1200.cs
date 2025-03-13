@@ -99,9 +99,10 @@ namespace eSocial.Model.Eventos.XML {
             from e in lProcJudTrab
             select e,
 
-            // infoInterm 0.1
-            opElement("infoInterm", ideTrabalhador.infoInterm.dia,
-            new XElement(ns + "dia", ideTrabalhador.infoInterm.dia))
+            // infoInterm 0.31
+            opElement("infoInterm", lInfoInterm,
+            from e in lInfoInterm
+            select e)
 
             )); // ideTrabalhador
 
@@ -145,11 +146,24 @@ namespace eSocial.Model.Eventos.XML {
 
             ideTrabalhador.procJudTrab = new sIdeTrabalhador.sProcJudTrab();
         }
-        #endregion
+      #endregion
 
-        #region dmDev
+      #region infoInterm
+      List<XElement> lInfoInterm = new List<XElement>();
+      public void add_infoInterm()
+      {
 
-        List<XElement> lDmDev = new List<XElement>();
+         lInfoInterm.Add(
+         //new XElement(ns + "infoInterm",
+         new XElement(ns + "dia", ideTrabalhador.infoInterm.dia));
+
+         ideTrabalhador.infoInterm = new sIdeTrabalhador.sInfoInterm();
+      }
+      #endregion
+
+      #region dmDev
+
+      List<XElement> lDmDev = new List<XElement>();
         public void add_dmDev() {
 
             lDmDev.Add(

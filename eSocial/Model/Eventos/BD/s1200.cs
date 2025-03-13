@@ -16,6 +16,7 @@ namespace eSocial.Model.Eventos.BD {
 
          try {
             List<string> lista1200 = new List<string>();
+            List<string> lista1200infoInterm = new List<string>();
             List<string> lista1200DmDev = new List<string>();
             List<string> lista1200infoPerApur = new List<string>();
             List<string> lista1200infoComplCont = new List<string>();
@@ -84,6 +85,23 @@ namespace eSocial.Model.Eventos.BD {
                   s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.matricAnt = row["matricAnt"].ToString();         // 0.1
                   s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.dtAdm = validadores.aaaa_mm_dd(row["dtAdm"].ToString());
                   s1200XML.ideTrabalhador.infoComplem.sucessaoVinc.observacao = row["observacao"].ToString();       // 0.1
+
+
+                  // infoInterm 0.31
+                  foreach (var infoInterm in from DataRow r in tbEventos.Rows
+                                             where r["id_funcionario"].ToString().Equals(evento.id_funcionario) &&
+                                             !string.IsNullOrEmpty(r["tpInsc"].ToString()) &&
+                                             !string.IsNullOrEmpty(r["dia_infoInterm"].ToString())
+                                             select r)
+                  {
+                     if (!lista1200infoInterm.Contains(infoInterm["id_infoInterm"].ToString()))
+                     {
+                        lista1200infoInterm.Add(infoInterm["id_infoInterm"].ToString());
+
+                        s1200XML.ideTrabalhador.infoInterm.dia = infoInterm["dia_infoInterm"].ToString();
+                        s1200XML.add_infoInterm();
+                     }
+                  }
 
                   // dmDev 1.99
                   gcl.setLevel("dmDev");
