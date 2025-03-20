@@ -90,7 +90,7 @@ namespace eSocial.Model.Eventos.BD {
                   // infoInterm 0.31
                   foreach (var infoInterm in from DataRow r in tbEventos.Rows
                                              where r["id_funcionario"].ToString().Equals(evento.id_funcionario) &&
-                                             !string.IsNullOrEmpty(r["tpInsc"].ToString()) &&
+                                             //!string.IsNullOrEmpty(r["tpInsc"].ToString()) 
                                              !string.IsNullOrEmpty(r["dia_infoInterm"].ToString())
                                              select r)
                   {
