@@ -100,9 +100,11 @@ namespace eSocial.Model.Eventos.XML {
             select e,
 
             // infoInterm 0.31
-            opElement("infoInterm", lInfoInterm,
+            //opElement("infoInterm", lInfoInterm,
+            //from e in lInfoInterm
+            //select e)            
             from e in lInfoInterm
-            select e)
+            select e
 
             )); // ideTrabalhador
 
@@ -154,8 +156,8 @@ namespace eSocial.Model.Eventos.XML {
       {
 
          lInfoInterm.Add(
-         //new XElement(ns + "infoInterm",
-         new XElement(ns + "dia", ideTrabalhador.infoInterm.dia));
+         new XElement(ns + "infoInterm",
+         new XElement(ns + "dia", ideTrabalhador.infoInterm.dia)));
 
          ideTrabalhador.infoInterm = new sIdeTrabalhador.sInfoInterm();
       }
