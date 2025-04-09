@@ -406,8 +406,7 @@ namespace eSocial.Model.Eventos.BD {
                                           !string.IsNullOrEmpty(r[$"dtPgto_infoPgto"].ToString()) &&
                                           r["id_infoIRComplem"].ToString().Equals(sIDchaveIRcomplem) &&
                                           !r["id_planSaude"].ToString().Equals("0") &&                                          
-                                          !r["cnpjOper_planSaude"].ToString().Equals("") &&
-                                          r["id_infoDepSau"].ToString().Equals("0") 
+                                          !r["cnpjOper_planSaude"].ToString().Equals("") 
                                           select r;
 
                         foreach (var planSaude in tbPlanSaude)
@@ -428,7 +427,7 @@ namespace eSocial.Model.Eventos.BD {
                                                  where r["id_funcionario"].ToString().Equals(evento.id_funcionario) &&
                                                  !string.IsNullOrEmpty(r[$"dtPgto_infoPgto"].ToString()) &&
                                                  r["id_infoIRComplem"].ToString().Equals(sIDchaveIRcomplem) &&
-                                                 r["id_planSaude"].ToString().Equals(sIDchavePlanSaude) &&
+                                                 //r["id_planSaude"].ToString().Equals(sIDchavePlanSaude) &&
                                                  !r["id_infoDepSau"].ToString().Equals("0")
                                                  select r;
 

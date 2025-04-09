@@ -8,6 +8,10 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
 using eSocial.Controller;
+using static eSocial.Model.Eventos.XML.s1210.sIdeBenef.sInfoIRComple.sPlanSaude;
+using static eSocial.Model.Eventos.XML.s1210.sIdeBenef.sInfoIRComple;
+using static eSocial.Model.Eventos.XML.s1210;
+using static eSocial.Model.Eventos.XML.s2190.sInfoRegPrelim;
 
 namespace eSocial.Model.Eventos.XML {
    public class s2190 : bEvento_XML {
@@ -16,6 +20,7 @@ namespace eSocial.Model.Eventos.XML {
         {
             id = sID;
             infoRegPrelim = new sInfoRegPrelim();
+            infoRegPrelim.infoRegCTPS = new sInfoRegPrelim.sInfoRegCTPS();
         }
 
         public override XElement genSignedXML(X509Certificate2 cert) {
@@ -41,9 +46,33 @@ namespace eSocial.Model.Eventos.XML {
          new XElement(ns + "dtAdm", infoRegPrelim.dtAdm),
          new XElement(ns + "matricula", infoRegPrelim.matricula),
          new XElement(ns + "codCateg", infoRegPrelim.codCateg),
-         new XElement(ns + "natAtividade", infoRegPrelim.natAtividade)));
+         new XElement(ns + "natAtividade", infoRegPrelim.natAtividade),
+
+         // infoRegCTPS 0.1
+         from e in lInfoRegCTPS
+         select e
+
+         ));
+
+         lInfoRegCTPS = new List<XElement>();
 
          return x509.signXMLSHA256(xml, cert);
+      }
+
+      List<XElement> lInfoRegCTPS = new List<XElement>();
+      public void add_infoRegCTPS()
+      {
+
+         lInfoRegCTPS.Add(
+
+         opElement("infoRegCTPS", infoRegPrelim.infoRegCTPS.CBOCargo,
+         new XElement(ns + "CBOCargo", infoRegPrelim.infoRegCTPS.CBOCargo),
+         new XElement(ns + "vrSalFx", infoRegPrelim.infoRegCTPS.vrSalFx),
+         new XElement(ns + "undSalFixo", infoRegPrelim.infoRegCTPS.undSalFixo),
+         new XElement(ns + "tpContr", infoRegPrelim.infoRegCTPS.tpContr),
+         new XElement(ns + "dtTerm", infoRegPrelim.infoRegCTPS.dtTerm )));
+
+         infoRegPrelim.infoRegCTPS = new sInfoRegPrelim.sInfoRegCTPS();
       }
 
       #region ****************************************************************************************************************************** Structs
@@ -59,8 +88,14 @@ namespace eSocial.Model.Eventos.XML {
       public struct sInfoRegPrelim {
          public string cpfTrab;
          public string dtNascto, dtAdm, matricula, codCateg, natAtividade;
-      }
 
+
+         public sInfoRegCTPS infoRegCTPS;
+         public struct sInfoRegCTPS
+         {
+            public string CBOCargo, vrSalFx, undSalFixo, tpContr, dtTerm;
+         }
+      }
       #endregion
    }
 }

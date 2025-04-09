@@ -42,6 +42,16 @@ namespace eSocial.Model.Eventos.BD {
                s2190XML.infoRegPrelim.codCateg = row["codCateg"].ToString();
                s2190XML.infoRegPrelim.natAtividade = row["natAtividade"].ToString();
 
+               if (row["CBOCargo"].ToString() != "")
+               {
+                  s2190XML.infoRegPrelim.infoRegCTPS.CBOCargo = row["CBOCargo"].ToString();
+                  s2190XML.infoRegPrelim.infoRegCTPS.vrSalFx = row["vrSalFx"].ToString().Replace(",", ".");
+                  s2190XML.infoRegPrelim.infoRegCTPS.undSalFixo = row["undSalFixo"].ToString();
+                  s2190XML.infoRegPrelim.infoRegCTPS.tpContr = row["tpContr"].ToString();
+                  s2190XML.infoRegPrelim.infoRegCTPS.dtTerm = validadores.aaaa_mm_dd(row["dtTerm"].ToString());
+                  s2190XML.add_infoRegCTPS();
+               }
+
                evento.eventoAssinadoXML = s2190XML.genSignedXML(evento.certificado);
                lEventos.Add(evento);
             }
