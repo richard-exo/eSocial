@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\gitHub\\eSocial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\bd\\s1210.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\bd\\s1210.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\fsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\fsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 162,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,28 +58,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "fSQL.cs",
               "DocumentMoniker": "C:\\gitHub\\eSocial\\eSocial\\Model\\fSQL.cs",
               "RelativeDocumentMoniker": "eSocial\\Model\\fSQL.cs",
               "ToolTip": "C:\\gitHub\\eSocial\\eSocial\\Model\\fSQL.cs",
               "RelativeToolTip": "eSocial\\Model\\fSQL.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T18:26:29.921Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "s1210.cs",
-              "DocumentMoniker": "C:\\gitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s1210.cs",
-              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\BD\\s1210.cs",
-              "ToolTip": "C:\\gitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s1210.cs",
-              "RelativeToolTip": "eSocial\\Model\\Eventos\\BD\\s1210.cs",
-              "ViewState": "AgIAAIgBAAAAAAAAAAAvwJgBAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T17:56:05.029Z",
+              "WhenOpened": "2025-04-10T18:23:11.057Z",
               "EditorCaption": ""
             }
           ]
