@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\fsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\fsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|C:\\gitHub\\eSocial\\esocial\\model\\eventos\\xml\\s2190.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\xml\\s2190.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|C:\\gitHub\\eSocial\\esocial\\model\\eventos\\bd\\s2190.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\bd\\s2190.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,10 +72,34 @@
               "RelativeDocumentMoniker": "eSocial\\Model\\fSQL.cs",
               "ToolTip": "C:\\gitHub\\eSocial\\eSocial\\Model\\fSQL.cs",
               "RelativeToolTip": "eSocial\\Model\\fSQL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T18:23:11.057Z",
+              "WhenOpened": "2025-05-06T13:03:16.098Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "s2190.cs",
+              "DocumentMoniker": "C:\\gitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2190.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\XML\\s2190.cs",
+              "ToolTip": "C:\\gitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2190.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\XML\\s2190.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAvwEMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T12:59:13.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "s2190.cs",
+              "DocumentMoniker": "C:\\gitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2190.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\BD\\s2190.cs",
+              "ToolTip": "C:\\gitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2190.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\BD\\s2190.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T12:58:41.34Z"
             }
           ]
         },

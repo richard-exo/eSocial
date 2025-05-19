@@ -70,7 +70,8 @@ namespace eSocial.Model.Eventos.XML {
          new XElement(ns + "vrSalFx", infoRegPrelim.infoRegCTPS.vrSalFx),
          new XElement(ns + "undSalFixo", infoRegPrelim.infoRegCTPS.undSalFixo),
          new XElement(ns + "tpContr", infoRegPrelim.infoRegCTPS.tpContr),
-         new XElement(ns + "dtTerm", infoRegPrelim.infoRegCTPS.dtTerm )));
+         //new XElement(ns + "dtTerm", infoRegPrelim.infoRegCTPS.dtTerm )));
+         opTag("dtTerm", infoRegPrelim.infoRegCTPS.dtTerm)));
 
          infoRegPrelim.infoRegCTPS = new sInfoRegPrelim.sInfoRegCTPS();
       }
