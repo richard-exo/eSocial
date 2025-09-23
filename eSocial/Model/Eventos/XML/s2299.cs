@@ -32,6 +32,7 @@ namespace eSocial.Model.Eventos.XML {
 
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot();
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sDetVerbas();
+            infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sDetVerbas.sDescFolha();
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.infoSaudeColet = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sInfoSaudeColet();
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.infoSaudeColet.detOper = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sInfoSaudeColet.sDetOper();
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.infoSaudeColet.detOper.detPlano = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sInfoSaudeColet.sDetOper.sDetPlano();
@@ -265,7 +266,14 @@ namespace eSocial.Model.Eventos.XML {
             opTag("qtdRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.qtdRubr),
             opTag("fatorRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.fatorRubr),
             new XElement(ns + "vrRubr", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrRubr),
-            opTag("indApurIR", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.indApurIR)));
+            opTag("indApurIR", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.indApurIR),
+
+            opElement("descFolha", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.tpDesc,
+            new XElement(ns + "tpDesc", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.tpDesc),
+            new XElement(ns + "instFinanc", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.instFinanc),
+            new XElement(ns + "nrDoc", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.nrDoc),
+            opTag("observacao", infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.observacao)
+            )));
 
             infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas = new sInfoDeslig.sVerbasResc.sDmDev.sInfoPerApur.sIdeEstabLot.sDetVerbas();
         }
@@ -522,6 +530,12 @@ namespace eSocial.Model.Eventos.XML {
                             public struct sDetVerbas {
                                 public string qtdRubr, fatorRubr, vrUnit, vrRubr, indApurIR;
                                 public string codRubr, ideTabRubr;
+
+                                 public sDescFolha descFolha;
+                                 public struct sDescFolha
+                                 {
+                                    public string tpDesc, instFinanc, nrDoc, observacao;
+                                 }
                             }
                             public sInfoSaudeColet infoSaudeColet;
                             public struct sInfoSaudeColet {

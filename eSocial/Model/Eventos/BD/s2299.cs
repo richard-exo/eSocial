@@ -148,6 +148,11 @@ namespace eSocial.Model.Eventos.BD{
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.vrRubr = gcl.getVal("vrRubr").Replace(",", ".");
                               s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.indApurIR = gcl.getVal("indApurIR");
 
+                              s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.tpDesc = gcl.getVal("eConsignado_descFolha");
+                              s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.instFinanc = gcl.getVal("instFinanc_descFolha");
+                              s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.nrDoc = gcl.getVal("nrContrato_descFolha");
+                              s2299XML.infoDeslig.verbasResc.dmDev.infoPerApur.ideEstabLot.detVerbas.descFolha.observacao = gcl.getVal("observacao_descFolha");
+
                               s2299XML.add_detVerbas_infoPerApur();
                            }
                         }
