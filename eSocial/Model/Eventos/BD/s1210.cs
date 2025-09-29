@@ -101,7 +101,7 @@ namespace eSocial.Model.Eventos.BD {
                      nLiquido = Convert.ToDouble(gcl.getVal("vrLiq_detPgtoFl"));
 
                      // Só executa 1x para cada funcionario
-                     if (!lista1210info.Contains(sIDchave) && nLiquido>0.00)
+                     if (!lista1210info.Contains(sIDchave)) // && nLiquido>0.00)
                      {
                         lista1210info.Add(sIDchave);
 
