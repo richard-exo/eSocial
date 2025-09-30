@@ -350,8 +350,10 @@ namespace eSocial.Model.Eventos.XML
          lInfoFGTS.Add(
          opElement("infoFGTS", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.temInfoFGTS,
          new XElement(ns + "vrBcFGTSProcTrab", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSProcTrab),
-         new XElement(ns + "vrBcFGTSSefip", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSSefip),
-         new XElement(ns + "vrBcFGTSDecAnt", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSDecAnt)));
+         //new XElement(ns + "vrBcFGTSSefip", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSSefip),
+         //new XElement(ns + "vrBcFGTSDecAnt", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSDecAnt)
+         opTag("vrBcFGTSSefip", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSSefip),
+         opTag("vrBcFGTSDecAnt", ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS.vrBcFGTSDecAnt)));
 
          ideTrab.infoContr.ideEstab.infoVlr.idePeriodo.infoFGTS = new sIdeTrab.sInfoContr.sIdeEstab.sInfoVlr.sIdePeriodo.sInfoFGTS();
       }
