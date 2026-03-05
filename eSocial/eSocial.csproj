@@ -53,7 +53,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F1DF8C41DC39EE3B4590A3E9A462F523B74E11AC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C3CA3947146E0C0AFCCB5CCAC951D6393803C7AC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>eSocial_TemporaryKey.pfx</ManifestKeyFile>
