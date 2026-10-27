@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="eSocial.exe" version="1.0.0.72" publicKeyToken="52d3b51a7b97d824" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="ico.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="eSocial" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="eSocial.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opções de Manifesto do UAC
+          Para alterar o nível de Controle de Conta de Usuário do Windows, substitua o nó
+          requestedExecutionLevel por um dos seguintes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Para utilizar a Virtualização de Arquivos e Registro para manter a compatibilidade com versões anteriores,
+         exclua o nó requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eSocial.exe" size="891808">
+      <assemblyIdentity name="eSocial" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>v50wfWG28CglCyVqm7BYcmh7bikjfmcTcB/swlTqtZA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="_ToDo e TIPs.txt" size="6435">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QqFn/T72d8BcRQF4gZU7NOkGvykQQk+nMYDcVVOrmmo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="eSocial.exe.config" size="4080">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+Wso9KzMGYGj/l8BxfKRdde3cHsIGdwSXHvT4neKdvw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="ico.ico" size="255676">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gWwEW+lCs212OeTC9ecn+lI1pLLO5WuR8oS9HZyWRR0=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=WO42\richa" issuerKeyHash="4c9e061bb9261dd96e2706278512e2c4bafd9391" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dAngmewVB0xGKvIHn544v1XMgHCB7nqPT7QX1kkbxXo=</DigestValue></Reference></SignedInfo><SignatureValue>RB57DtphmtgabXDGi4ehSXbOri5GYWIUbXeLcaXJwpxHJCDh6U1AQNrsyMyTmUoS9Vji89f8LH7Fbtm3tLRyStxpWwlnzfYzDPJk86vRJow+ziz26ijOMSaDsa8msD2f930tFaIm2u/Z1swn+Ha/HFmST5JBSQALW9oonu2X8M0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ri5xkam5GRD2rOd+q7Y0MC6EZWBYJstBZvv+vSgNgbrn3VzpkoIZxdh8HE9rfyA3UNlc+dXFbCQFhvd6o+t7YbsCpIvnhoo4H+w0/RK0AEcNnXt/sSdxRMKBHK68FJ57ZqYkHRca2YVqF0n6fGZdtsxa4jHWeHNE+LdnKdm0RNU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7ac51b49d617b44f8f7aee817080cc55bf389e9f07f22a464c0715ec99e00974" Description="" Url=""><as:assemblyIdentity name="eSocial.exe" version="1.0.0.72" publicKeyToken="52d3b51a7b97d824" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=WO42\richa</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>N8cgcwU95GyYo5AbJLoi7kMJ2a3IYpNaou2mTCS2Ock=</DigestValue></Reference></SignedInfo><SignatureValue>Gcel6TC7KX+69Hl+knOmgbUiBAYmnsclCsAWKOeBEojiVRDUvzSjwyZxPplBuWcJVAHCPky7aAP7M9682ffib34eHqYOzjlo8Pnj8kXarfIUY3o9Zusg8aTRrYmZstz02c+bo6qTVCABwniSb9ycCUO3o7tgM1k5L6/xL3QIexY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ri5xkam5GRD2rOd+q7Y0MC6EZWBYJstBZvv+vSgNgbrn3VzpkoIZxdh8HE9rfyA3UNlc+dXFbCQFhvd6o+t7YbsCpIvnhoo4H+w0/RK0AEcNnXt/sSdxRMKBHK68FJ57ZqYkHRca2YVqF0n6fGZdtsxa4jHWeHNE+LdnKdm0RNU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBwTCCASqgAwIBAgIQFP+HeRhZqoBK8gDJzDWMqzANBgkqhkiG9w0BAQsFADAfMR0wGwYDVQQDHhQAVwBPADQAMgBcAHIAaQBjAGgAYTAeFw0yNjEwMjcxODQxMzdaFw0yNzEwMjgwMDQxMzdaMB8xHTAbBgNVBAMeFABXAE8ANAAyAFwAcgBpAGMAaABhMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCuLnGRqbkZEPas536rtjQwLoRlYFgmy0Fm+/69KA2BuufdXOmSghnF2HwcT2t/IDdQ2Vz51cVsJAWG93qj63thuwKki+eGijgf7DT9ErQARw2de3+xJ3FEwoEcrrwUnntmpiQdFxrZhWoXSfp8Zl22zFriMdZ4c0T4t2cp2bRE1QIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAFDs8ImRj3DhyUOC6R06vkAe+wvL0QlKTy5VLbUREwuG5xxpX5ImQj0yxOWRy8ILR+fhN4IY+lze0h5OM8qoWLVewyJpNmYeyFFhNDx/d1U40V0kJz/spnjOZqYBfM07qcFdc3YA9tVlhIp9b8TXhQtOPM9QqYbR5SivM6egig22</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

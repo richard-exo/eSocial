@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>72</ApplicationRevision>
+    <ApplicationRevision>73</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,7 +53,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C3CA3947146E0C0AFCCB5CCAC951D6393803C7AC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>EE5DC0C94CE3235271BF9E01DF1957E9D2B4D5ED</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>eSocial_TemporaryKey.pfx</ManifestKeyFile>

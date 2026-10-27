@@ -137,4 +137,3 @@ C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\bin\Debug\eSoc
 C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.csproj.CoreCompileInputs.cache
 C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.exe.manifest
 C:\Users\richa\OneDrive\Área de Trabalho\eSocial\eSocial\eSocial\obj\Debug\eSocial.application
-C:\gitHub\eSocial\eSocial\obj\Debug\eSocial.exe.config

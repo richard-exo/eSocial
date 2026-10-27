@@ -128,7 +128,7 @@ namespace eSocial.Model.Eventos.BD{
 						s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.defMental = row["defMental_infoDeficiencia"].ToString();
 						s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.defIntelectual = row["defIntelectual_infoDeficiencia"].ToString();
 						s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.reabReadap = row["reabReadap_infoDeficiencia"].ToString();
-						s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.infoCota = row["infoCota_infoDeficiencia"].ToString();
+						//s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.infoCota = row["infoCota_infoDeficiencia"].ToString();
 						s2205XML.alteracao.dadosTrabalhador.infoDeficiencia.observacao = row["observacao_infoDeficiencia"].ToString();
 
 						// dependente 0.99

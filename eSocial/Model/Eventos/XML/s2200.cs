@@ -143,7 +143,7 @@ namespace eSocial.Model.Eventos.XML {
             new XElement(ns + "defMental", trabalhador.infoDeficiencia.defMental),
             new XElement(ns + "defIntelectual", trabalhador.infoDeficiencia.defIntelectual),
             new XElement(ns + "reabReadap", trabalhador.infoDeficiencia.reabReadap),
-            new XElement(ns + "infoCota", trabalhador.infoDeficiencia.infoCota),
+            //new XElement(ns + "infoCota", trabalhador.infoDeficiencia.infoCota),
             opTag("observacao", trabalhador.infoDeficiencia.observacao)),
 
             // dependente 0.99

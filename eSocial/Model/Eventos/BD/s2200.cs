@@ -150,7 +150,7 @@ namespace eSocial.Model.Eventos.BD {
                   s2200XML.trabalhador.infoDeficiencia.defMental = gcl.getVal("defMental");
                   s2200XML.trabalhador.infoDeficiencia.defIntelectual = gcl.getVal("defIntelectual");
                   s2200XML.trabalhador.infoDeficiencia.reabReadap = gcl.getVal("reabReadap");
-                  s2200XML.trabalhador.infoDeficiencia.infoCota = gcl.getVal("infoCota");
+                  //s2200XML.trabalhador.infoDeficiencia.infoCota = gcl.getVal("infoCota");
                   s2200XML.trabalhador.infoDeficiencia.observacao = gcl.getVal("observacao");          // 0.1
 
                   // dependente 0.99

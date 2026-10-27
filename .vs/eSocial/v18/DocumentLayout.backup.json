@@ -1,0 +1,252 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\eSocial\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|eSocial||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\fsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\fsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\xml\\s2205.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\xml\\s2205.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\bd\\s2205.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\bd\\s2205.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\xml\\s2200.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\xml\\s2200.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\bd\\s2200.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\bd\\s2200.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\retorno\\retevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\retorno\\retevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\bd\\s2300.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\bd\\s2300.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\model\\eventos\\xml\\s2300.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\model\\eventos\\xml\\s2300.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|C:\\GitHub\\eSocial\\esocial\\cbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|solutionrelative:esocial\\cbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BC24EB7-491D-454E-89DA-1B092645D5AF}|eSocial\\eSocial.csproj|c:\\github\\esocial\\esocial\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|f8d6553f-f752-4dbf-acb6-f291b744a792"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 162,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "eSocial",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\eSocial.csproj",
+              "RelativeDocumentMoniker": "eSocial\\eSocial.csproj",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\eSocial.csproj",
+              "RelativeToolTip": "eSocial\\eSocial.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-10-27T18:41:31.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "s2300.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2300.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\XML\\s2300.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2300.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\XML\\s2300.cs",
+              "ViewState": "AgIAAG8BAAAAAAAAAAAawHgBAACKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:39:45.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "s2300.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2300.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\BD\\s2300.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2300.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\BD\\s2300.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAiwJ8AAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:39:29.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "s2205.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2205.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\XML\\s2205.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2205.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\XML\\s2205.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAiwH0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:39:08.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "s2205.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2205.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\BD\\s2205.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2205.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\BD\\s2205.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAiwIIAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:37:50.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "s2200.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2200.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\XML\\s2200.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\XML\\s2200.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\XML\\s2200.cs",
+              "ViewState": "AgIAAOUBAAAAAAAAAAAswO4BAACNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:37:13.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "s2200.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2200.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\BD\\s2200.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\BD\\s2200.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\BD\\s2200.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAAAJgAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:37:07.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "retEvento.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\Retorno\\retEvento.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\Eventos\\Retorno\\retEvento.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\Eventos\\Retorno\\retEvento.cs",
+              "RelativeToolTip": "eSocial\\Model\\Eventos\\Retorno\\retEvento.cs",
+              "ViewState": "AgIAABIBAAAAAAAAAAAswBsBAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T18:37:00.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fSQL.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\Model\\fSQL.cs",
+              "RelativeDocumentMoniker": "eSocial\\Model\\fSQL.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\Model\\fSQL.cs",
+              "RelativeToolTip": "eSocial\\Model\\fSQL.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-11T12:01:01.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "cBase.cs",
+              "DocumentMoniker": "C:\\GitHub\\eSocial\\eSocial\\cBase.cs",
+              "RelativeDocumentMoniker": "eSocial\\cBase.cs",
+              "ToolTip": "C:\\GitHub\\eSocial\\eSocial\\cBase.cs",
+              "RelativeToolTip": "eSocial\\cBase.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-11T10:46:53.307Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 146,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
